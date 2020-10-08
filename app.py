@@ -38,6 +38,19 @@ def home():
     return render_template('home.template.html')
 
 
+@app.route('/register')
+def register():
+    return render_template('register.template.html')
+
+@app.route('/login')
+def login():
+    return render_template('login.template.html')
+
+@app.route('/browse-items')
+def browse_items():
+    return render_template('browse.template.html')
+
+
 
 # "magic code" -- boilerplate
 if __name__ == '__main__':

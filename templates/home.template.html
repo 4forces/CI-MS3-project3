@@ -4,17 +4,19 @@
 
 {% block content %}
 
-<section class="page-section">
-    <div class="container h-100">
-        <div class="row h-100 justify-content-center align-items-center">
-            <div class="col-lg-8 text-center">
-                    <button type="button" class="btn btn-secondary btn-lg btn-block">Become a Gifter</button>
-                    <button type="button" class="btn btn-secondary btn-lg btn-block">Post Gifts</button>
-                    <button type="button" class="btn btn-secondary btn-lg btn-block">Browse Items</button>
-            </div>
-        </div>
+<div class="row vh-100 justify-content-center align-items-center">
+    <div class="col-lg-8 text-center">
+            <a class="nav-item nav-link" href="{{ url_for('register') }}">
+                <button type="button" class="btn btn-secondary btn-lg btn-block">Become a Gifter</button>
+            </a>
+            <a class="nav-item nav-link" href="{{ url_for('login') }}">
+                <button type="button" class="btn btn-secondary btn-lg btn-block">Post Gifts</button>
+            </a>
+            <a class="nav-item nav-link" href="{{ url_for('browse_items') }}">
+                <button type="button" class="btn btn-secondary btn-lg btn-block">Browse Items</button>
+            </a>
     </div>
-</section>
+</div>
 
 
 {% endblock %}
