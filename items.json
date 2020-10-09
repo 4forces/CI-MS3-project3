@@ -1,1 +1,36 @@
-[]
+[
+    {   
+        "id": 7129,
+        "date": "26-Sep-2020",
+        "user": "user123",
+        "name": "Bootes",
+        "description": "A set of old worn bootes used for new borns",
+        "age": "Infant",
+        "condition": "Used",
+        "delete": "26-Oct-2020",
+        "photo": "photo1"
+    },
+    {   
+        "id": 8291,
+        "date": "26-Sep-2020",
+        "user": "user13",
+        "name": "Mittens x2",
+        "description": "2 New mittens that are unused",
+        "age": "Infant",
+        "condition": "New",
+        "delete": "26-Oct-2020",
+        "photo": "photo2"
+
+    },
+    {   
+        "id": 9473,
+        "date": "26-Sep-2020",
+        "user": "user3",
+        "name": "Lego set",
+        "description": "3 boxes of legos",
+        "age": "Preschooler",
+        "condition": "Like New",
+        "delete": "26-Oct-2020",
+        "photo": "photo3"
+    }
+]
