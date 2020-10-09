@@ -1,0 +1,29 @@
+{% extends 'base.template.html' %}
+
+{% block title %}
+<h1 class='text-center'>Post Item</h1>
+{% endblock %}
+
+{% block content %}
+
+<h1>Add new item</h1>
+<form method="POST">
+    <div>
+        <label class="form-label">Item name: </label>
+        <input type="text" name="item_name" class="form-control" placeholder="Enter item name"/>
+    </div>
+    <div>
+        <label class="form-label">Description: </label>
+        <textarea name="description" class="form-control" row="3" placeholder="Enter item description"></textarea>
+    </div>
+    <div>
+        <label class="form-label">Age Range: </label>
+        <input type="radio" name="age" value="infant"/>Infant (Newborn - 1 year)
+        <input type="radio" name="age" value="toddler"/>Toddler (1 - 2 years)
+        <input type="radio" name="age" value="preschooler"/>Dinner (2 - 5 years)
+    </div>
+    
+    <input type="submit" value="Create Customer" class="btn btn-primary"/>
+</form>
+
+{% endblock %}

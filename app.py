@@ -47,13 +47,13 @@ def register():
 def login():
     return render_template('login.template.html')
 
-
-@app.route('/browse-items')
+# browse items list
+@app.route('/items/browse')
 def browse_items():
     return render_template('browse_items.template.html', all_items=itemsdb)
 
-
-@app.route('/items/<int:item_id>')
+# view single item details
+@app.route('/item/<int:item_id>')
 def view_item_details(item_id):
     item_to_view = None
     for each_item in itemsdb:
@@ -68,6 +68,10 @@ def view_item_details(item_id):
     else:
         return f"The item with id of {item_id} is not found"
 
+
+@app.route('/items/post')
+def post_item():
+    return "Hello world"
 
 
 # "magic code" -- boilerplate
