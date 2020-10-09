@@ -6,28 +6,28 @@ import random
 
 # initialise Users database
 app = Flask(__name__)
-userdb = {}
+usersdb = {}
 with open('users.json') as fp:
-    userdb = json.load(fp)
+    usersdb = json.load(fp)
 
 
 # initialise Items dtabase
 app = Flask(__name__)
-itemdb = {}
+itemsdb = {}
 with open('items.json') as fp:
-    itemdb = json.load(fp)
+    itemsdb = json.load(fp)
 
 
 # Secret key for flash messages
 app = Flask(__name__)
 app.secret_key = b'laksdfoi323d'
 
-
+# function to save users
 def save_users():
     with open('users.json', 'w') as fp:
-        json.dump(userdb, fp)
+        json.dump(usersdb, fp)
 
-
+# function to save items
 def save_items():
     with open('items.json', 'w') as fp:
         json.dump(itemsdb, fp)
@@ -42,14 +42,15 @@ def home():
 def register():
     return render_template('register.template.html')
 
+
 @app.route('/login')
 def login():
     return render_template('login.template.html')
 
+
 @app.route('/browse-items')
 def browse_items():
-    return render_template('browse.template.html')
-
+    return render_template('browse_items.template.html', all_items=itemsdb)
 
 
 # "magic code" -- boilerplate
