@@ -16,7 +16,7 @@
         <h4>{{item.name}}</h4>
     </div>
     <div class='col-10 bg-secondary'>
-        {{item.photo}}
+        <a href="{{ url_for('view_item_details', item_id=item.id) }}">{{item.photo}}</a>
     </div>
     <div class='col-10 bg-secondary mb-3'>
         <p>Posted on <b>{{item.date}}</b></p>

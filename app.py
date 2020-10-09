@@ -53,6 +53,23 @@ def browse_items():
     return render_template('browse_items.template.html', all_items=itemsdb)
 
 
+@app.route('/items/<int:item_id>')
+def view_item_details(item_id):
+    item_to_view = None
+    for each_item in itemsdb:
+        if each_item["id"] == item_id:
+            item_to_view = each_item
+            break
+
+    if item_to_view:
+        return render_template('item_details.template.html',
+                                item=item_to_view)
+
+    else:
+        return f"The item with id of {item_id} is not found"
+
+
+
 # "magic code" -- boilerplate
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
