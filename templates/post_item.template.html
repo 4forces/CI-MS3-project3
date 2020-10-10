@@ -1,7 +1,7 @@
 {% extends 'base.template.html' %}
 
 {% block title %}
-<h1 class='text-center'>Post Item</h1>
+Post Item
 {% endblock %}
 
 {% block content %}
@@ -18,12 +18,27 @@
     </div>
     <div>
         <label class="form-label">Age Range: </label>
-        <input type="radio" name="age" value="infant"/>Infant (Newborn - 1 year)
-        <input type="radio" name="age" value="toddler"/>Toddler (1 - 2 years)
-        <input type="radio" name="age" value="preschooler"/>Dinner (2 - 5 years)
+        <input type="radio" name="age" id="infant" value="Infant (Newborn - 1 year)"/>Infant (Newborn - 1 year)
+        <input type="radio" name="age" id="toddler" value="Toddler (1 - 2 years)"/>Toddler (1 - 2 years)
+        <input type="radio" name="age" id="preschooler" value="Preschooler (2 - 5 years)"/>Preschooler (2 - 5 years)
     </div>
-    
-    <input type="submit" value="Create Customer" class="btn btn-primary"/>
+    <div>
+        <label class="form-label">Item condition: </label>
+        <input type="radio" name="age" value="new"/>New
+        <input type="radio" name="age" value="Like New"/>Like New
+        <input type="radio" name="age" value="Used"/>Used
+    </div>
+    <div>
+        <label class="form-label">Upload image: </label>
+        <input type="file" id="image" name="image"/>
+        <input type="submit">
+    </div>
+    <div>
+        <label class="form-label">Delete after: </label>
+        <input type="file" id="image" name="image"/>
+        <input type="submit">
+    </div>
+    <input type="submit" value="Create item" class="btn btn-primary"/>
 </form>
 
 {% endblock %}

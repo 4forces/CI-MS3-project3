@@ -53,7 +53,7 @@ def browse_items():
     return render_template('browse_items.template.html', all_items=itemsdb)
 
 # view single item details
-@app.route('/item/<int:item_id>')
+@app.route('/items/<int:item_id>')
 def view_item_details(item_id):
     item_to_view = None
     for each_item in itemsdb:
@@ -72,7 +72,7 @@ def view_item_details(item_id):
 
 @app.route('/items/post')
 def post_item():
-    return "Hello world"
+        return render_template('post_item.template.html')
 
 
 # "magic code" -- boilerplate
