@@ -66,7 +66,8 @@ def view_item_details(item_id):
                                 item=item_to_view)
 
     else:
-        return f"The item with id of {item_id} is not found"
+        return render_template('item_notfound.template.html',
+                                item=item_id)
 
 
 @app.route('/items/post')
