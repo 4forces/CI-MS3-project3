@@ -74,13 +74,29 @@ def view_item_details(item_id):
 def show_post_item():
     return render_template('post_item.template.html')
 
+# @app.route('/items/post', methods = ['POST'])
+# def process_post_item():
+#     return render_template('post_item.template.html')
+    # print(request.form)
+    # database.append({
+    #     'id': random.randint(1000,9999),
+    #     'name': request.form.get('food_name'),
+    #     'calories': request.form.get('calories'),
+    #     'date': request.form.get('date'),
+    #     'meal': request.form.get('meal'),
+    # })
+
+    # with open('food.json', 'w') as fp:
+    #     json.dump(database, fp)
+
+    # return redirect(url_for('food_tracker'))
 
 @app.route('/items/listings')
 def item_list():
     return render_template('item_listings.template.html', all_items=itemsdb)
 
 
-@app.route('/items/<int:items_id>/edit')
+@app.route('/items/<int:item_id>/edit')
 def show_edit_items(item_id):
     item_to_edit = None
     for each_item in itemsdb:
@@ -90,12 +106,78 @@ def show_edit_items(item_id):
 
     if item_to_edit:
         return render_template('edit_item.template.html',
-                                item=item_to_view)
+                                item=item_to_edit)
 
     else:
         return render_template('item_notfound.template.html',
                                 item=item_id)
 
+
+
+# @app.route('/food/<int:item_id>/edit', methods=['POST'])
+# def process_edit_food(item_id):
+#     item_to_edit = None
+#     for each_item in itemsdb:
+#         if each_item["id"] == item_id:
+#             item_to_edit = each_item
+#             break
+
+#     if item_to_edit:
+#         item_to_edit["name"] = request.form.get('item_name')
+#         item_to_edit["description"] = request.form.get('description')
+#         item_to_edit["age"] = request.form.get('age')
+#         item_to_edit["condition"] = request.form.get('condition')
+#         item_to_edit["image"] = request.form.get('condition')
+#         item_to_edit["image"] = request.form.get('condition')
+
+
+
+#         with open('food.json', 'w') as fp:
+#             json.dump(database, fp)
+       
+#         flash(
+#             f"The food {food_to_edit['name']}"
+#             f"  has been edited successfully")
+#         return redirect(url_for('food_tracker'))
+
+#     else: 
+#         return render_template('item_notfound.template.html',
+#                                 item=item_id)
+
+
+# @app.route('/food/<int:food_id>/delete')
+# def show_delete_food(food_id):
+#     food_record = None
+#     #linear search
+#     for food_record in database:
+#         if food_record['id'] == food_id:
+#             food_to_delete = food_record
+#             break
+
+#     if food_record:
+#         return render_template('show_delete_food.template.html', food=food_to_delete)
+
+# @app.route('/foods/<int:food_id>/delete', methods=['POST'])
+# def process_show_delete_food(food_id):
+#     # initialise food_to_delete to None as this will eventually be a dictionary
+#     food_to_delete = None 
+
+#     # linear search (search one by one)
+#     for food_record in databsse:
+#         if food_record['id'] == food_id:
+#             food_to_delete = food_record['id']
+#             break
+
+#     if food_to_delete:
+#         database.remove(food_to_delete)
+
+#         with open('food.json', 'w') as fp:
+#             json.dump(database, fp)
+
+#         return redirect(url_for('show_food'))
+    
+#     else:
+#         return f"The food record with the id of {food_id} is not found."
 
 # "magic code" -- boilerplate
 if __name__ == '__main__':
