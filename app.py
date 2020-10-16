@@ -72,7 +72,12 @@ def view_item_details(item_id):
 
 @app.route('/items/post')
 def post_item():
-        return render_template('post_item.template.html')
+    return render_template('post_item.template.html')
+
+
+@app.route('/itms/listings')
+def item_list():
+    return render_template('item_listings.template.html')
 
 
 # "magic code" -- boilerplate
