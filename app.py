@@ -156,7 +156,7 @@ def show_delete_items(item_id):
             break
 
     if item_record:
-        return render_template('show_delete_food.template.html', food=food_to_delete)
+        return render_template('show_delete_item.template.html', item=item_to_delete)
 
 # @app.route('/foods/<int:food_id>/delete', methods=['POST'])
 # def process_show_delete_food(food_id):
