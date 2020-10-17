@@ -52,6 +52,7 @@ def login():
 def browse_items():
     return render_template('browse_items.template.html', all_items=itemsdb)
 
+
 # view single item details
 @app.route('/items/<int:item_id>')
 def view_item_details(item_id):
@@ -145,17 +146,17 @@ def show_edit_items(item_id):
 #                                 item=item_id)
 
 
-# @app.route('/food/<int:food_id>/delete')
-# def show_delete_food(food_id):
-#     food_record = None
-#     #linear search
-#     for food_record in database:
-#         if food_record['id'] == food_id:
-#             food_to_delete = food_record
-#             break
+@app.route('/items/<int:item_id>/delete')
+def show_delete_items(item_id):
+    item_record = None
+    #linear search
+    for item_record in itemsdb:
+        if item_record['id'] == item_id:
+            item_to_delete = item_record
+            break
 
-#     if food_record:
-#         return render_template('show_delete_food.template.html', food=food_to_delete)
+    if item_record:
+        return render_template('show_delete_food.template.html', food=food_to_delete)
 
 # @app.route('/foods/<int:food_id>/delete', methods=['POST'])
 # def process_show_delete_food(food_id):
