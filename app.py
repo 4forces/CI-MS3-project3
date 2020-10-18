@@ -75,22 +75,22 @@ def view_item_details(item_id):
 def show_post_item():
     return render_template('post_item.template.html')
 
-# @app.route('/items/post', methods = ['POST'])
-# def process_post_item():
-#     return render_template('post_item.template.html')
-    # print(request.form)
-    # database.append({
-    #     'id': random.randint(1000,9999),
-    #     'name': request.form.get('food_name'),
-    #     'calories': request.form.get('calories'),
-    #     'date': request.form.get('date'),
-    #     'meal': request.form.get('meal'),
-    # })
+@app.route('/items/post', methods = ['POST'])
+def process_post_item():
+    print(request.form)
+    itemsdb.append({
+        'id': random.randint(1000,9999),
+        'name': request.form.get('item_name'),
+        'description': request.form.get('description'),
+        'age': request.form.get('age'),
+        'condition': request.form.get('condition'),
+        'delete': request.form.get('delete_after')
+    })
 
-    # with open('food.json', 'w') as fp:
-    #     json.dump(database, fp)
+    with open('items.json', 'w') as fp:
+        json.dump(itemsdb, fp)
 
-    # return redirect(url_for('food_tracker'))
+    return redirect(url_for('item_list'))
 
 @app.route('/items/listings')
 def item_list():
