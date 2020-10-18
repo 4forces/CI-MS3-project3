@@ -114,8 +114,9 @@ def show_edit_items(item_id):
 
 
 
-@app.route('/item/<int:item_id>/edit', methods=['POST'])
-def process_edit_food(item_id):
+@app.route('/items/<int:item_id>/edit', methods=['POST'])
+def process_edit_item(item_id):
+    print(request.form)
     item_to_edit = None
     for each_item in itemsdb:
         if each_item["id"] == item_id:
@@ -132,8 +133,8 @@ def process_edit_food(item_id):
         save_items()
        
         flash(
-            f"The food {food_to_edit['name']}"
-            f"  has been edited successfully")
+            f"Item {item_to_edit['name']}"
+            f"  has been edited successfully.")
         return redirect(url_for('item_list'))
 
     else: 
