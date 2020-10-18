@@ -87,8 +87,7 @@ def process_post_item():
         'delete': request.form.get('delete_after')
     })
 
-    with open('items.json', 'w') as fp:
-        json.dump(itemsdb, fp)
+    save_items()
 
     return redirect(url_for('item_list'))
 
@@ -115,35 +114,31 @@ def show_edit_items(item_id):
 
 
 
-# @app.route('/food/<int:item_id>/edit', methods=['POST'])
-# def process_edit_food(item_id):
-#     item_to_edit = None
-#     for each_item in itemsdb:
-#         if each_item["id"] == item_id:
-#             item_to_edit = each_item
-#             break
+@app.route('/item/<int:item_id>/edit', methods=['POST'])
+def process_edit_food(item_id):
+    item_to_edit = None
+    for each_item in itemsdb:
+        if each_item["id"] == item_id:
+            item_to_edit = each_item
+            break
 
-#     if item_to_edit:
-#         item_to_edit["name"] = request.form.get('item_name')
-#         item_to_edit["description"] = request.form.get('description')
-#         item_to_edit["age"] = request.form.get('age')
-#         item_to_edit["condition"] = request.form.get('condition')
-#         item_to_edit["image"] = request.form.get('condition')
-#         item_to_edit["image"] = request.form.get('condition')
+    if item_to_edit:
+        item_to_edit["name"] = request.form.get('item_name')
+        item_to_edit["description"] = request.form.get('description')
+        item_to_edit["age"] = request.form.get('age')
+        item_to_edit["condition"] = request.form.get('condition')
+        item_to_edit["delete"] = request.form.get('delete_after')
 
-
-
-#         with open('food.json', 'w') as fp:
-#             json.dump(database, fp)
+        save_items()
        
-#         flash(
-#             f"The food {food_to_edit['name']}"
-#             f"  has been edited successfully")
-#         return redirect(url_for('food_tracker'))
+        flash(
+            f"The food {food_to_edit['name']}"
+            f"  has been edited successfully")
+        return redirect(url_for('item_list'))
 
-#     else: 
-#         return render_template('item_notfound.template.html',
-#                                 item=item_id)
+    else: 
+        return render_template('item_notfound.template.html',
+                                item=item_id)
 
 
 @app.route('/items/<int:item_id>/delete')
