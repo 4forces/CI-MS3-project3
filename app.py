@@ -32,6 +32,21 @@ def save_items():
     with open('items.json', 'w') as fp:
         json.dump(itemsdb, fp)
 
+# function to assign item id to be displayed
+# def assign_item():
+#     print(request.form)
+#     selected_item = None
+#     for each_item in itemsdb:
+#         if each_item["id"] == item_id:
+#             selected_item = each_item
+#             break
+
+# function to render item not found page
+# def display_notfound():
+#     return render_template('item_notfound.template.html',
+#                             item_id=item_id)
+
+
 
 @app.route('/')
 def home():
@@ -50,25 +65,25 @@ def login():
 # browse items list
 @app.route('/items/browse')
 def browse_items():
-    return render_template('browse_items.template.html', all_items=itemsdb)
+    return render_template('browse_items.template.html', items_stored=itemsdb)
 
 
 # view single item details
 @app.route('/items/<int:item_id>')
 def view_item_details(item_id):
-    item_to_view = None
+    print(request.form)
+    selected_item = None
     for each_item in itemsdb:
         if each_item["id"] == item_id:
-            item_to_view = each_item
+            selected_item = each_item
             break
 
-    if item_to_view:
+    if selected_item:
         return render_template('item_details.template.html',
-                                item=item_to_view)
-
+                                item=selected_item)
     else:
         return render_template('item_notfound.template.html',
-                                item=item_id)
+                                item_id=item_id)
 
 
 @app.route('/items/post')
@@ -95,18 +110,18 @@ def process_post_item():
 def item_list():
     return render_template('item_listings.template.html', all_items=itemsdb)
 
-
 @app.route('/items/<int:item_id>/edit')
 def show_edit_items(item_id):
-    item_to_edit = None
+    print(request.form)
+    selected_item = None
     for each_item in itemsdb:
         if each_item["id"] == item_id:
-            item_to_edit = each_item
+            selected_item = each_item
             break
 
-    if item_to_edit:
+    if selected_item:
         return render_template('edit_item.template.html',
-                                item=item_to_edit)
+                                item=selected_item)
 
     else:
         return render_template('item_notfound.template.html',
@@ -117,42 +132,42 @@ def show_edit_items(item_id):
 @app.route('/items/<int:item_id>/edit', methods=['POST'])
 def process_edit_item(item_id):
     print(request.form)
-    item_to_edit = None
+    selected_item = None
     for each_item in itemsdb:
         if each_item["id"] == item_id:
-            item_to_edit = each_item
+            selected_item = each_item
             break
 
-    if item_to_edit:
-        item_to_edit["name"] = request.form.get('item_name')
-        item_to_edit["description"] = request.form.get('description')
-        item_to_edit["age"] = request.form.get('age')
-        item_to_edit["condition"] = request.form.get('condition')
-        item_to_edit["delete"] = request.form.get('delete_after')
+    if selected_item:
+        selected_item["name"] = request.form.get('item_name')
+        selected_item["description"] = request.form.get('description')
+        selected_item["age"] = request.form.get('age')
+        selected_item["condition"] = request.form.get('condition')
+        selected_item["delete"] = request.form.get('delete_after')
 
         save_items()
        
         flash(
-            f"Item {item_to_edit['name']}"
+            f"Item {selected_item['name']}"
             f"  has been edited successfully.")
         return redirect(url_for('item_list'))
 
     else: 
         return render_template('item_notfound.template.html',
-                                item=item_id)
+                                item_id=item_id)
 
 
 @app.route('/items/<int:item_id>/delete')
 def show_delete_items(item_id):
-    item_record = None
-    #linear search
-    for item_record in itemsdb:
-        if item_record['id'] == item_id:
-            item_to_delete = item_record
+    print(request.form)
+    selected_item = None
+    for each_item in itemsdb:
+        if each_item["id"] == item_id:
+            selected_item = each_item
             break
 
-    if item_record:
-        return render_template('show_delete_item.template.html', item=item_to_delete)
+    if each_item:
+        return render_template('show_delete_item.template.html', item=each_item)
 
 # @app.route('/foods/<int:food_id>/delete', methods=['POST'])
 # def process_show_delete_food(food_id):
