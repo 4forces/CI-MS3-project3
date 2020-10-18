@@ -110,7 +110,7 @@ def show_edit_items(item_id):
 
     else:
         return render_template('item_notfound.template.html',
-                                item=item_id)
+                                item_id=item_id)
 
 
 
