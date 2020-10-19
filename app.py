@@ -22,15 +22,18 @@ with open('items.json') as fp:
 app = Flask(__name__)
 app.secret_key = b'laksdfoi323d'
 
+
 # function to save users
 def save_users():
     with open('users.json', 'w') as fp:
         json.dump(usersdb, fp)
 
+
 # function to save items
 def save_items():
     with open('items.json', 'w') as fp:
         json.dump(itemsdb, fp)
+
 
 # function to assign item id to be displayed
 # def assign_item():
@@ -47,7 +50,6 @@ def save_items():
 #                             item_id=item_id)
 
 
-
 @app.route('/')
 def home():
     return render_template('home.template.html')
@@ -62,13 +64,19 @@ def register():
 def login():
     return render_template('login.template.html')
 
+
 # browse items list
 @app.route('/items/browse')
 def browse_items():
     return render_template('browse_items.template.html', items_stored=itemsdb)
 
 
-# view single item details
+@app.route('/items/listings')
+def item_list():
+    return render_template('item_listings.template.html', all_items=itemsdb)
+
+
+# view item details
 @app.route('/items/<int:item_id>')
 def view_item_details(item_id):
     print(request.form)
@@ -86,6 +94,7 @@ def view_item_details(item_id):
                                 item_id=item_id)
 
 
+# post item - with ['POST']
 @app.route('/items/post')
 def show_post_item():
     return render_template('post_item.template.html')
@@ -106,10 +115,8 @@ def process_post_item():
 
     return redirect(url_for('item_list'))
 
-@app.route('/items/listings')
-def item_list():
-    return render_template('item_listings.template.html', all_items=itemsdb)
 
+# edit item - with ['POST']
 @app.route('/items/<int:item_id>/edit')
 def show_edit_items(item_id):
     print(request.form)
@@ -126,8 +133,6 @@ def show_edit_items(item_id):
     else:
         return render_template('item_notfound.template.html',
                                 item_id=item_id)
-
-
 
 @app.route('/items/<int:item_id>/edit', methods=['POST'])
 def process_edit_item(item_id):
@@ -157,6 +162,7 @@ def process_edit_item(item_id):
                                 item_id=item_id)
 
 
+# delete item - with ['POST']
 @app.route('/items/<int:item_id>/delete')
 def show_delete_items(item_id):
     print(request.form)
@@ -166,30 +172,34 @@ def show_delete_items(item_id):
             selected_item = each_item
             break
 
-    if each_item:
-        return render_template('show_delete_item.template.html', item=each_item)
-
-# @app.route('/foods/<int:food_id>/delete', methods=['POST'])
-# def process_show_delete_food(food_id):
-#     # initialise food_to_delete to None as this will eventually be a dictionary
-#     food_to_delete = None 
-
-#     # linear search (search one by one)
-#     for food_record in databsse:
-#         if food_record['id'] == food_id:
-#             food_to_delete = food_record['id']
-#             break
-
-#     if food_to_delete:
-#         database.remove(food_to_delete)
-
-#         with open('food.json', 'w') as fp:
-#             json.dump(database, fp)
-
-#         return redirect(url_for('show_food'))
+    if selected_item:
+        return render_template('show_delete_item.template.html', 
+                                item=selected_item)
     
-#     else:
-#         return f"The food record with the id of {food_id} is not found."
+    else:
+        return render_template('item_notfound.template.html',
+                                item_id=item_id)
+
+
+@app.route('/items/<int:item_id>/delete', methods=['POST'])
+def process_show_delete_item(item_id):
+    selected_item = None
+    for each_item in itemsdb:
+        if each_item['id'] == item_id:
+            selected_item = each_item['id']
+            break
+
+    if selected_item:
+        itemsdb.remove(each_item)
+
+        save_items()
+
+        return redirect(url_for('item_list'))
+
+    else:
+        return render_template('item_notfound.template.html',
+                                item_id=item_id)
+
 
 # "magic code" -- boilerplate
 if __name__ == '__main__':
