@@ -2,14 +2,13 @@ body {
     background-color: antiquewhite
 }
 
-.header-font {
+a.header-font {
     font-family: 'Fredoka One', cursive;
 }
 
-.content-font {
+a.content-font {
     font-family: 'Ubuntu', sans-serif;
 }
-
 
 .navbar {
     background-color: #94c8e9!important;
