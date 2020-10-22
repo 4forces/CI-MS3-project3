@@ -1,3 +1,17 @@
 body {
     background-color: antiquewhite
 }
+
+.header-font {
+    font-family: 'Fredoka One', cursive;
+}
+
+.content-font {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+
+.navbar {
+    background-color: #94c8e9!important;
+}
+
