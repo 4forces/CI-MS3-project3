@@ -1,16 +1,21 @@
 body {
-    background-color: antiquewhite
-}
-
-a.header-font {
-    font-family: 'Fredoka One', cursive;
-}
-
-a.content-font {
+    background-color: antiquewhite;
     font-family: 'Ubuntu', sans-serif;
+}
+
+.header-font {
+    font-family: 'Fredoka One', cursive;
 }
 
 .navbar {
     background-color: #94c8e9!important;
 }
 
+.bt-style{
+    background-color: rgba(255, 112, 138, 0.45);
+    color: #ffffff
+}
+
+.bt-style:hover {
+    background-color: rgba(148, 199, 235, 0.45);
+}
