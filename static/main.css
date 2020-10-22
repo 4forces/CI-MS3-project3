@@ -1,21 +1,39 @@
 body {
-    background-color: antiquewhite;
-    font-family: 'Ubuntu', sans-serif;
+  background-color: antiquewhite;
+  font-family: "Ubuntu", sans-serif;
+  color: #1a191b;
 }
 
 .header-font {
-    font-family: 'Fredoka One', cursive;
+  font-family: "Fredoka One", cursive;
 }
 
 .navbar {
-    background-color: #94c8e9!important;
+  background-color: #94c8e9 !important;
 }
 
-.bt-style{
-    background-color: rgba(255, 112, 138, 0.45);
-    color: #ffffff
+.bt-style {
+  background-color: rgba(255, 112, 138, 0.45);
+  color: #ffffff;
 }
 
 .bt-style:hover {
-    background-color: rgba(148, 199, 235, 0.45);
+  background-color: rgba(148, 199, 235, 0.45);
+  color: #1a191b;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a:active {
+  text-decoration: none;
 }
