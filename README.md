@@ -1,5 +1,18 @@
 <img>
 
+# bugs
+- background of edit and post page
+- adding a login element
+- adding an image upload option
+- changing the display of the links after login
+- getting the date and add to the data
+- at less than 425 px there is right border
+- description does not come out
+- Edited successfully toastr pops up when click on back button after editing item
+
+# add-ons
+pop up "item added"/item deleted/item modified after submit
+
 # VolunTutoring
 
 Ace Tuition is a tuition agency that aims to bring tutees and tutors together. 
@@ -66,6 +79,8 @@ Visitors can browse tutors and look at the tutor profile, so as to make a more w
     - The project uses **JQuery** to simplify DOM manipulation.
 8. [JQuery](https://jquery.com)
     - The project uses **JQuery** to simplify DOM manipulation.
+9. toastr
+10. [bootstrap](https://getbootstrap.com/)
 
 
 
@@ -153,6 +168,23 @@ To see the web application in action, go the the following link: http://127.0.0.
 
 
 ## Credits
+
+### style and feel
+1. Pinterest which led to (2) 
+2. https://demo.hasthemes.com/shopify/jadusona-cm.html
+3. Color palette (Chrome extension) to extract color theme
+4. Color pickr eyedropper (Chrome extension) to pick color
+
+### Alighment and looks refinement: 
+4. Alumni's website: 
+   - https://linda-instaramen.herokuapp.com/#
+   - https://mel-buyandsell-marketplace.herokuapp.com/
+
+Images:
+1. Mostly Unplash
+2. And a bit of pexel
+3. and google [search results](https://www.google.com/search?q=baby+gift+wallpaper&tbm=isch&ved=2ahUKEwinwczF1r_sAhUunEsFHaXtAKoQ2-cCegQIABAA&oq=baby+gift+wallpaper&gs_lcp=CgNpbWcQAzICCAA6BggAEAcQHjoICAAQCBAHEB5Qp_wBWN3_AWC_gQJoAHAAeACAAUmIAYcCkgEBNZgBAKABAaoBC2d3cy13aXotaW1nwAEB&sclient=img&ei=2AKNX6f1Oq64rtoPpduD0Ao&bih=969&biw=1920&rlz=1C1NHXL_enSG810SG810#imgrc=fBrjw4FAwGnf8M)
+
 
 ### Content
 - The text for section Y was copied from the [Wikipedia article Z](https://en.wikipedia.org/wiki/Z)
