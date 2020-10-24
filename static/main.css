@@ -4,7 +4,7 @@ body {
   color: #1a191b;
 }
 
-.header-font {
+.header-font, h1, h2, h3, h4, h5, h6 {
   font-family: "Fredoka One", cursive;
 }
 
@@ -12,28 +12,27 @@ body {
   background-color: #94c8e9 !important;
 }
 
-.bt-style {
-  background-color: rgba(255, 112, 138, 0.45);
-  color: #ffffff;
-}
-
-.bt-style:hover {
+.bt-big {
   background-color: rgba(148, 199, 235, 0.45);
   color: #1a191b;
 }
 
-a:link {
-  text-decoration: none;
+.bt-big:hover {
+  background-color: rgba(255, 112, 138, 0.45);
+  color: #ffffff;
+  box-shadow: 0 2px 1px #1a161e;
 }
 
-a:visited {
-  text-decoration: none;
+.bt {
+  background-color: #ffffff;
+  color: #1a191b;
 }
 
-a:hover {
-  text-decoration: none;
+.bt:hover {
+  background-color: rgba(255, 112, 138);
+  color: #ffffff;
 }
 
-a:active {
+a:link, a:visited, a:hover, a:active {
   text-decoration: none;
 }
