@@ -5,6 +5,14 @@ import random
 from flask_pymongo import PyMongo
 
 
+# for env.py set up
+if os.path.exists("env.py"):
+    import env
+# bson.json converts the mongo format to json for workability
+from bson.json_util import dumps, loads
+app = Flask(__name__)
+
+
 # initialise Users database
 app = Flask(__name__)
 usersdb = {}
