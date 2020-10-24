@@ -12,6 +12,13 @@ if os.path.exists("env.py"):
 from bson.json_util import dumps, loads
 app = Flask(__name__)
 
+# to set the DB and the URI
+app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
+app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
+print(os.environ.get("MONGO_URI"))
+# to set the mongo object
+mongo = PyMongo(app)
+
 
 # initialise Users database
 app = Flask(__name__)
