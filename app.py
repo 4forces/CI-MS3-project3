@@ -20,13 +20,6 @@ print(os.environ.get("MONGO_URI"))
 mongo = PyMongo(app)
 
 
-# initialise Users database
-app = Flask(__name__)
-usersdb = {}
-with open('users.json') as fp:
-    usersdb = json.load(fp)
-
-
 # initialise Items dtabase
 app = Flask(__name__)
 itemsdb = {}
