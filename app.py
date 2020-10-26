@@ -85,23 +85,7 @@ def view_item_details(item_id):
 def show_post_item():
     return render_template('post_item.template.html')
 
-# json method
-@app.route('/items/post', methods=['POST'])
-def process_post_item():
-    print(request.form)
-    itemsdb.append({
-        'id': random.randint(1000, 9999),
-        'name': request.form.get('item_name'),
-        'description': request.form.get('description'),
-        'age': request.form.get('age'),
-        'condition': request.form.get('condition'),
-        'delete': request.form.get('delete_after')
-    })
-    save_items()
-    return redirect(url_for('item_list'))
-
-
-# # mongo method
+# # json method
 # @app.route('/items/post', methods=['POST'])
 # def process_post_item():
 #     print(request.form)
@@ -115,6 +99,23 @@ def process_post_item():
 #     })
 #     save_items()
 #     return redirect(url_for('item_list'))
+
+
+# mongo method
+@app.route('/items/post', methods=['POST'])
+def process_post_item():
+    print(request.form)
+    itemsdb.append({
+        'id': random.randint(1000, 9999),
+        'name': request.form.get('item_name'),
+        'description': request.form.get('description'),
+        'age': request.form.get('age'),
+        'condition': request.form.get('condition'),
+        'delete': request.form.get('delete_after')
+    })
+    mongo.db.tasks.insert_one(task)
+    flash("Task Successfully Added")
+    return redirect(url_for('item_list'))
 
 
 # edit item - with ['POST']
