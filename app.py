@@ -32,12 +32,6 @@ app = Flask(__name__)
 app.secret_key = b'laksdfoi323d'
 
 
-# function to save users
-def save_users():
-    with open('users.json', 'w') as fp:
-        json.dump(usersdb, fp)
-
-
 # function to save items
 def save_items():
     with open('items.json', 'w') as fp:
