@@ -105,17 +105,17 @@ def show_post_item():
 @app.route('/items/post', methods=['POST'])
 def process_post_item():
     print(request.form)
-    itemsdb.append({
-        'id': random.randint(1000, 9999),
+    item = {
+        # 'id': random.randint(1000, 9999),
         'name': request.form.get('item_name'),
         'description': request.form.get('description'),
         'age': request.form.get('age'),
         'condition': request.form.get('condition'),
         'delete': request.form.get('delete_after')
-    })
-    mongo.db.tasks.insert_one(task)
-    flash("Task Successfully Added")
-    return redirect(url_for('item_list'))
+    }
+    mongo.db.tasks.insert_one(item)
+    flash("Item Successfully Added")
+    return redirect(url_for('show_post_item'))
 
 
 # edit item - with ['POST']
