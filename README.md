@@ -13,7 +13,9 @@
 # add-ons
 pop up "item added"/item deleted/item modified after submit
 
-# VolunTutoring
+# GiftKids
+
+GiftKids is a site fictional 
 
 Ace Tuition is a tuition agency that aims to bring tutees and tutors together. 
 Looking to find a tutor to ride through your academic woes? No problem, Ace Tuition Services has tutors to cater to your subject needs.
@@ -169,6 +171,9 @@ To see the web application in action, go the the following link: http://127.0.0.
 
 ## Credits
 
+### code
+1. [Tim Nelson's (CI) Task Manager](https://github.com/Code-Institute-Solutions/TaskManager/tree/master/08-SearchingWithinTheDatabase/01-text_index_searching)
+
 ### style and feel
 1. Pinterest which led to (2) 
 2. https://demo.hasthemes.com/shopify/jadusona-cm.html
@@ -180,11 +185,17 @@ To see the web application in action, go the the following link: http://127.0.0.
    - https://linda-instaramen.herokuapp.com/#
    - https://mel-buyandsell-marketplace.herokuapp.com/
 
-Images:
+### Images:
 1. Mostly Unplash
 2. And a bit of pexel
 3. and google [search results](https://www.google.com/search?q=baby+gift+wallpaper&tbm=isch&ved=2ahUKEwinwczF1r_sAhUunEsFHaXtAKoQ2-cCegQIABAA&oq=baby+gift+wallpaper&gs_lcp=CgNpbWcQAzICCAA6BggAEAcQHjoICAAQCBAHEB5Qp_wBWN3_AWC_gQJoAHAAeACAAUmIAYcCkgEBNZgBAKABAaoBC2d3cy13aXotaW1nwAEB&sclient=img&ei=2AKNX6f1Oq64rtoPpduD0Ao&bih=969&biw=1920&rlz=1C1NHXL_enSG810SG810#imgrc=fBrjw4FAwGnf8M)
 
+### Logo
+1. [Free Logo Design](https://www.freelogodesign.org/)
+
+### Layout Design
+1. [Smashing Magazine](https://www.smashingmagazine.com/2016/04/web-developer-guide-color/)
+2. [Width and Height Display](Width and Height Display)
 
 ### Content
 - The text for section Y was copied from the [Wikipedia article Z](https://en.wikipedia.org/wiki/Z)
