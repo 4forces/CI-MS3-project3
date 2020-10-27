@@ -3,6 +3,8 @@ import os
 import json
 import random
 from flask_pymongo import PyMongo
+from bson.objectid import ObjectId
+
 
 
 # for env.py set up
@@ -71,8 +73,9 @@ def item_list():
 def view_item_details(item_id):
     print(request.form)
     selected_item = None
-    for each_item in itemsdb:
-        if each_item["id"] == item_id:
+    items = list(mongo.db.items.find())
+    for each_item in items:
+        if each_item["_id"] == item_id:
             selected_item = each_item
             break
 
@@ -82,7 +85,7 @@ def view_item_details(item_id):
         return render_template('item_notfound.template.html', item_id=item_id)
 
 
-# add item
+# add item - with ['POST']
 @app.route('/items/post')
 def show_post_item():
     return render_template('post_item.template.html')
@@ -103,7 +106,7 @@ def process_post_item():
 
 
 # edit item - with ['POST']
-@app.route('/items/<int:item_id>/edit')
+@app.route('/items/<item_id>/edit')
 def show_edit_items(item_id):
     print(request.form)
     selected_item = None
