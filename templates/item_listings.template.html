@@ -21,8 +21,8 @@
     </div>
 </div>
 <div>
-    <a href="{{ url_for('show_edit_items', item_id=item.id) }}" class="btn btn-primary">Edit</a>
-    <a href="{{ url_for('show_delete_items', item_id=item.id) }}" class="btn btn-danger">Delete</a>
+    <a href="{{ url_for('show_edit_items', item_id=item._id) }}" class="btn btn-primary">Edit</a>
+    <a href="{{ url_for('show_delete_items', item_id=item._id) }}" class="btn btn-danger">Delete</a>
 </div>
 {% endfor %}
 
