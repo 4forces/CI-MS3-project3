@@ -3,21 +3,21 @@ import os
 import json
 import random
 from flask_pymongo import PyMongo
-from bson.objectid import ObjectId
-
-
 
 # for env.py set up
 if os.path.exists("env.py"):
     import env
 # bson.json converts the mongo format to json for workability
 from bson.json_util import dumps, loads
+from bson.objectid import ObjectId
+
 app = Flask(__name__)
 
 # to set the DB and the URI
 app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 print(os.environ.get("MONGO_URI"))
+
 # to set the mongo object
 mongo = PyMongo(app)
 
@@ -29,9 +29,9 @@ mongo = PyMongo(app)
 #     itemsdb = json.load(fp)
 
 
-# # Secret key for flash messages
-# app = Flask(__name__)
-# app.secret_key = b'laksdfoi323d'
+# Secret key for flash messages
+app = Flask(__name__)
+app.secret_key = b'laksdfoi323d'
 
 
 # # function to save items
@@ -56,41 +56,43 @@ def login():
 
 
 # display all items list - vistor view
-@app.route('/items/browse')
+@app.route('/items/browse') #ok
 def browse_items():
-    items = list(mongo.db.items.find())
+    items = mongo.db.items.find()
+    print(items)
     return render_template('browse_items.template.html', items_stored=items)
 
 # display all items list - login view
 @app.route('/items/listings')
 def item_list():
-    items = list(mongo.db.items.find())
+    items = mongo.db.items.find()
     return render_template('item_listings.template.html', all_items=items)
 
 
 # view item details
-@app.route('/items/<item_id>')
+@app.route('/items/<item_id>') #ok
 def view_item_details(item_id):
-    print(request.form)
-    selected_item = None
-    items = list(mongo.db.items.find())
-    for each_item in items:
-        if each_item["_id"] == item_id:
-            selected_item = each_item
-            break
+    # print(request.form)
+    # selected_item = None
+    item = list(mongo.db.items.find({"_id": ObjectId(item_id)}))
+    print(item)
+    # for each_item in items:
+    #     if each_item["_id"] == item_id:
+    #         selected_item = each_item
+    #         break
 
-    if selected_item:
-        return render_template('item_details.template.html', item=selected_item)
-    else:
-        return render_template('item_notfound.template.html', item_id=item_id)
+    # if selected_item:
+    return render_template('item_details.template.html', item=item)
+    # else:
+        # return render_template('item_notfound.template.html', item_id=item_id)
 
 
 # add item - with ['POST']
-@app.route('/items/post')
+@app.route('/items/post') # ok
 def show_post_item():
     return render_template('post_item.template.html')
 
-@app.route('/items/post', methods=['POST'])
+@app.route('/items/post', methods=['POST']) # ok
 def process_post_item():
     print(request.form)
     item = {
@@ -124,7 +126,7 @@ def show_edit_items(item_id):
 
 
 
-@app.route('/items/<int:item_id>/edit', methods=['POST'])
+@app.route('/items/<item_id>/edit', methods=['POST'])
 def process_edit_item(item_id):
     print(request.form)
     selected_item = None
