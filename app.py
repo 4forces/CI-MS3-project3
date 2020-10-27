@@ -22,22 +22,22 @@ print(os.environ.get("MONGO_URI"))
 mongo = PyMongo(app)
 
 
-# initialise Items dtabase
-app = Flask(__name__)
-itemsdb = {}
-with open('items.json') as fp:
-    itemsdb = json.load(fp)
+# # initialise Items dtabase
+# app = Flask(__name__)
+# itemsdb = {}
+# with open('items.json') as fp:
+#     itemsdb = json.load(fp)
 
 
-# Secret key for flash messages
-app = Flask(__name__)
-app.secret_key = b'laksdfoi323d'
+# # Secret key for flash messages
+# app = Flask(__name__)
+# app.secret_key = b'laksdfoi323d'
 
 
-# function to save items
-def save_items():
-    with open('items.json', 'w') as fp:
-        json.dump(itemsdb, fp)
+# # function to save items
+# def save_items():
+#     with open('items.json', 'w') as fp:
+#         json.dump(itemsdb, fp)
 
 
 @app.route('/')
