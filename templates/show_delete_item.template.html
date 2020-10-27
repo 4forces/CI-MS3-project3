@@ -5,12 +5,15 @@ Delete Item
 {% endblock %}
 
 {% block content %}
-<form method="POST">
-    <div class="alert alert-danger">
-        <div>
-            Are you sure you want to delete the food record for <b>"{{item.name}}"</b>
+{{item}}
+    {% for item in item %}
+    <form method="POST">
+        <div class="alert alert-danger">
+            <div>
+                Are you sure you want to delete <b>"{{item.name}}"</b>?
+            </div>
+            <input type="submit" class="btn btn-danger" value="Confirm delete"/>
+            <a href="{{ url_for('item_list') }}" class="btn btn-success">No, cancel delete</a>
         </div>
-        <input type="submit" class="btn btn-danger" value="Confirm delete"/>
-        <a href="{{ url_for('item_list') }}" class="btn btn-success">No, cancel delete</a>
-    </div>
+        {% endfor %}
 {% endblock %}

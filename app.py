@@ -169,39 +169,52 @@ def edit_items(item_id):
 
 
 # delete item - with ['POST']
-@app.route('/items/<int:item_id>/delete')
-def show_delete_items(item_id):
-    print(request.form)
-    selected_item = None
-    for each_item in itemsdb:
-        if each_item["id"] == item_id:
-            selected_item = each_item
-            break
-
-    if selected_item:
-        return render_template('show_delete_item.template.html',
-                               item=selected_item)
-
-    else:
-        return render_template('item_notfound.template.html',
-                               item_id=item_id)
+@app.route("/items/<item_id>/delete")
+def delete_item(item_id):
+    if request.method == 'POST':
+        mongo.db.items.remove({"_id": ObjectId(item_id)})
+        flash("Item deleted")
+        return redirect(url_for("item_list"))
+        
+    item = list(mongo.db.items.find({"_id": ObjectId(item_id)}))
+    return render_template('show_delete_item.template.html',
+                               item=item)
+    
 
 
-@app.route('/items/<int:item_id>/delete', methods=['POST'])
-def process_show_delete_item(item_id):
-    selected_item = None
-    for each_item in itemsdb:
-        if each_item['id'] == item_id:
-            selected_item = each_item['id']
-            break
+# @app.route('/items/<int:item_id>/delete')
+# def show_delete_items(item_id):
+#     print(request.form)
+#     selected_item = None
+#     for each_item in itemsdb:
+#         if each_item["id"] == item_id:
+#             selected_item = each_item
+#             break
 
-    if selected_item:
-        itemsdb.remove(each_item)
-        save_items()
-        return redirect(url_for('item_list'))
+#     if selected_item:
+#         return render_template('show_delete_item.template.html',
+#                                item=selected_item)
 
-    else:
-        return render_template('item_notfound.template.html', item_id=item_id)
+#     else:
+#         return render_template('item_notfound.template.html',
+#                                item_id=item_id)
+
+
+# @app.route('/items/<int:item_id>/delete', methods=['POST'])
+# def process_show_delete_item(item_id):
+#     selected_item = None
+#     for each_item in itemsdb:
+#         if each_item['id'] == item_id:
+#             selected_item = each_item['id']
+#             break
+
+#     if selected_item:
+#         itemsdb.remove(each_item)
+#         save_items()
+#         return redirect(url_for('item_list'))
+
+#     else:
+#         return render_template('item_notfound.template.html', item_id=item_id)
 
 
 # "magic code" -- boilerplate
