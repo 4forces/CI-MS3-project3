@@ -50,9 +50,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <script src="/static/main.js"></script>
     <script>
-        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% with messages = get_flashed_messages() %}
             {% if messages %}
-                toastr.info("Edited successfully")
+                        toastr.info({messages})
             {% endif %}
         {% endwith %}      
     </script>
