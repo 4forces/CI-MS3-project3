@@ -92,6 +92,7 @@ def view_item_details(item_id):
 def show_post_item():
     return render_template('post_item.template.html')
 
+
 @app.route('/items/post', methods=['POST']) # ok
 def process_post_item():
     print(request.form)
@@ -108,48 +109,63 @@ def process_post_item():
 
 
 # edit item - with ['POST']
-@app.route('/items/<item_id>/edit')
-def show_edit_items(item_id):
-    print(request.form)
-    selected_item = None
-    for each_item in itemsdb:
-        if each_item["id"] == item_id:
-            selected_item = each_item
-            break
+@app.route('/items/<item_id>/edit', methods=["GET", "POST"]) # ok
+def edit_items(item_id):
+    if request.method == 'POST':
+        item = {
+            'name': request.form.get('item_name'),
+            'description': request.form.get('description'),
+            'age': request.form.get('age'),
+            'condition': request.form.get('condition'),
+            'delete': request.form.get('delete_after')
+        }
+        mongo.db.items.update({"_id": ObjectId(item_id)}, item)
+        flash("Edit successful") # Error - Does not show
 
-    if selected_item:
-        return render_template('edit_item.template.html', item=selected_item)
+    item = mongo.db.items.find_one({"_id": ObjectId(item_id)})
+    return render_template('edit_item.template.html', item=item)
 
-    else:
-        return render_template('item_notfound.template.html',
-                               item_id=item_id)
+# def show_edit_items(item_id):
+#     print(request.form)
+#     selected_item = None
+#     for each_item in itemsdb:
+#         if each_item["id"] == item_id:
+#             selected_item = each_item
+#             break
+
+#     if selected_item:
+#         return render_template('edit_item.template.html', item=selected_item)
+
+#     else:
+#         return render_template('item_notfound.template.html',
+#                                item_id=item_id)
 
 
 
-@app.route('/items/<item_id>/edit', methods=['POST'])
-def process_edit_item(item_id):
-    print(request.form)
-    selected_item = None
-    for each_item in itemsdb:
-        if each_item["id"] == item_id:
-            selected_item = each_item
-            break
+# @app.route('/items/<item_id>/edit', methods=['POST'])
+# def process_edit_item(item_id):
+#     print(request.form)
+#     selected_item = None
+#     for each_item in itemsdb:
+#         if each_item["id"] == item_id:
+#             selected_item = each_item
+#             break
 
-    if selected_item:
-        selected_item["name"] = request.form.get('item_name')
-        selected_item["description"] = request.form.get('description')
-        selected_item["age"] = request.form.get('age')
-        selected_item["condition"] = request.form.get('condition')
-        selected_item["delete"] = request.form.get('delete_after')
-        save_items()
-        flash(
-            f"Item {selected_item['name']}"
-            f"  has been edited successfully.")
-        return redirect(url_for('item_list'))
+#     if selected_item:
+#         selected_item["name"] = request.form.get('item_name')
+#         selected_item["description"] = request.form.get('description')
+#         selected_item["age"] = request.form.get('age')
+#         selected_item["condition"] = request.form.get('condition')
+#         selected_item["delete"] = request.form.get('delete_after')
+#         save_items()
+#         flash(
+#             f"Item {selected_item['name']}"
+#             f"  has been edited successfully.")
+#         return redirect(url_for('item_list'))
 
-    else:
-        return render_template('item_notfound.template.html',
-                               item_id=item_id)
+#     else:
+#         return render_template('item_notfound.template.html',
+#                                item_id=item_id)
 
 
 # delete item - with ['POST']
