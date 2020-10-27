@@ -53,19 +53,21 @@ def login():
     return render_template('login.template.html')
 
 
-# browse items list - vistor view
+# display all items list - vistor view
 @app.route('/items/browse')
 def browse_items():
-    return render_template('browse_items.template.html', items_stored=itemsdb)
+    items = list(mongo.db.items.find())
+    return render_template('browse_items.template.html', items_stored=items)
 
-# browse items list - login view
+# display all items list - login view
 @app.route('/items/listings')
 def item_list():
-    return render_template('item_listings.template.html', all_items=itemsdb)
+    items = list(mongo.db.items.find())
+    return render_template('item_listings.template.html', all_items=items)
 
 
 # view item details
-@app.route('/items/<int:item_id>')
+@app.route('/items/<item_id>')
 def view_item_details(item_id):
     print(request.form)
     selected_item = None
@@ -80,41 +82,23 @@ def view_item_details(item_id):
         return render_template('item_notfound.template.html', item_id=item_id)
 
 
-# post item - with ['POST']
+# add item
 @app.route('/items/post')
 def show_post_item():
     return render_template('post_item.template.html')
 
-# # json method
-# @app.route('/items/post', methods=['POST'])
-# def process_post_item():
-#     print(request.form)
-#     itemsdb.append({
-#         'id': random.randint(1000, 9999),
-#         'name': request.form.get('item_name'),
-#         'description': request.form.get('description'),
-#         'age': request.form.get('age'),
-#         'condition': request.form.get('condition'),
-#         'delete': request.form.get('delete_after')
-#     })
-#     save_items()
-#     return redirect(url_for('item_list'))
-
-
-# mongo method
 @app.route('/items/post', methods=['POST'])
 def process_post_item():
     print(request.form)
     item = {
-        # 'id': random.randint(1000, 9999),
         'name': request.form.get('item_name'),
         'description': request.form.get('description'),
         'age': request.form.get('age'),
         'condition': request.form.get('condition'),
         'delete': request.form.get('delete_after')
     }
-    mongo.db.tasks.insert_one(item)
-    flash("Item Successfully Added")
+    mongo.db.items.insert_one(item)
+    flash("Item Successfully Added") # Error - Does not show
     return redirect(url_for('show_post_item'))
 
 
