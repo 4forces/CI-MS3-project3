@@ -5,6 +5,10 @@ body {
   background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url("/static/img/bg-body.jpg");
 }
 
+.logo {
+    width: 4.5rem;
+}
+
 .header-font, h1, h2, h3, h4, h5, h6 {
   font-family: "Fredoka One", cursive;
 }
