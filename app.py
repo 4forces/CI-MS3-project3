@@ -119,7 +119,7 @@ def edit_items(item_id):
             'condition': request.form.get('condition'),
             'delete': request.form.get('delete_after')
         }
-        mongo.db.items.update({"_id": ObjectId(item_id)}, item)
+        mongo.db.items.update_one({"_id": ObjectId(item_id)}, {'$set':item})
         flash("Edit successful") # Error - Does not show
 
     item = mongo.db.items.find_one({"_id": ObjectId(item_id)})
