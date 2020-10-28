@@ -105,7 +105,8 @@ def post_items():
         }
         mongo.db.items.insert_one(item)
         flash("Item Successfully Added") # Error - Does not show
-        return render_template('post_item.template.html')
+        return redirect(url_for("item_list"))
+        
     return render_template('post_item.template.html')
 
 
@@ -122,6 +123,7 @@ def edit_items(item_id):
         }
         mongo.db.items.update_one({"_id": ObjectId(item_id)}, {'$set':item})
         flash("Edit successful") # Error - Does not show
+        return redirect(url_for("item_list"))
 
     item = mongo.db.items.find_one({"_id": ObjectId(item_id)})
     return render_template('edit_item.template.html', item=item)
