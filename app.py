@@ -40,30 +40,30 @@ app.secret_key = b'laksdfoi323d'
 #         json.dump(itemsdb, fp)
 
 
-@app.route('/')
+@app.route('/') # ok
 def home():
     return render_template('home.template.html')
 
 
-@app.route('/register')
+@app.route('/register') # ok
 def register():
     return render_template('register.template.html')
 
 
-@app.route('/login')
+@app.route('/login') # ok
 def login():
     return render_template('login.template.html')
 
 
 # display all items list - vistor view
-@app.route('/items/browse') #ok
+@app.route('/browse') #ok
 def browse_items():
     items = mongo.db.items.find()
     print(items)
     return render_template('browse_items.template.html', items_stored=items)
 
 # display all items list - login view
-@app.route('/items/listings')
+@app.route('/listings') # ok
 def item_list():
     items = mongo.db.items.find()
     return render_template('item_listings.template.html', all_items=items)
@@ -87,25 +87,26 @@ def view_item_details(item_id):
         # return render_template('item_notfound.template.html', item_id=item_id)
 
 
+# @app.route('/items/post') # ok
+# def show_post_item():
+#     return render_template('post_item.template.html')
+
 # add item - with ['POST']
-@app.route('/items/post') # ok
-def show_post_item():
+@app.route('/items/post', methods=['POST', 'GET']) # ok
+def post_items():
+    if request.method == 'POST':
+        print(request.form)
+        item = {
+            'name': request.form.get('item_name'),
+            'description': request.form.get('description'),
+            'age': request.form.get('age'),
+            'condition': request.form.get('condition'),
+            'delete': request.form.get('delete_after')
+        }
+        mongo.db.items.insert_one(item)
+        flash("Item Successfully Added") # Error - Does not show
+        return render_template('post_item.template.html')
     return render_template('post_item.template.html')
-
-
-@app.route('/items/post', methods=['POST']) # ok
-def process_post_item():
-    print(request.form)
-    item = {
-        'name': request.form.get('item_name'),
-        'description': request.form.get('description'),
-        'age': request.form.get('age'),
-        'condition': request.form.get('condition'),
-        'delete': request.form.get('delete_after')
-    }
-    mongo.db.items.insert_one(item)
-    flash("Item Successfully Added") # Error - Does not show
-    return redirect(url_for('show_post_item'))
 
 
 # edit item - with ['POST']
@@ -176,7 +177,7 @@ def delete_items(item_id):
         flash("Item deleted")
         return redirect(url_for("item_list"))
         
-    item = mongo.db.items.find({"_id": ObjectId(item_id)})
+    item = list(mongo.db.items.find({"_id": ObjectId(item_id)}))
     return render_template('show_delete_item.template.html',
                                item=item)
     
