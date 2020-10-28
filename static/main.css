@@ -2,7 +2,7 @@ body {
   /* background-color: antiquewhite; */
   font-family: "Ubuntu", sans-serif;
   color: #1a191b;
-  background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url("/static/bg-body.jpg");
+  background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url("/static/img/bg-body.jpg");
 }
 
 .header-font, h1, h2, h3, h4, h5, h6 {
@@ -17,7 +17,6 @@ body {
 .bt-big:hover {
   background-color: rgba(255, 112, 138, 0.45);
   color: #ffffff;
-  box-shadow: 0 2px 1px #1a161e;
 }
 
 .bt {
@@ -42,10 +41,10 @@ a:link, a:visited, a:hover, a:active {
 .jumbotron {
     /* padding-top: 10rem;
     padding-bottom: calc(10rem - 4.5rem); */
-    background: linear-gradient(to bottom, rgba(92, 77, 66, 0.7) 0%, rgba(92, 77, 66, 0.7) 100%), url("../img/bg-masthead.jpg");
+    background: linear-gradient(rgba(92, 77, 66, 0.7), rgba(92, 77, 66, 0.7), url("/static/img/child.jpg");
     /* background-position: center;
     background-repeat: no-repeat;
-    background-attachment: scroll;
+    background-attachment: scroll; */
     background-size: cover;
-    height: 100vh; */
+    /* height: 100vh; */
 }
