@@ -169,14 +169,14 @@ def edit_items(item_id):
 
 
 # delete item - with ['POST']
-@app.route("/items/<item_id>/delete")
-def delete_item(item_id):
+@app.route("/items/<item_id>/delete", methods=["GET", "POST"]) #ok
+def delete_items(item_id):
     if request.method == 'POST':
         mongo.db.items.remove({"_id": ObjectId(item_id)})
         flash("Item deleted")
         return redirect(url_for("item_list"))
         
-    item = list(mongo.db.items.find({"_id": ObjectId(item_id)}))
+    item = mongo.db.items.find({"_id": ObjectId(item_id)})
     return render_template('show_delete_item.template.html',
                                item=item)
     
