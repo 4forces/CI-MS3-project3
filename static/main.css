@@ -6,7 +6,7 @@ body {
 }
 
 .logo {
-    width: 4.5rem;
+    width: 3.5rem;
 }
 
 .header-font, h1, h2, h3, h4, h5, h6 {
@@ -41,13 +41,13 @@ a:link, a:visited, a:hover, a:active {
   background-color: #94c8e9 !important;
 }
 
-/* Home page */
-.jumbotron {
+/* Home.template CSS */
+.jumbotron-image {
     /* padding-top: 10rem;
     padding-bottom: calc(10rem - 4.5rem); */
-    background: linear-gradient(rgba(92, 77, 66, 0.7), rgba(92, 77, 66, 0.7), url("/static/img/child.jpg");
-    /* background-position: center;
-    background-repeat: no-repeat;
+    background: linear-gradient(rgba(184,219,245, 0.8), rgba(184,219,245, 0.8)), url("/static/img/child.jpg");
+    background-position: center;
+    /* background-repeat: no-repeat;
     background-attachment: scroll; */
     background-size: cover;
     /* height: 100vh; */
