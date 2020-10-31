@@ -40,37 +40,39 @@ app.secret_key = b'laksdfoi323d'
 #         json.dump(itemsdb, fp)
 
 
-@app.route('/') # ok
+@app.route('/')  # ok
 def home():
     return render_template('home.template.html')
 
 
-@app.route('/register') # ok
+@app.route('/register')  # ok
 def register():
     return render_template('register.template.html')
 
 
-@app.route('/login') # ok
+@app.route('/login')  # ok
 def login():
     return render_template('login.template.html')
 
 
 # display all items list - vistor view
-@app.route('/browse') #ok
+@app.route('/browse')  # ok
 def browse_items():
     items = mongo.db.items.find()
     print(items)
     return render_template('browse_items.template.html', items_stored=items)
 
 # display all items list - login view
-@app.route('/listings') # ok
+
+
+@app.route('/listings')  # ok
 def item_list():
     items = mongo.db.items.find()
     return render_template('item_listings.template.html', all_items=items)
 
 
 # view item details
-@app.route('/items/<item_id>') #ok
+@app.route('/items/<item_id>')  # ok
 def view_item_details(item_id):
     # print(request.form)
     # selected_item = None
@@ -84,7 +86,7 @@ def view_item_details(item_id):
     # if selected_item:
     return render_template('item_details.template.html', item=item)
     # else:
-        # return render_template('item_notfound.template.html', item_id=item_id)
+    # return render_template('item_notfound.template.html', item_id=item_id)
 
 
 # @app.route('/items/post') # ok
@@ -92,7 +94,7 @@ def view_item_details(item_id):
 #     return render_template('post_item.template.html')
 
 # add item - with ['POST']
-@app.route('/items/post', methods=['POST', 'GET']) # ok
+@app.route('/items/post', methods=['POST', 'GET'])  # ok
 def post_items():
     if request.method == 'POST':
         print(request.form)
@@ -101,17 +103,18 @@ def post_items():
             'description': request.form.get('description'),
             'age': request.form.get('age'),
             'condition': request.form.get('condition'),
-            'delete': request.form.get('delete_after')
+            'delete': request.form.get('delete_after'),
+            'date': request.form.get('date')
         }
         mongo.db.items.insert_one(item)
-        flash("Item Successfully Added") # Error - Does not show
+        flash("Item Successfully Added")  # Error - Does not show
         return redirect(url_for("item_list"))
-        
+
     return render_template('post_item.template.html')
 
 
 # edit item - with ['POST']
-@app.route('/items/<item_id>/edit', methods=["GET", "POST"]) # ok
+@app.route('/items/<item_id>/edit', methods=["GET", "POST"])  # ok
 def edit_items(item_id):
     if request.method == 'POST':
         item = {
@@ -121,8 +124,8 @@ def edit_items(item_id):
             'condition': request.form.get('condition'),
             'delete': request.form.get('delete_after')
         }
-        mongo.db.items.update_one({"_id": ObjectId(item_id)}, {'$set':item})
-        flash("Edit successful") # Error - Does not show
+        mongo.db.items.update_one({"_id": ObjectId(item_id)}, {'$set': item})
+        flash("Edit successful")  # Error - Does not show
         return redirect(url_for("item_list"))
 
     item = mongo.db.items.find_one({"_id": ObjectId(item_id)})
@@ -142,7 +145,6 @@ def edit_items(item_id):
 #     else:
 #         return render_template('item_notfound.template.html',
 #                                item_id=item_id)
-
 
 
 # @app.route('/items/<item_id>/edit', methods=['POST'])
@@ -172,17 +174,16 @@ def edit_items(item_id):
 
 
 # delete item - with ['POST']
-@app.route("/items/<item_id>/delete", methods=["GET", "POST"]) #ok
+@app.route("/items/<item_id>/delete", methods=["GET", "POST"])  # ok
 def delete_items(item_id):
     if request.method == 'POST':
         mongo.db.items.remove({"_id": ObjectId(item_id)})
         flash("Item deleted")
         return redirect(url_for("item_list"))
-        
+
     item = list(mongo.db.items.find({"_id": ObjectId(item_id)}))
     return render_template('show_delete_item.template.html',
-                               item=item)
-    
+                           item=item)
 
 
 # @app.route('/items/<int:item_id>/delete')
@@ -219,12 +220,11 @@ def delete_items(item_id):
 #     else:
 #         return render_template('item_notfound.template.html', item_id=item_id)
 
-
 # "magic code" -- boilerplate
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
-            # only one program can run on one port, 
-            # therefore flask gives error 
+            # only one program can run on one port,
+            # therefore flask gives error
             # if it is run 2nd time
             port=int(os.environ.get('PORT')),
             debug=True)
