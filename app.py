@@ -16,7 +16,8 @@ app = Flask(__name__)
 # to set the DB and the URI
 app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
-print(os.environ.get("MONGO_URI"))
+print('Connected to:', os.environ.get("MONGO_URI"))
+print('DB name:', os.environ.get("MONGO_DBNAME"))
 
 # to set the mongo object
 mongo = PyMongo(app)
@@ -62,9 +63,8 @@ def browse_items():
     print(items)
     return render_template('browse_items.template.html', items_stored=items)
 
+
 # display all items list - login view
-
-
 @app.route('/listings')  # ok
 def item_list():
     items = mongo.db.items.find()
@@ -77,7 +77,7 @@ def view_item_details(item_id):
     # print(request.form)
     # selected_item = None
     item = list(mongo.db.items.find({"_id": ObjectId(item_id)}))
-    print(item)
+    print('Item selected for VIEW:', item)
     # for each_item in items:
     #     if each_item["_id"] == item_id:
     #         selected_item = each_item
@@ -97,7 +97,7 @@ def view_item_details(item_id):
 @app.route('/items/post', methods=['POST', 'GET'])  # ok
 def post_items():
     if request.method == 'POST':
-        print(request.form)
+        print('Form-values grab:', request.form)
         item = {
             'name': request.form.get('item_name'),
             'description': request.form.get('description'),
