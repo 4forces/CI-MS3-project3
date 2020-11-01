@@ -1,3 +1,4 @@
+/* Common CSS */
 body {
   /* background-color: antiquewhite; */
   font-family: "Ubuntu", sans-serif;
@@ -5,12 +6,19 @@ body {
   background: linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75)), url("/static/img/bg-body.jpg");
 }
 
+.frame {
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    background-color: rgba(244,250,255,0.7);
+    padding: 1.5rem;
+    border-radius: 25px;
+}
+
 
 .header-font, h1, h2, h3, h4, h5, h6 {
   font-family: "Fredoka One", cursive;
 }
 
-/* button css */
+/* Button CSS */
 .bt-big {
   background-color: rgba(148, 199, 235, 0.7);
   color: #1a191b;
@@ -24,7 +32,7 @@ body {
 }
 
 .bt {
-  background-color: #ffffff;
+  background-color: rgba(148, 199, 235);
   color: #1a191b;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
@@ -48,6 +56,18 @@ a:link, a:visited, a:hover, a:active {
 
 .logo {
     width: 3.5rem;
+}
+
+.bt-navbar {
+  background-color: rgba(244,250,255,0.7);
+  color: #1a191b;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.bt-navbar:hover {
+  background-color: rgba(255, 112, 138);
+  color: #ffffff;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
 /* Home.template CSS */
