@@ -7,5 +7,6 @@
 
 // Get current date
 function getDate() {
-  document.getElementById('date').value = Date();
+  let dateSubStr = Date().substring(4,15)
+  document.getElementById('date').value = dateSubStr;
 }
