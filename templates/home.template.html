@@ -4,27 +4,34 @@
 
 {% block content %}
 
-<div class="jumbotron jumbotron-image">
-  <h1 class="display-4">Welcome to GiftKids!</h1>
-  <p class="lead">A simple site to look for things you need, or to give away.</p>
-  <hr class="my-4">
-  <p>Saving. Sharing., Recycling.</p>
+<div class="container">
+        <div class="jumbotron jumbotron-image mt-5">
+            <h1 class="display-4">Welcome to GiftKids!</h1>
+            <p class="lead">A simple site to look for things you need, or to give away.</p>
+            <hr class="my-4">
+            <p>Saving. Sharing. Recycling.</p>
+        </div>
 </div>
 
-<div class="row mt-5 justify-content-center align-items-center">
-    <div class="col-lg-8 text-center">
-            <a class="mx-3" href="{{ url_for('register') }}">
-                <button type="button" class="bt-big btn btn-lg btn-block">Become a Gifter</button>
-            </a>
-            <a class="mx-3" href="{{ url_for('login') }}">
-                <button type="button" class="bt-big btn btn-lg btn-block">Post Gifts</button>
-            </a>
-            <a class="mx-3" href="{{ url_for('browse_items') }}">
-                <button type="button" class="bt-big btn btn-lg btn-block">Browse Items</button>
-            </a>
-            <a class="mx-3" href="{{ url_for('post_items') }}">
-                <button type="button" class="bt-big btn btn-lg btn-block">Post Items</button>
-            </a>
+<div class="container">
+    <div class="row mt-5 justify-content-center align-items-center">
+        <div class="col-md-6 text-center">
+                <!-- <a class="col" href="{{ url_for('register') }}">
+                    <button type="button" class="bt-big btn btn-lg btn-block">Become a Gifter</button>
+                </a> -->
+                <!-- <a class="col" href="{{ url_for('login') }}">
+                    <button type="button" class="bt-big btn btn-lg btn-block">Post Gifts</button>
+                </a> -->
+                <a class="col" href="{{ url_for('browse_items') }}">
+                    <button type="button" class="bt-big btn btn-lg btn-block">Browse Items</button>
+                </a>
+                <a class="col" href="{{ url_for('post_items') }}">
+                    <button type="button" class="bt-big btn btn-lg btn-block">Post Items</button>
+                </a>
+                <a class="col" href="{{ url_for('item_list') }}">
+                    <button type="button" class="bt-big btn btn-lg btn-block">View Items List</button>
+                </a>
+        </div>
     </div>
 </div>
 
