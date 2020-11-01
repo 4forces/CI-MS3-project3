@@ -54,20 +54,24 @@ a:link, a:visited, a:hover, a:active {
   padding: 0.1rem 1rem
 }
 
-.logo {
+#logo {
     width: 3.5rem;
 }
 
-.bt-navbar {
+#search-button {
   background-color: rgba(244,250,255,0.7);
   color: #1a191b;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
-.bt-navbar:hover {
+#search-button:hover {
   background-color: rgba(255, 112, 138);
   color: #ffffff;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+#search-bar {
+  background-color: rgba(244,250,255,0.7);
 }
 
 /* Home.template CSS */
