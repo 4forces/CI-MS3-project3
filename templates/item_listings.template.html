@@ -5,10 +5,15 @@
 {% block content %}
 
 <div class="container">
-    <h1>Item Listings</h1>
+        <div class="row mt-5 justify-content-center text-center">
+            <div class="col-8 text-center">
+                <h1>Item Listings</h1>
+            </div>
+        </div>
 
+<div class="row justify-content-center text-center">
     {% for item in all_items %}
-    <div class="row justify-content-center align-items-center text-center mx-2">
+    <!-- <div class="row justify-content-center align-items-center text-center mx-2">
         <div class="col-3 bg-secondary my-3">
             {{item.photo}}
         </div>
@@ -20,10 +25,13 @@
         <div class='col bg-secondary mb-3'>
             <p>Posted: <b>{{item.date}}</b></p>
         </div>
-    </div>
-    <div>
-        <a href="{{ url_for('edit_items', item_id=item._id) }}" class="btn btn-primary">Edit</a>
-        <a href="{{ url_for('delete_items', item_id=item._id) }}" class="btn btn-danger">Delete</a>
+    </div> -->
+    <div class="col-8 frame my-3">
+                <h4>{{item.name}}</h4>
+                {{item.description}}
+                <p>Posted on: <br><b>{{item.date}}</b></p>
+            <a href="{{ url_for('edit_items', item_id=item._id) }}" class="btn bt-edit">Edit</a>
+            <a href="{{ url_for('delete_items', item_id=item._id) }}" class="btn bt-delete">Delete</a>
     </div>
     {% endfor %}
 </div>
