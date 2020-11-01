@@ -16,16 +16,13 @@ app = Flask(__name__)
 # to set the DB and the URI
 app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
+app.secret_key = os.environ.get("SECRET_KEY")
 print('Connected to:', os.environ.get("MONGO_URI"))
 print('DB name:', os.environ.get("MONGO_DBNAME"))
 
+
 # to set the mongo object
 mongo = PyMongo(app)
-
-
-# Secret key for flash messages
-app = Flask(__name__)
-app.secret_key = b'laksdfoi323d'
 
 
 @app.route('/')  # ok
