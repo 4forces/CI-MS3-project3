@@ -13,75 +13,79 @@ Edit Item
 {{item}}
 name: {{item.name}}
 
-<form method="POST">
+<div class="container">
 
-        <div class="form-group">
-            <h5><label class="form-check-label">Item name </label></h5>
-            <input class="form-control" type="text" name="item_name" value="{{item.name}}">
-        </div>
+    <form method="POST">
 
-        <div class="form-group">
-            <h5><label class="form-check-label">Description </label></h5>
-            <textarea class="form-control" row="3" name="description">{{item.description}}</textarea>
-        </div>
+            <div class="form-group">
+                <h5><label class="form-check-label">Item name </label></h5>
+                <input class="form-control" type="text" name="item_name" value="{{item.name}}">
+            </div>
 
-        <div class="form-group">
-            <h5>Age Range:</h5>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="age" id="infant" value="Infant (Newborn - 1 year)" {% if item.age == 'Infant (Newborn - 1 year)' %} checked {% endif %}/>
-                <label class="form-check-label" for="infant">Infant (Newborn - 1 year)</label>
+            <div class="form-group">
+                <h5><label class="form-check-label">Description </label></h5>
+                <textarea class="form-control" row="3" name="description">{{item.description}}</textarea>
             </div>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="age" id="toddler" value="Toddler (1 - 2 years)" {% if item.age == 'Toddler (1 - 2 years)' %} checked {% endif %}/>
-                <label class="form-check-label" for="toddler">Toddler (1 - 2 years)</label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="age" id="preschooler" value="Preschooler (2 - 5 years)" {% if item.age == 'Preschooler (2 - 5 years)' %} checked {% endif %} />
-                <label class="form-check-label" for="preschooler">Preschooler (2 - 5 years)</label>
-            </div>
-        </div>
 
-        <div class="form-group">
-            <h5>Item Condition</h5>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="condition" id="new" value="New" {% if item.condition == 'New' %} checked {% endif %}>
-                <label class="form-check-label" for="new">New</label>
+            <div class="form-group">
+                <h5>Age Range:</h5>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="age" id="infant" value="Infant (Newborn - 1 year)" {% if item.age == 'Infant (Newborn - 1 year)' %} checked {% endif %}/>
+                    <label class="form-check-label" for="infant">Infant (Newborn - 1 year)</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="age" id="toddler" value="Toddler (1 - 2 years)" {% if item.age == 'Toddler (1 - 2 years)' %} checked {% endif %}/>
+                    <label class="form-check-label" for="toddler">Toddler (1 - 2 years)</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="age" id="preschooler" value="Preschooler (2 - 5 years)" {% if item.age == 'Preschooler (2 - 5 years)' %} checked {% endif %} />
+                    <label class="form-check-label" for="preschooler">Preschooler (2 - 5 years)</label>
+                </div>
             </div>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="condition" id="like-new" value="Like New" {% if item.condition == 'Like New' %} checked {% endif %}>
-                <label class="form-check-label" for="like-new">Like New</label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="condition" id="used" value="Used" {% if item.condition == 'Used' %} checked {% endif %}>
-                <label class="form-check-label" for="used">Used</label>
-            </div>
-        </div>
 
-        <div class="input-group">
-            <h5>Upload Image</h5>
-            <div class="input-group-prepend">
-                <span class="input-group-text" id="imageAddon">Upload</span>
+            <div class="form-group">
+                <h5>Item Condition</h5>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="condition" id="new" value="New" {% if item.condition == 'New' %} checked {% endif %}>
+                    <label class="form-check-label" for="new">New</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="condition" id="like-new" value="Like New" {% if item.condition == 'Like New' %} checked {% endif %}>
+                    <label class="form-check-label" for="like-new">Like New</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="condition" id="used" value="Used" {% if item.condition == 'Used' %} checked {% endif %}>
+                    <label class="form-check-label" for="used">Used</label>
+                </div>
             </div>
-            <div class="ml-1 custom-file">
-                <input type="file" class="custom-file-input" id="image">
-                <label class="custom-file-label" for="image">Choose file</label>
+
+            <div class="input-group">
+                <h5>Upload Image</h5>
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="imageAddon">Upload</span>
+                </div>
+                <div class="ml-1 custom-file">
+                    <input type="file" class="custom-file-input" id="image">
+                    <label class="custom-file-label" for="image">Choose file</label>
+                </div>
             </div>
-        </div>
 
-        <div class="form-group">
-            <h5><label class="form-label">Delete after: </label></h5>
-            <select class="custom-select" name="delete_after">
-                <option selected disabled>Please select</option>
-                <option value="1 Week" {% if item.delete == '1 Week' %} selected {% endif %}>1 Week</option>
-                <option value="1 Month" {% if item.delete == '1 Month' %} selected {% endif %}>1 Month</option>
-                <option value="3 Months" {% if item.delete == '3 Months' %} selected {% endif %}>3 Months</option>
-            </select>
-        </div>
+            <div class="form-group">
+                <h5><label class="form-label">Delete after: </label></h5>
+                <select class="custom-select" name="delete_after">
+                    <option selected disabled>Please select</option>
+                    <option value="1 Week" {% if item.delete == '1 Week' %} selected {% endif %}>1 Week</option>
+                    <option value="1 Month" {% if item.delete == '1 Month' %} selected {% endif %}>1 Month</option>
+                    <option value="3 Months" {% if item.delete == '3 Months' %} selected {% endif %}>3 Months</option>
+                </select>
+            </div>
 
-        <div class="form-group">
-            <input type="submit" value="Submit" class="btn btn-primary"/>
-        </div>
-    
-</form>
+            <div class="form-group">
+                <input type="submit" value="Submit" class="btn btn-primary"/>
+            </div>
+        
+    </form>
+
+</div>
 
 {% endblock %}

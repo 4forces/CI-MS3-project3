@@ -6,6 +6,7 @@ Delete Item
 
 {% block content %}
 {{item}}
+<div class="container">
     {% for item in item %}
     <form method="POST">
         <div class="alert alert-danger">
@@ -16,4 +17,5 @@ Delete Item
             <a href="{{ url_for('item_list') }}" class="btn btn-success">No, cancel delete</a>
         </div>
         {% endfor %}
+</div>
 {% endblock %}
