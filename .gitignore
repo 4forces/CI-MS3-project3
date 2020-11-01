@@ -6,4 +6,6 @@ __pycache__/
 *.py[cod]
 app2.py
 app3.py
+app2-json-old.py
+app3-before-delete.py
 
