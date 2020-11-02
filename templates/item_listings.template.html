@@ -28,10 +28,10 @@
     </div> -->
     <div class="col-8 frame my-3">
                 <h4>{{item.name}}</h4>
-                {{item.description}}
+                <p>{{item.description}}</p>
                 <p>Posted on: <br><b>{{item.date}}</b></p>
-            <a href="{{ url_for('edit_items', item_id=item._id) }}" class="btn bt-edit">Edit</a>
-            <a href="{{ url_for('delete_items', item_id=item._id) }}" class="btn bt-delete">Delete</a>
+            <a href="{{ url_for('edit_items', item_id=item._id) }}" class="btn edit" id="bt-edit"></a>
+            <a href="{{ url_for('delete_items', item_id=item._id) }}" class="btn delete" id="bt-delete"></a>
     </div>
     {% endfor %}
 </div>
