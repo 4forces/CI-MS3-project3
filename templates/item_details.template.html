@@ -8,35 +8,19 @@
 
 {% for item in item %}
 <div class="container">
-    <div class="row mt-5 justify-content-center text-center">
-        <div class="col-8 text-center">
-            <h1>{{item.name}}</h1>
+        <div class="row my-5 justify-content-center text-center">
+            <div class="col-8 frame text-center">
+                <h1>{{item.name}}</h1>
+                <p>Posted by <b>{{item.user}}</b> on <b>{{item.date}}</b>.</p>
+                <h5>Description</h5>
+                <p>{{item.description}}</p>
+                <h5>Age Range</h5>
+                <p>{{item.age}}</p>
+                <h5>Condition</h5>
+                <p>{{item.condition}}</p>
+                <!-- <button type="button" class="btn btn-info">Contact seller</button> -->
+            </div>
         </div>
-    </div>
-
-    <div class="row justify-content-center text-center">
-        <div class="col-10 bg-secondary my-3">
-            {{item.photo}}
-        </div>
-        <div class='col-10 bg-secondary mb-3'>
-            <p>Posted by <b>{{item.user}}</b> on <b>{{item.date}}</b>.</p>
-        </div>
-        <div class='col-10 bg-secondary mb-3'>
-            <h5>Description</h5>
-            <p>{{item.description}}</p>
-        </div>
-        <div class='col-10 bg-secondary mb-3'>
-            <h5>Age Range</h5>
-            <p>{{item.age}}</p>
-        </div>
-        <div class='col-10 bg-secondary mb-3'>
-            <h5>Condition</h5>
-            <p>{{item.condition}}</p>
-        </div>
-        <div class='col-10 bg-secondary mb-3'>
-            <button type="button" class="btn btn-info">Contact seller</button>
-        </div>
-    </div>
 </div>
 
 {% endfor %}
