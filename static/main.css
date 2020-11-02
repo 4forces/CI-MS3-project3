@@ -64,7 +64,7 @@ body {
 }
 
 #bt-edit:hover, #bt-delete:hover {
-  transform: scale(1.02);
+  transform: scale(1.05);
   box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 
@@ -131,4 +131,57 @@ a:link, a:visited, a:hover, a:active {
     background-size: cover;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 30px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
     /* height: 100vh; */
+}
+
+
+/* .delete2, .delete2:after, .delete2:before {
+    border: 1px solid black;
+    align-self: center;
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    font-size: 40px;
+    color: black
+} */
+.delete:after {
+    font-family: FontAwesome;
+    content: " \f00d";
+    opacity: 0;
+}
+.delete:before {
+    content: "Delete";
+    opacity: 1;
+}
+
+.delete:after, .delete:before {
+    transition: opacity 0.33s linear;
+}
+
+/* .delete2:hover:before {
+    opacity: 0;
+} */
+.delete:hover:after {
+    opacity: 1;
+}
+
+
+.edit:after {
+    font-family: FontAwesome;
+    content: " \f040";
+    opacity: 0;
+}
+.edit:before {
+    content: "Edit";
+    opacity: 1;
+}
+
+.edit:after, .edit:before {
+    transition: opacity 0.33s linear;
+}
+
+/* .delete2:hover:before {
+    opacity: 0;
+} */
+.edit:hover:after {
+    opacity: 1;
 }
