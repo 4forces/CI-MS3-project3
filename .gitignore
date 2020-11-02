@@ -1,9 +1,9 @@
 core.Microsoft*
 core.mongo*
 core.python*
-env.py
 __pycache__/
 *.py[cod]
+env.py
 app2-json-old.py
 app3-before-delete.py
 
