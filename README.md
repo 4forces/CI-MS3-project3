@@ -15,7 +15,9 @@ pop up "item added"/item deleted/item modified after submit
 
 # GiftKids
 
-GiftKids is a site fictional 
+GiftKids is a site fictional to look for items you may need for children and also for parents to donate items they dont need.
+As parents we know how fast kids outgrow their clothes, toys, and other accessories etc. 
+
 
 Ace Tuition is a tuition agency that aims to bring tutees and tutors together. 
 Looking to find a tutor to ride through your academic woes? No problem, Ace Tuition Services has tutors to cater to your subject needs.
@@ -58,6 +60,8 @@ This page caters to potential tutors, who will input their particulars and uploa
 
 Visitors can browse tutors and look at the tutor profile, so as to make a more well informed decision on the tutor they are going to engage. 
 
+## look and feel
+Light colour them to 
 
 ## Features Left to Implement
 - TBC
@@ -83,8 +87,8 @@ Visitors can browse tutors and look at the tutor profile, so as to make a more w
     - The project uses **JQuery** to simplify DOM manipulation.
 9. toastr
 10. [bootstrap](https://getbootstrap.com/)
-
-
+11. [Adobe Photoshop]() to edit some of the images
+12. [Fontawesome](https://www.bootstrapcdn.com/fontawesome/)
 
 ## Testing
 
@@ -171,6 +175,9 @@ To see the web application in action, go the the following link: http://127.0.0.
 
 ## Credits
 
+### Key
+[RandomKeygen](https://randomkeygen.com/) to generate the secret key
+
 ### code
 1. [Tim Nelson's (CI) Task Manager](https://github.com/Code-Institute-Solutions/TaskManager/tree/master/08-SearchingWithinTheDatabase/01-text_index_searching)
 
@@ -188,14 +195,19 @@ To see the web application in action, go the the following link: http://127.0.0.
 ### Images:
 1. Mostly Unplash
 2. And a bit of pexel
-3. and google [search results](https://www.google.com/search?q=baby+gift+wallpaper&tbm=isch&ved=2ahUKEwinwczF1r_sAhUunEsFHaXtAKoQ2-cCegQIABAA&oq=baby+gift+wallpaper&gs_lcp=CgNpbWcQAzICCAA6BggAEAcQHjoICAAQCBAHEB5Qp_wBWN3_AWC_gQJoAHAAeACAAUmIAYcCkgEBNZgBAKABAaoBC2d3cy13aXotaW1nwAEB&sclient=img&ei=2AKNX6f1Oq64rtoPpduD0Ao&bih=969&biw=1920&rlz=1C1NHXL_enSG810SG810#imgrc=fBrjw4FAwGnf8M)
+3. and Inspiration from google [search results](https://www.google.com/search?q=baby+gift+wallpaper&tbm=isch&ved=2ahUKEwinwczF1r_sAhUunEsFHaXtAKoQ2-cCegQIABAA&oq=baby+gift+wallpaper&gs_lcp=CgNpbWcQAzICCAA6BggAEAcQHjoICAAQCBAHEB5Qp_wBWN3_AWC_gQJoAHAAeACAAUmIAYcCkgEBNZgBAKABAaoBC2d3cy13aXotaW1nwAEB&sclient=img&ei=2AKNX6f1Oq64rtoPpduD0Ao&bih=969&biw=1920&rlz=1C1NHXL_enSG810SG810#imgrc=fBrjw4FAwGnf8M)
+4. Background image from [freepik](https://www.freepik.com/premium-vector/toys-doodle-set_6551728.htm#page=1&query=toys&position=41)
 
-### Logo
+### Logo and favicion
 1. [Free Logo Design](https://www.freelogodesign.org/)
+2. [favicon.io](https://favicon.io/favicon-converter/)
 
 ### Layout Design
 1. [Smashing Magazine](https://www.smashingmagazine.com/2016/04/web-developer-guide-color/)
 2. [Width and Height Display](Width and Height Display)
+
+### Solution to resolve favicon 404 error when edit/delete item
+1. [stackoverflow](https://stackoverflow.com/questions/27234593/setting-up-static-folder-path-in-flask1)
 
 ### Content
 - The text for section Y was copied from the [Wikipedia article Z](https://en.wikipedia.org/wiki/Z)
@@ -203,6 +215,27 @@ To see the web application in action, go the the following link: http://127.0.0.
 
 ### Media
 - The photos used in this site were obtained from [Unplash]()
+
+### JS Date code snippet
+- Retrieve [date object](https://www.w3schools.com/js/js_dates.asp)
+- [Substring](https://www.w3schools.com/jsref/jsref_substring.asp) to cut date string
+
+### Changing Edit and Delete buttons
+Concept from [here](https://webdeasy.de/en/top-css-buttons-en/?referer=dev-updated-f41)
+JS from [w3schools](https://www.w3schools.com/Jsref/event_onmouseover.asp)
+CSS methods from [here](https://stackoverflow.com/questions/44573480/change-text-content-on-hover), 
+[here](https://stackoverflow.com/questions/33057737/css-replacing-a-text-on-hover-but-smooth-transition-to-the-new-text-does-not-w), 
+and [here](https://stackoverflow.com/questions/3331353/transitions-on-the-css-display-property)
+[Fontawesome content with CSS](https://stackoverflow.com/questions/20782368/use-font-awesome-icon-as-css-content)
+The evolving of css display:
+0. attempted to try without js (pure css)
+1. Discovered that display-none to display-block does not allow transition effects
+2. Work towards Opacity and visibility, but realised the element still takes up space although not visible
+3. A compromise was decided that to fade-in the fontawesome icon upon hover - leaves a slightly unsightly of 'align-left' as fontawesome icon is hidden
+
+### Box shodows
+CSS Scan [Beautiful CSS box-shadow examples](https://getcssscan.com/css-box-shadow-examples)
+
 
 ### Acknowledgements
 
