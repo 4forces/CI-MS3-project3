@@ -91,6 +91,17 @@ a:link, a:visited, a:hover, a:active {
   padding: 0.1rem 1rem
 }
 
+.navbar-light .navbar-nav .nav-link {
+    font-family: "Fredoka One", cursive;
+    color: #1a191b;
+}
+
+.navbar-light:hover .navbar-nav:hover .nav-link:hover {
+    text-shadow: 2px 2px 5px #fe7690;
+    /* transform: scale(1.075); */
+    color: #b0384e;
+}
+
 #logo {
     width: 3.5rem;
 }
