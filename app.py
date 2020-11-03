@@ -39,6 +39,9 @@ def register():
 def login():
     return render_template('login.template.html')
 
+@app.route('/notfound')
+def not_found():
+    return render_template('item_notfound.template.html')
 
 # display all items list - vistor view
 @app.route('/browse')  # ok
