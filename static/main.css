@@ -10,7 +10,7 @@ body {
     box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
     background-color: rgba(244,250,255,0.7);
     padding: 1.5rem;
-    border-radius: 25px;
+    border-radius: 1.5rem;
 }
 
 
@@ -37,7 +37,7 @@ body {
 }
 
 .bt-big .bt-big:hover, .bt, .bt:hover {
-       border-radius: 25px;     
+       border-radius: 1.5rem;     
 }
 
 .bt-big, .bt {
@@ -109,15 +109,11 @@ a:link, a:visited, a:hover, a:active {
 
 #search-bar {
   background-color: rgba(244,250,255,0.7);
-  border-radius: 25px;
+  border-radius: 1.5rem;
 }
 
-#search-button, #search-bar {
-    border-radius: 25px;
-}
-
-.form-field {
-    border-radius: 25px;
+#search-button, #search-bar, .form-field {
+    border-radius: 1.5rem;
 }
 
 /* Home.template CSS */
@@ -198,8 +194,8 @@ a:link, a:visited, a:hover, a:active {
     background-size: cover;
 }
 
-/* Confirm delete page */
-.alert {
+/* Confirm delete page CSS */
+.alert, .btn-danger, .btn-success  {
     border-radius: 0.75rem;
 }
 
