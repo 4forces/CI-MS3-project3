@@ -197,3 +197,12 @@ a:link, a:visited, a:hover, a:active {
     background-position: center;
     background-size: cover;
 }
+
+/* Confirm delete page */
+.alert {
+    border-radius: 0.75rem;
+}
+
+#del-pg-cancel {
+    color: #ffffff;
+}
