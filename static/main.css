@@ -6,7 +6,7 @@ body {
   background: linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75)), url("/static/img/bg-body.jpg");
 }
 
-.frame, #post-form {
+.frame, #post-form, #edit-form {
     box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
     background-color: rgba(244,250,255,0.7);
     padding: 1.5rem;
@@ -188,6 +188,12 @@ a:link, a:visited, a:hover, a:active {
 
 #post-form {
     background: linear-gradient(rgba(244,250,255, 0.85), rgba(244,250,255, 0.85)), url("/static/img/post.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+#edit-form {
+    background: linear-gradient(rgba(244,250,255, 0.85), rgba(244,250,255, 0.85)), url("/static/img/edit.jpg");
     background-position: center;
     background-size: cover;
 }
