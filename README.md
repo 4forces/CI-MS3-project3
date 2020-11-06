@@ -1,34 +1,35 @@
-<img>
+# GiftKids - A simple site to bless others, or to receive blessings
 
-# bugs
-- background of edit and post page
-- adding a login element
-- adding an image upload option
-- changing the display of the links after login
-- getting the date and add to the data
-- at less than 425 px there is right border
-- description does not come out
-- Edited successfully toastr pops up when click on back button after editing item
+<img> from am i responsive
+***
 
-# add-ons
-pop up "item added"/item deleted/item modified after submit
+## Overview
 
-# GiftKids
+Most parents and caregivers of children will understand how fast kids outgrow the things they own, 
+whether is it clothes, toys or accesories like steamers and child seats. This developer had the
+privilege of witnessing the generosity of many around him, who gratefully share children's resources
+with whomvever that needs. At times, the donor may be at the receiving end, with their gifts coming back to them, 
+since children (especially toddlers) quickly outgrow what they use. However, at times caregivers may be urgently 
+looking for something, yet clueless how and where to start. This brings us to the objective of this site.
 
-GiftKids is a site fictional to look for items you may need for children and also for parents to donate items they dont need.
-As parents we know how fast kids outgrow their clothes, toys, and other accessories etc. 
+## Objective
 
+GiftKids presents itself as a fictional platform for parents and and caregivers looking to give away items 
+do not need, or to look for items they need, on a donation basis. It is hoped that a community and generous spirit of 
+sharing and giving can be promoted. 
+***
 
-Ace Tuition is a tuition agency that aims to bring tutees and tutors together. 
-Looking to find a tutor to ride through your academic woes? No problem, Ace Tuition Services has tutors to cater to your subject needs.
-Want to give tuition a try? Just sign up with us and we will get you started in not time! We offer competitive hourly rates for capable tutors.
+## UX and UI
 
-This projects seeks to emulate a tuition agency website, where 
-1. Potential students are able to register as a member. 
-2. potential tutors can sign up as a tutor
-3. The tuition agency administrator can perform CRUD of the students and tutor records
- 
-## UX
+This site is designed to be visually appealing to parents and kid-lovers in mind, from the 
+colours used to the font selection. It has a "cutesy" touch, and models itself after sites that sell children related items. 
+The reference website used for the look and feel is obtained from homepage layout examples at  ["Jadusona"](https://demo.hasthemes.com/shopify/jadusona-cm.html),
+which in turn was sourced while browsing through [Pinterest](https://www.pinterest.com/) for appearance inspirations. 
+The fonts used are [Fredoka One](https://fonts.google.com/specimen/Fredoka+One?query=fredoka) for headings and [Ubuntu](https://fonts.google.com/specimen/Ubuntu?query=ubuntu) for contents
+The color palette used as follows in Figure (b):
+
+Figure(b): 
+<img src="static/images/readme/#" width="200" style="margin:0">
 
 ### User stories
 
@@ -237,6 +238,25 @@ The evolving of css display:
 CSS Scan [Beautiful CSS box-shadow examples](https://getcssscan.com/css-box-shadow-examples)
 
 
+### text shadow for navbar
+W3 Schools link [here](https://www.w3schools.com/css/css3_shadows.asp)
+Initally the idea is to on hover, increase the font size by 1.075x, but due to the misalignment that occurs link [here]().
+Work around is to just settle with text shadow and changing font color
+
 ### Acknowledgements
 
 - I received inspiration for this project from X
+
+
+# bugs
+- background of edit and post page
+- adding a login element
+- adding an image upload option
+- changing the display of the links after login
+- getting the date and add to the data
+- at less than 425 px there is right border
+- description does not come out
+- Edited successfully toastr pops up when click on back button after editing item
+
+# add-ons
+pop up "item added"/item deleted/item modified after submit
