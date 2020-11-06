@@ -12,7 +12,7 @@ with whomvever that needs. At times, the donor may be at the receiving end, with
 since children (especially toddlers) quickly outgrow what they use. However, at times caregivers may be urgently 
 looking for something, yet clueless how and where to start. This brings us to the objective of this site.
 
-## Objective
+### Objective
 
 GiftKids presents itself as a fictional platform for parents and and caregivers looking to give away items 
 do not need, or to look for items they need, on a donation basis. It is hoped that a community and generous spirit of 
@@ -23,50 +23,65 @@ sharing and giving can be promoted.
 
 This site is designed to be visually appealing to parents and kid-lovers in mind, from the 
 colours used to the font selection. It has a "cutesy" touch, and models itself after sites that sell children related items. 
-The reference website used for the look and feel is obtained from homepage layout examples at  ["Jadusona"](https://demo.hasthemes.com/shopify/jadusona-cm.html),
+The reference website used for the color theme, look and feel is obtained from homepage layout examples at the website: ["Jadusona"](https://demo.hasthemes.com/shopify/jadusona-cm.html),
 which in turn was sourced while browsing through [Pinterest](https://www.pinterest.com/) for appearance inspirations. 
 The fonts used are [Fredoka One](https://fonts.google.com/specimen/Fredoka+One?query=fredoka) for headings and [Ubuntu](https://fonts.google.com/specimen/Ubuntu?query=ubuntu) for contents
-The color palette used as follows in Figure (b):
+The colour palette used is as follows: 
 
-Figure(b): 
+Colour Palette:
 <img src="static/images/readme/#" width="200" style="margin:0">
 
 ### User stories
 
-* As a student, I am looking tuition services on various subjects
-* As someone interested in giving tuition, I am looking to start off somewhere
-* As an administrator, I am looking to manage the student and tutor profiles database
+* "I believe in recycling, re-using things that are still usable and reducing waste, since children grow up quickly" - *A parent who believes in saving the earth*
+* "I wish to give away used items from my children as they have only been used a short while" - *Someone looking to give away their items*
+* "I am looking for items for my kids, and do not wish to spend too much since they will quickly outgrow it" - *A parent or caregiver looking for recylable kids items*
+
 
 ### Wireframes and Diagrams
 
-* [Wireframes](https://#)
-* [ER Diagrams](https://#)
- 
-## Features
+ *&Label diagram titles in wireframe*
 
-This site is primarily split into 3 parts: 
-* Request a Tutor
-* Tutor Registration
-* Browse Tutors
+* [Wireframes (desktop)](/images/#)
+* [Wireframes (mobile)](/images/#)
+* [ER Diagrams](/images/#)
+* [Logical Diagram](/images/#)
 
-### Request a Tutor
+### Features
+
+This site has mainly three sections: 
+
+- [Landing page](#Landing-Page) 
+- [View items](#View-Items)
+- [Search items](#Search)
+- [Post items](#Post-Items)
+- [Edit/Delete items](#Edit/Delete-Items)
+- 
+
+
+
+### Landing Page
 
 This page allows potential students to sign up with the agency. The potential student needs to provide the particulars and other details about the tuition services he or she requires
+[screenshot](/images/#)
 
-### Tutor Registration
+### View Items
 
 This page caters to potential tutors, who will input their particulars and upload a photograph and certificate
  
-### Browse tutor
+### Search
+
+
+### Post Items
 
 Visitors can browse tutors and look at the tutor profile, so as to make a more well informed decision on the tutor they are going to engage. 
 
-## look and feel
+## Edit/Delete Items
 Light colour them to 
 
 ## Features Left to Implement
-- TBC
-- TBC...
+- **User Login** for better management of posts
+- **TBC...**
 
 ## Technologies Used
 
@@ -86,10 +101,10 @@ Light colour them to
     - The project uses **JQuery** to simplify DOM manipulation.
 8. [JQuery](https://jquery.com)
     - The project uses **JQuery** to simplify DOM manipulation.
-9. toastr
+9. [toastr](https://github.com/CodeSeven/toastr) for message pop-ups upon POST, EDIT, DELETE items
 10. [bootstrap](https://getbootstrap.com/)
-11. [Adobe Photoshop]() to edit some of the images
-12. [Fontawesome](https://www.bootstrapcdn.com/fontawesome/)
+11. [Adobe Photoshop](https://www.adobe.com/sea/products/photoshop.html?sdid=YKHWGJBS&mv=search&ef_id=Cj0KCQiAhZT9BRDmARIsAN2E-J3nMUmJtn6TzrJSACgqgz8qd_J6Uvdp8mOKj4bch-nX2vdyaVi6PQAaAmu0EALw_wcB:G:s&s_kwcid=AL!3085!3!444551131429!e!!g!!adobe%20photoshop&gclid=Cj0KCQiAhZT9BRDmARIsAN2E-J3nMUmJtn6TzrJSACgqgz8qd_J6Uvdp8mOKj4bch-nX2vdyaVi6PQAaAmu0EALw_wcB) to edit some of the images
+12. [Fontawesome](https://www.bootstrapcdn.com/fontawesome/) 
 
 ## Testing
 
@@ -221,6 +236,25 @@ To see the web application in action, go the the following link: http://127.0.0.
 - Retrieve [date object](https://www.w3schools.com/js/js_dates.asp)
 - [Substring](https://www.w3schools.com/jsref/jsref_substring.asp) to cut date string
 
+### readme and markdown
+- The [CI Slack community](https://code-institute-room.slack.com) which gave much useful tips and pointers on to useful sites to:
+
+**Markdown**
+
+- [Adam Pritchard's Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
+
+- [commonmark.org](https://commonmark.org/help/)
+
+- [Github Guides - Markdown Cheatsheet](https://guides.github.com/pdfs/markdown-cheatsheet-online.pdf)
+- [Line breaks in markdown](https://gist.github.com/shaunlebron/746476e6e7a4d698b373)
+
+**Writing Readme**
+
+- [CI Readme template](https://github.com/Code-Institute-Solutions/readme-template)
+
+- [Anna Gilhespy's *Portrait Artist* Readme](https://github.com/AJGreaves/portrait-artist/blob/master/README.md)
+
+
 ### Changing Edit and Delete buttons
 Concept from [here](https://webdeasy.de/en/top-css-buttons-en/?referer=dev-updated-f41)
 JS from [w3schools](https://www.w3schools.com/Jsref/event_onmouseover.asp)
@@ -246,6 +280,7 @@ Work around is to just settle with text shadow and changing font color
 ### Acknowledgements
 
 - I received inspiration for this project from X
+- Lots of tips, inspiration and encouragement from the wonderful CI community at [Slack](https://code-institute-room.slack.com)
 
 
 # bugs
