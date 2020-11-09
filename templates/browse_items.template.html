@@ -12,12 +12,12 @@
         </div>
 
         <div class="row justify-content-center text-center">
-        {% for item in items_stored %}
+        {% for item in items_stored|reverse %}
         <div class="col-8 frame card my-3">
             <a href="{{ url_for('view_item_details', item_id=item._id) }}">
                     <h4>{{item.name}}</h4>
                     {{item.description}}
-                    <p>Posted on: <br><b>{{item.date}}</b></p>
+                    <p>Posted on: <br><b>{{item.date}} hrs</b></p>
             </a>
         </div>
         {% endfor %}
