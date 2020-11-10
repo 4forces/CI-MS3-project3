@@ -80,7 +80,7 @@ def post_items():
             'date': request.form.get('date')
         }
         mongo.db.items.insert_one(item)
-        flash("Item Successfully Added")  # Error - Does not show
+        flash(f'Item "{item["name"]}" added successfully', 'message')  # Error - Does not show
         return redirect(url_for("item_list"))
 
     return render_template('post_item.template.html')
@@ -98,7 +98,7 @@ def edit_items(item_id):
             'delete': request.form.get('delete_after')
         }
         mongo.db.items.update_one({"_id": ObjectId(item_id)}, {'$set': item})
-        flash("Edit successful")  # Error - Does not show
+        flash(f'Item "{item["name"]}" updated', 'info' )  # Error - Does not show
         return redirect(url_for("item_list"))
 
     item = mongo.db.items.find_one({"_id": ObjectId(item_id)})
@@ -110,7 +110,7 @@ def edit_items(item_id):
 def delete_items(item_id):
     if request.method == 'POST':
         mongo.db.items.remove({"_id": ObjectId(item_id)})
-        flash("Item deleted")
+        flash(f"Item deleted", 'error')
         return redirect(url_for("item_list"))
 
     item = list(mongo.db.items.find({"_id": ObjectId(item_id)}))

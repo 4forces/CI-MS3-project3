@@ -56,9 +56,17 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <script src="/static/main.js"></script>
     <script>
-        {% with messages = get_flashed_messages() %}
+        {% with messages = get_flashed_messages(with_categories=true) %}
             {% if messages %}
-                        toastr.info({messages})
+                {% for category, msg in messages %}
+                    {% if category == "error" %}
+                        toastr.error("{{ msg }}");
+                    {% elif category == "info" %}
+                        toastr.info("{{ msg }}")
+                    {% else %}
+                        toastr.success("{{ msg }}")
+                    {% endif %}
+                {% endfor %}
             {% endif %}
         {% endwith %}      
     </script>
