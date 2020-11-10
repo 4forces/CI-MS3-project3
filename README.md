@@ -62,39 +62,46 @@ This site has mainly three sections:
 
 ### Landing Page
 
-This page allows potential students to sign up with the agency. The potential student needs to provide the particulars and other details about the tuition services he or she requires
+This page allows potential users to sign up, browse items and post items. 
+The design is kept sinmple and follows a color theme for children website
 [screenshot](/images/#)
 
 ### View Items
 
-This page caters to potential tutors, who will input their particulars and upload a photograph and certificate
- 
+Users are able to view items that have been uploaded by other users or themselves. 
+
 ### Search
 
+Users can searhc for items by:
+- category/type
+- condition
+- user
 
 ### Post Items
 
-Visitors can browse tutors and look at the tutor profile, so as to make a more well informed decision on the tutor they are going to engage. 
+Users can post items they wish to give away
 
-## Edit/Delete Items
-Light colour them to 
+### Edit/Delete Items
 
-## Features Left to Implement
+Users can edit and/or delete items they have already posted. 
+
+### Features Left to Implement
 - **User Login** for better management of posts
+- **Picture upload**
 - **TBC...**
+- ```toastr pop up "item added"/item deleted/item modified after submit```
+
+---
 
 ## Technologies Used
 
-1. [HTML](https://jquery.com)
-    - The project uses **JQuery** to simplify DOM manipulation.
-2. [CSS](https://jquery.com)
-    - The project uses **JQuery** to simplify DOM manipulation.
+1. [HTML](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML_basics)
+   - The standard markup langauge to display document in web browsers.
+2. [CSS](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/CSS_basics)
+   - Web content styling 
 3. [JavaScript](https://jquery.com)
-    - The project uses **JQuery** to simplify DOM manipulation. 
 4. [Flask](https://jquery.com)
-    - The project uses **JQuery** to simplify DOM manipulation.
 5. [Python 3.8](https://jquery.com)
-    - The project uses **JQuery** to simplify DOM manipulation. 
 6. [MongoDB](https://jquery.com)
     - The project uses **JQuery** to simplify DOM manipulation. 
 7. [Heroku](https://jquery.com)
@@ -105,6 +112,8 @@ Light colour them to
 10. [bootstrap](https://getbootstrap.com/)
 11. [Adobe Photoshop](https://www.adobe.com/sea/products/photoshop.html?sdid=YKHWGJBS&mv=search&ef_id=Cj0KCQiAhZT9BRDmARIsAN2E-J3nMUmJtn6TzrJSACgqgz8qd_J6Uvdp8mOKj4bch-nX2vdyaVi6PQAaAmu0EALw_wcB:G:s&s_kwcid=AL!3085!3!444551131429!e!!g!!adobe%20photoshop&gclid=Cj0KCQiAhZT9BRDmARIsAN2E-J3nMUmJtn6TzrJSACgqgz8qd_J6Uvdp8mOKj4bch-nX2vdyaVi6PQAaAmu0EALw_wcB) to edit some of the images
 12. [Fontawesome](https://www.bootstrapcdn.com/fontawesome/) 
+
+---
 
 ## Testing
 
@@ -135,6 +144,20 @@ You should also mention in this section any interesting bugs or problems you dis
 
 If this section grows too long, you may want to split it off into a separate file and link to it from here.
 
+### Issues and bugs
+```
+- background of edit and post page
+- adding a login element
+- adding an image upload option
+- changing the display of the links after login
+- getting the date and add to the data
+- at less than 425 px there is right border
+- description does not come out
+- Edited successfully toastr pops up when click on back button after editing item
+```
+
+---
+
 ## Deployment
 
 This section should describe the process you went through to deploy the project to a hosting platform (e.g. GitHub Pages or Heroku).
@@ -151,6 +174,7 @@ a. Setting up MySQL (ClearDB) with Heroku
 Installing ClearDB in Git Bash using heroku addons:create cleardb:ignite
 Datatables in the database were created using the create_datatables.py file written by the developer
 Datasets were imported automatically from the csv file using import_datasets.py file written by the developer
+
 b. Heroku Deployment
 Sign up for an account at Heroku.
 Download Heroku CLI at Heroku website.
@@ -188,10 +212,16 @@ Run the application using the following command: python app.py
 
 To see the web application in action, go the the following link: http://127.0.0.1:8080
 
+---
 
 ## Credits
 
-### Key
+### Images and Graphics
+1. Images were mostly sourced from [Unplash](https://unsplash.com/) and a bit from [Pexels](https://www.pexels.com/)
+4. Background image graphics obtained from [freepik](https://www.freepik.com/premium-vector/toys-doodle-set_6551728.htm#page=1&query=toys&position=41)
+
+
+### secret Key
 [RandomKeygen](https://randomkeygen.com/) to generate the secret key
 
 ### code
@@ -202,17 +232,14 @@ To see the web application in action, go the the following link: http://127.0.0.
 2. https://demo.hasthemes.com/shopify/jadusona-cm.html
 3. Color palette (Chrome extension) to extract color theme
 4. Color pickr eyedropper (Chrome extension) to pick color
+3. and google [search results](https://www.google.com/search?q=baby+gift+wallpaper&tbm=isch&ved=2ahUKEwinwczF1r_sAhUunEsFHaXtAKoQ2-cCegQIABAA&oq=baby+gift+wallpaper&gs_lcp=CgNpbWcQAzICCAA6BggAEAcQHjoICAAQCBAHEB5Qp_wBWN3_AWC_gQJoAHAAeACAAUmIAYcCkgEBNZgBAKABAaoBC2d3cy13aXotaW1nwAEB&sclient=img&ei=2AKNX6f1Oq64rtoPpduD0Ao&bih=969&biw=1920&rlz=1C1NHXL_enSG810SG810#imgrc=fBrjw4FAwGnf8M)
+
 
 ### Alighment and looks refinement: 
 4. Alumni's website: 
    - https://linda-instaramen.herokuapp.com/#
    - https://mel-buyandsell-marketplace.herokuapp.com/
 
-### Images:
-1. Mostly Unplash
-2. And a bit of pexel
-3. and Inspiration from google [search results](https://www.google.com/search?q=baby+gift+wallpaper&tbm=isch&ved=2ahUKEwinwczF1r_sAhUunEsFHaXtAKoQ2-cCegQIABAA&oq=baby+gift+wallpaper&gs_lcp=CgNpbWcQAzICCAA6BggAEAcQHjoICAAQCBAHEB5Qp_wBWN3_AWC_gQJoAHAAeACAAUmIAYcCkgEBNZgBAKABAaoBC2d3cy13aXotaW1nwAEB&sclient=img&ei=2AKNX6f1Oq64rtoPpduD0Ao&bih=969&biw=1920&rlz=1C1NHXL_enSG810SG810#imgrc=fBrjw4FAwGnf8M)
-4. Background image from [freepik](https://www.freepik.com/premium-vector/toys-doodle-set_6551728.htm#page=1&query=toys&position=41)
 
 ### Logo and favicion
 1. [Free Logo Design](https://www.freelogodesign.org/)
@@ -268,6 +295,9 @@ The evolving of css display:
 2. Work towards Opacity and visibility, but realised the element still takes up space although not visible
 3. A compromise was decided that to fade-in the fontawesome icon upon hover - leaves a slightly unsightly of 'align-left' as fontawesome icon is hidden
 
+### Reversing display order in {% for %} loop
+1. Reverse the order of items displayed in a `{% for %}` loop, from [stackoverflow](https://stackoverflow.com/questions/45699660/jinja2-reverse-a-list)
+
 ### Box shodows
 CSS Scan [Beautiful CSS box-shadow examples](https://getcssscan.com/css-box-shadow-examples)
 
@@ -277,21 +307,26 @@ W3 Schools link [here](https://www.w3schools.com/css/css3_shadows.asp)
 Initally the idea is to on hover, increase the font size by 1.075x, but due to the misalignment that occurs link [here]().
 Work around is to just settle with text shadow and changing font color
 
-### Acknowledgements
+
+### Toastr pop up. 
+
+Lecturer Mr KX Chor for allowing us to reference his code.
+[This site](https://codeseven.github.io/toastr/demo.html) and [this site](http://plnkr.co/edit/6W9URNyyp2ItO4aUWzBB?preview) for information on toatr.options usage.
+[This site](https://stackoverflow.com/questions/44110049/toastr-options-dont-work) to resolve toatr.options not working
+
+
+
+### Jinja documentation
+
+Link [here](https://jinja.palletsprojects.com/en/2.11.x/templates/) for clarification on jinja
+
+### Flask documentation
+
+link [here](https://flask.palletsprojects.com/en/1.1.x/) for flask syntax
+
+## Acknowledgements
 
 - I received inspiration for this project from X
 - Lots of tips, inspiration and encouragement from the wonderful CI community at [Slack](https://code-institute-room.slack.com)
 
 
-# bugs
-- background of edit and post page
-- adding a login element
-- adding an image upload option
-- changing the display of the links after login
-- getting the date and add to the data
-- at less than 425 px there is right border
-- description does not come out
-- Edited successfully toastr pops up when click on back button after editing item
-
-# add-ons
-pop up "item added"/item deleted/item modified after submit
