@@ -22,7 +22,7 @@
 
 // Get current date
 function getDate() {
-  let dateSubStr = Date().substring(0,3) + 'day, '+ Date().substring(4,15) + ', ' + Date().substring(16,24) ;
+  let dateSubStr = Date().substring(4,15) + ', ' + Date().substring(16,24) ;
   document.getElementById('date').value = dateSubStr;
 }
 
