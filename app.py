@@ -77,25 +77,21 @@ def process_post_items():
     # if request.method == 'POST':
     print('Form-values grab:', request.form)
     
-    # item = {
-    #         'name': request.form.get('item_name'),
-    #         'description': request.form.get('description'),
-    #         'age': request.form.get('age'),
-    #         'condition': request.form.get('condition'),
-    #         'delete': request.form.get('delete_after'),
-    #         'date': request.form.get('date')
-    #     }
-
+    nickname = request.form.get('nickname')
+    email = request.form.get('email')
     name = request.form.get('item_name')
     description = request.form.get('description')
+    item_type = request.form.get('item_type')
     age = request.form.get('age')
     condition = request.form.get('condition')
     delete = request.form.get('delete_after')
     date = request.form.get('date')
 
-    print('delete', delete)
     form_errors = {}
 
+    if not name:
+        form_errors["name"] = "Please provide an item name"
+    
     if not name:
         form_errors["name"] = "Please provide an item name"
 
@@ -113,36 +109,18 @@ def process_post_items():
 
     print('form_errors: ', form_errors)
     
-    # if not email:
-    #     errors['email'] = "Please provide a valid email"
-
-    # if '@' not in email:
-    #     errors['email'] = "Your email is not properly formatted"
-
-
-    # check if 'can_send' checkbox is checked
-    # if 'can_send' in request.form:
-    #     can_send = True
-    # else:
-    #     can_send = False
-
     if len(form_errors) == 0:
-        # new_customer = {
-        #     'id': random.randint(1000, 9999),
-        #     'first_name': first_name,
-        #     'last_name': last_name,
-        #     'email': email,
-        #     'can_send': can_send,
-        # }
         item = {
+            'nickname': request.form.get('nickname'),
+            'email': request.form.get('email'),
             'name': request.form.get('item_name'),
             'description': request.form.get('description'),
+            'type': request.form.get('type'),
             'age': request.form.get('age'),
             'condition': request.form.get('condition'),
             'delete': request.form.get('delete_after'),
             'date': request.form.get('date')
         }
-
         mongo.db.items.insert_one(item)
         flash(f'Item "{item["name"]}" added', 'message')
         return redirect(url_for("item_list"))
