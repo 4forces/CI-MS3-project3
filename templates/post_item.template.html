@@ -17,6 +17,32 @@ Post Item
         <div class='row'>
             <div class="col">
                 <form method="POST">
+
+                <div class='row'>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <h5><label class="form-check-label">Posted by</label></h5>
+                            <input class="form-control {% if 'user' in errors %} is-invalid {% endif %}" type="text" name="nickname" placeholder="Enter nickname" value="{{ input_value.nickname }}"/>
+                            {% if 'name' in errors %}
+                            <div class="invalid-feedback">
+                                {{errors.nickname}}
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="form-group">
+                            <h5><label class="form-check-label">Contact</label></h5>
+                            <input class="form-control {% if 'email' in errors %} is-invalid {% endif %}" type="text" name="email" placeholder="Enter email" value="{{ input_value.email }}"/>
+                            {% if 'email' in errors %}
+                            <div class="invalid-feedback">
+                                {{errors.email}}
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+
                         <div class="form-group">
                             <h5><label class="form-check-label">Item name </label></h5>
                             <input class="form-control {% if 'name' in errors %} is-invalid {% endif %}" type="text" name="item_name" placeholder="Enter item name" value="{{ input_value.name }}"/>
@@ -37,6 +63,26 @@ Post Item
                             {% endif %}                            
                         </div>
 
+                        <div class="form-group">
+                            <h5><label class="form-label">Item type: </label></h5>
+                            <select class="custom-select {% if 'type' in errors %} missing-field {% endif %}" name="item_ype">
+                                <option selected disabled>Please select</option>
+                                <option value="Toys & Accessories">Toys & Accessories</option>
+                                <option value="Clothes & Wardrobe">Clothes & Wardrobe</option>
+                                <option value="Maternity (E.g. Pumps, Nursing pads)">Maternity (E.g. Pumps, Nursing pads)</option>
+                                <option value="Accessories (E.g. Strollers, Car seats)">Accessories (E.g. Strollers, Car seats)</option>
+                                <option value="Others">Others</option>
+                            </select>
+                            {% if 'delete' in errors %}
+                            <div class="feedback-text">
+                                {{errors.item_type}}
+                            </div>
+                            {% endif %} 
+                        </div>
+
+
+                <div class="row">
+                    <div class="col-sm-6">
                         <div class="form-group">
                             <h5>Age Range:</h5>
                             <div class= "{% if 'age' in errors %} missing-field {% endif %}">
@@ -59,7 +105,9 @@ Post Item
                             </div>
                             {% endif %}   
                         </div>
+                    </div>
 
+                    <div class="col-sm-6">
                         <div class="form-group">
                             <h5>Item Condition</h5>
                             <div class= "{% if 'condition' in errors %} missing-field {% endif %}">
@@ -82,6 +130,8 @@ Post Item
                             </div>
                             {% endif %}  
                         </div>
+                    </div>
+                </div>
 
                         <div class="input-group" hidden>
                             <h5>Upload Image</h5>
