@@ -214,3 +214,9 @@ a:link, a:visited, a:hover, a:active {
 #del-pg-cancel {
     color: #ffffff;
 }
+
+/* form validation */
+.missing-field {
+    border: 1px solid #dc3545;
+    border-radius: 5px;
+}
