@@ -66,85 +66,90 @@ def view_item_details(item_id):
     return render_template('item_details.template.html', item=item)
 
 
-# add item - with ['POST']
-@app.route('/items/post', methods=['POST', 'GET'])  # ok
-def post_items():
-    if request.method == 'POST':
-        print('Form-values grab:', request.form)
-        
-        # item = {
-        #         'name': request.form.get('item_name'),
-        #         'description': request.form.get('description'),
-        #         'age': request.form.get('age'),
-        #         'condition': request.form.get('condition'),
-        #         'delete': request.form.get('delete_after'),
-        #         'date': request.form.get('date')
-        #     }
-
-        name = request.form.get('item_name')
-        description = request.form.get('description')
-        age = request.form.get('age')
-        condition = request.form.get('condition')
-        delete = request.form.get('delete_after')
-        date = request.form.get('date')
-
-        print('name', name)
-        form_errors = {}
-
-        if not name:
-            form_errors["name"] = "Please provide an item name"
-
-        if not description:
-            form_errors['description'] = "Please provide a description"
-
-        if not age:
-            form_errors['age'] = "Please select the age range for this item"
-
-        if not condition:
-            form_errors['condition'] = "Please select the item condition"
-
-
-
-        print('form_errors: ', form_errors)
-        
-        # if not email:
-        #     errors['email'] = "Please provide a valid email"
-
-        # if '@' not in email:
-        #     errors['email'] = "Your email is not properly formatted"
-
-
-        # check if 'can_send' checkbox is checked
-        # if 'can_send' in request.form:
-        #     can_send = True
-        # else:
-        #     can_send = False
-
-        if len(form_errors) == 0:
-            # new_customer = {
-            #     'id': random.randint(1000, 9999),
-            #     'first_name': first_name,
-            #     'last_name': last_name,
-            #     'email': email,
-            #     'can_send': can_send,
-            # }
-            item = {
-                'name': request.form.get('item_name'),
-                'description': request.form.get('description'),
-                'age': request.form.get('age'),
-                'condition': request.form.get('condition'),
-                'delete': request.form.get('delete_after'),
-                'date': request.form.get('date')
-            }
-
-            mongo.db.items.insert_one(item)
-            flash(f'Item "{item["name"]}" added', 'message')
-            return redirect(url_for("item_list"))
-
-        else: 
-            return render_template('post_item.template.html', input_value=request.form, errors=form_errors)
-
+@app.route('/items/post', methods=['GET'])
+def show_post_items():
     return render_template('post_item.template.html',input_value={}, errors={})
+
+
+# add item - with ['POST']
+@app.route('/items/post', methods=['POST'])  # ok
+def process_post_items():
+    # if request.method == 'POST':
+    print('Form-values grab:', request.form)
+    
+    # item = {
+    #         'name': request.form.get('item_name'),
+    #         'description': request.form.get('description'),
+    #         'age': request.form.get('age'),
+    #         'condition': request.form.get('condition'),
+    #         'delete': request.form.get('delete_after'),
+    #         'date': request.form.get('date')
+    #     }
+
+    name = request.form.get('item_name')
+    description = request.form.get('description')
+    age = request.form.get('age')
+    condition = request.form.get('condition')
+    delete = request.form.get('delete_after')
+    date = request.form.get('date')
+
+    print('delete', delete)
+    form_errors = {}
+
+    if not name:
+        form_errors["name"] = "Please provide an item name"
+
+    if not description:
+        form_errors['description'] = "Please provide an item description"
+
+    if not age:
+        form_errors['age'] = "Please choose the age range for this item"
+
+    if not condition:
+        form_errors['condition'] = "Please indicate the item condition"
+
+    if not delete:
+        form_errors['delete'] = 'Please choose when to delete post'
+
+    print('form_errors: ', form_errors)
+    
+    # if not email:
+    #     errors['email'] = "Please provide a valid email"
+
+    # if '@' not in email:
+    #     errors['email'] = "Your email is not properly formatted"
+
+
+    # check if 'can_send' checkbox is checked
+    # if 'can_send' in request.form:
+    #     can_send = True
+    # else:
+    #     can_send = False
+
+    if len(form_errors) == 0:
+        # new_customer = {
+        #     'id': random.randint(1000, 9999),
+        #     'first_name': first_name,
+        #     'last_name': last_name,
+        #     'email': email,
+        #     'can_send': can_send,
+        # }
+        item = {
+            'name': request.form.get('item_name'),
+            'description': request.form.get('description'),
+            'age': request.form.get('age'),
+            'condition': request.form.get('condition'),
+            'delete': request.form.get('delete_after'),
+            'date': request.form.get('date')
+        }
+
+        mongo.db.items.insert_one(item)
+        flash(f'Item "{item["name"]}" added', 'message')
+        return redirect(url_for("item_list"))
+
+    else: 
+        print(request.form)
+        return render_template('post_item.template.html', input_value=request.form, errors=form_errors)
 
 
 # edit item - with ['POST']
