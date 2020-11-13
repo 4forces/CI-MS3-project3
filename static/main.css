@@ -220,3 +220,7 @@ a:link, a:visited, a:hover, a:active {
     border: 1px solid #dc3545;
     border-radius: 5px;
 }
+
+.feedback-text {
+    color:  #dc3545;
+}
