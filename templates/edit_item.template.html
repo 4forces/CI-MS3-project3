@@ -46,6 +46,19 @@ name: {{item.name}}
                         <textarea class="form-control" row="3" name="description">{{item.description}}</textarea>
                     </div>
 
+                    <div class="form-group">
+                        <h5><label class="form-label">Item type: </label></h5>
+                        <select class="custom-select" name="item_type">
+                            <option selected disabled>Please select</option>
+                            <option value="Toys & Accessories" {% if item.item_type == 'Toys & Accessories' %} selected {% endif %}>Toys & Accessories</option>
+                            <option value="Clothes & Wardrobe" {% if item.item_type == 'Clothes & Wardrobe' %} selected {% endif %}>Clothes & Wardrobe</option>
+                            <option value="Maternity (E.g. Pumps, Nursing pads)" {% if item.item_type == 'Maternity (E.g. Pumps, Nursing pads)' %} selected {% endif %}>Maternity (E.g. Pumps, Nursing pads)</option>
+                            <option value="Accessories (E.g. Strollers, Car seats)"{% if item.item_type == 'Accessories (E.g. Strollers, Car seats)' %} selected {% endif %}>Accessories (E.g. Strollers, Car seats)</option>
+                            <option value="Others" {% if item.item_type == 'Others' %} selected {% endif %}>Others</option>
+                        </select>
+                    </div>
+
+
                     <div class="row">
                         <div class="col-sm-6">
                             <div class="form-group">

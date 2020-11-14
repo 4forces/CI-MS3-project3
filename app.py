@@ -141,11 +141,15 @@ def process_post_items():
 def edit_items(item_id):
     if request.method == 'POST':
         item = {
+            'nickname': request.form.get('nickname'),
+            'email': request.form.get('email'),
             'name': request.form.get('item_name'),
             'description': request.form.get('description'),
+            'item_type': request.form.get('item_type'),
             'age': request.form.get('age'),
             'condition': request.form.get('condition'),
-            'delete': request.form.get('delete_after')
+            'delete': request.form.get('delete_after'),
+            'date': request.form.get('date')
         }
         mongo.db.items.update_one({"_id": ObjectId(item_id)}, {'$set': item})
         flash(f'Item "{item["name"]}" updated', 'info')  
