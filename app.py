@@ -149,7 +149,6 @@ def edit_items(item_id):
             'age': request.form.get('age'),
             'condition': request.form.get('condition'),
             'delete': request.form.get('delete_after'),
-            'date': request.form.get('date')
         }
         mongo.db.items.update_one({"_id": ObjectId(item_id)}, {'$set': item})
         flash(f'Item "{item["name"]}" updated', 'info')  
