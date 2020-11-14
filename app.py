@@ -121,7 +121,7 @@ def process_post_items():
             'email': request.form.get('email'),
             'name': request.form.get('item_name'),
             'description': request.form.get('description'),
-            'type': request.form.get('type'),
+            'item_type': request.form.get('item_type'),
             'age': request.form.get('age'),
             'condition': request.form.get('condition'),
             'delete': request.form.get('delete_after'),
