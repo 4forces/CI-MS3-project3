@@ -315,6 +315,10 @@ Lecturer Mr KX Chor for allowing us to reference his code.
 [This site](https://stackoverflow.com/questions/44110049/toastr-options-dont-work) to resolve toatr.options not working
 
 
+## Resolve display error in item_details page
+Resolve error: `Solve 'expected  ':', got '}' error in item_details display` on item_details.template.html
+with refernce from this [site](https://groups.google.com/g/pocoo-libs/c/hZIO4DziL2E?pli=1)
+
 
 ### Jinja documentation
 
