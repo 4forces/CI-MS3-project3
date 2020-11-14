@@ -75,7 +75,7 @@ def show_post_items():
 @app.route('/items/post', methods=['POST'])  # ok
 def process_post_items():
     # if request.method == 'POST':
-    print('Form-values grab:', request.form)
+    print('form values grab:', request.form)
     
     nickname = request.form.get('nickname')
     email = request.form.get('email')
@@ -89,14 +89,20 @@ def process_post_items():
 
     form_errors = {}
 
-    if not name:
-        form_errors["name"] = "Please provide an item name"
+    if not nickname:
+        form_errors["nickname"] = "Please provide a nickname"
+
+    if not email or '@' not in email:
+        form_errors["email"] = "Please provide a proper email"
     
     if not name:
         form_errors["name"] = "Please provide an item name"
 
-    if not description:
-        form_errors['description'] = "Please provide an item description"
+    # if not description:
+    #     form_errors['description'] = "Please provide an item description"
+    
+    if not item_type:
+        form_errors['item_type'] = "Please select an item type"
 
     if not age:
         form_errors['age'] = "Please choose the age range for this item"
@@ -104,8 +110,8 @@ def process_post_items():
     if not condition:
         form_errors['condition'] = "Please indicate the item condition"
 
-    if not delete:
-        form_errors['delete'] = 'Please choose when to delete post'
+    # if not delete:
+    #     form_errors['delete'] = 'Please choose duration to delete post'
 
     print('form_errors: ', form_errors)
     

@@ -22,8 +22,8 @@ Post Item
                     <div class="col-sm-6">
                         <div class="form-group">
                             <h5><label class="form-check-label">Posted by</label></h5>
-                            <input class="form-control {% if 'user' in errors %} is-invalid {% endif %}" type="text" name="nickname" placeholder="Enter nickname" value="{{ input_value.nickname }}"/>
-                            {% if 'name' in errors %}
+                            <input class="form-control {% if 'nickname' in errors %} is-invalid {% endif %}" type="text" name="nickname" placeholder="Enter nickname" value="{{ input_value.nickname }}"/>
+                            {% if 'nickname' in errors %}
                             <div class="invalid-feedback">
                                 {{errors.nickname}}
                             </div>
@@ -45,7 +45,7 @@ Post Item
 
                         <div class="form-group">
                             <h5><label class="form-check-label">Item name </label></h5>
-                            <input class="form-control {% if 'name' in errors %} is-invalid {% endif %}" type="text" name="item_name" placeholder="Enter item name" value="{{ input_value.name }}"/>
+                            <input class="form-control {% if 'name' in errors %} is-invalid {% endif %}" type="text" name="item_name" placeholder="Enter item name" value="{{ input_value.item_name }}"/>
                             {% if 'name' in errors %}
                             <div class="invalid-feedback">
                                 {{errors.name}}
@@ -55,7 +55,7 @@ Post Item
 
                         <div class="form-group">
                             <h5><label class="form-check-label">Description </label></h5>
-                            <textarea class="form-control {% if 'description' in errors %} is-invalid {% endif %}" row="3" name="description" placeholder="Enter item description" value="{{ input_value.description }}"></textarea>
+                            <textarea class="form-control {% if 'description' in errors %} is-invalid {% endif %}" row="3" name="description" placeholder="Enter item description (optional)" value="{{ input_value.description }}"></textarea>
                             {% if 'description' in errors %}
                             <div class="invalid-feedback">
                                 {{errors.description}}
@@ -65,7 +65,7 @@ Post Item
 
                         <div class="form-group">
                             <h5><label class="form-label">Item type: </label></h5>
-                            <select class="custom-select {% if 'type' in errors %} missing-field {% endif %}" name="item_ype">
+                            <select class="custom-select {% if 'item_type' in errors %} missing-field {% endif %}" name="item_type">
                                 <option selected disabled>Please select</option>
                                 <option value="Toys & Accessories">Toys & Accessories</option>
                                 <option value="Clothes & Wardrobe">Clothes & Wardrobe</option>
@@ -73,7 +73,7 @@ Post Item
                                 <option value="Accessories (E.g. Strollers, Car seats)">Accessories (E.g. Strollers, Car seats)</option>
                                 <option value="Others">Others</option>
                             </select>
-                            {% if 'delete' in errors %}
+                            {% if 'item_type' in errors %}
                             <div class="feedback-text">
                                 {{errors.item_type}}
                             </div>
@@ -146,10 +146,10 @@ Post Item
 
                         <div class="form-group">
                             <h5><label class="form-label">Delete after: </label></h5>
-                            <select class="custom-select {% if 'condition' in errors %} missing-field {% endif %}" name="delete_after">
-                                <option selected disabled>Please select</option>
+                            <select class="custom-select {% if 'delete' in errors %} missing-field {% endif %}" name="delete_after">
+                                <option disabled>Please select</option>
                                 <option value="1 Week">1 Week</option>
-                                <option value="1 Month">1 Month</option>
+                                <option selected value="1 Month">1 Month</option>
                                 <option value="3 Months">3 Months</option>
                             </select>
                             {% if 'delete' in errors %}
