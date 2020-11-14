@@ -206,6 +206,12 @@ a:link, a:visited, a:hover, a:active {
     background-size: cover;
 }
 
+#item-details {
+    background: linear-gradient(rgba(244,250,255, 0.725), rgba(244,250,255, 0.725)), url("/static/img/details.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
 /* Confirm delete page CSS */
 .alert, .btn-danger, .btn-success  {
     border-radius: 0.75rem;

@@ -8,23 +8,22 @@
 
 {% for item in item %}
 <div class="container">
-        <div class="row my-5 justify-content-center text-center">
-            <div class="col-8 frame text-center">
-                <h1>{{item.name}}</h1>
-                <h5>Description</h5>
-                <p>{% if item.description == '' %} Nil {% else %}{{item.description}}{% endif %}</p>
-                <h5>Item type</h5>
-                <p>{{item.item_type}}</p>
-                <h5>Age Range</h5>
-                <p>{{item.age}}</p>
-                <h5>Condition</h5>
-                <p>{{item.condition}}</p>
-                <p>Posted on: <b>{{item.date}}</b></p>
-                <p>by <b>{{item.nickname}}</b></p>
-                <h5>Contact</h5>
-                <p>{{item.email}}</p>
-            </div>
+    <div class="row my-5 justify-content-center text-center">
+        <div id="item-details" class="col-8 frame text-center">
+            <h1>{{item.name}}</h1>
+            <h5>Description</h5>
+            <p>{% if item.description == '' %} Nil {% else %}{{item.description}}{% endif %}</p>
+            <h5>Item type</h5>
+            <p>{{item.item_type}}</p>
+            <h5>Age Range</h5>
+            <p>{{item.age}}</p>
+            <h5>Condition</h5>
+            <p>{{item.condition}}</p>
+            <p>Posted on: <b>{{item.date}}</b>by <b>{{item.nickname}}</b></p>
+            <h5>Contact</h5>
+            <p>{{item.email}}</p>
         </div>
+    </div>
 </div>
 
 {% endfor %}
