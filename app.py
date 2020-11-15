@@ -51,6 +51,41 @@ def browse_items():
     return render_template('browse_items.template.html', items_stored=items)
 
 
+@app.route('/search', methods=["GET"])
+def show_search():
+    return render_template("search.template.html")
+
+
+@app.route('/search', methods=["POST"])
+def process_search():
+    search_item = request.form.get('search_item')
+    search_type = request.form.get('search_type')
+
+    search_criteria = {}
+
+    if search_item:
+        search_criteria['name'] = {
+            '$regex': search_item,
+            '$options': 'i'
+        }
+
+    if search_type:
+        search_criteria['item_type'] = {
+            '$regex': search_type,
+            '$options': 'i'
+        }
+
+    all_criteria = [search_item, search_type]
+
+    print(search_criteria)
+    
+    results = list(mongo.db.items.find(search_criteria))
+    print('all_criteria:',all_criteria)
+    print('results',results)
+    return render_template('search_results.template.html',items_searched = results)
+
+
+
 # display all items list - login view
 @app.route('/listings')  # ok
 def item_list():
@@ -75,6 +110,7 @@ def show_post_items():
 @app.route('/items/post', methods=['POST'])  # ok
 def process_post_items():
     # if request.method == 'POST':
+
     print('form values grab:', request.form)
     
     nickname = request.form.get('nickname')
