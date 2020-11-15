@@ -50,10 +50,10 @@ name: {{item.name}}
                         <h5><label class="form-label">Item type: </label></h5>
                         <select class="custom-select" name="item_type">
                             <option selected disabled>Please select</option>
-                            <option value="Toys" {% if item.item_type == 'Toys' %} selected {% endif %}>Toys</option>
-                            <option value="Clothes" {% if item.item_type == 'Clothes' %} selected {% endif %}>Clothes</option>
-                            <option value="Maternity" {% if item.item_type == 'Maternity' %} selected {% endif %}>Maternity</option>
-                            <option value="Accessories"{% if item.item_type == 'Accessories' %} selected {% endif %}>Accessories</option>
+                            <option value="Toys" {% if item.item_type == 'Toys' %} selected {% endif %}>Toys & Playthings</option>
+                            <option value="Clothes" {% if item.item_type == 'Clothes' %} selected {% endif %}>Clothes & Wardrobe</option>
+                            <option value="Maternity" {% if item.item_type == 'Maternity' %} selected {% endif %}>Maternity (E.g. Pumps, Nursing pads)</option>
+                            <option value="Accessories"{% if item.item_type == 'Accessories' %} selected {% endif %}>Accessories (E.g. Strollers, Car seats)</option>
                             <option value="Others" {% if item.item_type == 'Others' %} selected {% endif %}>Others</option>
                         </select>
                     </div>
