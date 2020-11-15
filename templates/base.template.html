@@ -33,9 +33,10 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav ml-auto">
-                    <a class="nav-item nav-link" href="{{ url_for('browse_items') }}">Browse Items<span class="sr-only">(current)</span></a>
-                    <a class="nav-item nav-link" href="{{ url_for('show_post_items') }}">Post Item</a>
-                    <a class="nav-item nav-link" href="{{ url_for('item_list') }}">Edit & Delete</a>
+                    <a class="nav-item nav-link" href="{{ url_for('browse_items') }}">Browse<span class="sr-only">(current)</span></a>
+                    <a class="nav-item nav-link" href="{{ url_for('show_search') }}">Search</a>
+                    <a class="nav-item nav-link" href="{{ url_for('show_post_items') }}">Submit</a>
+                    <a class="nav-item nav-link" href="{{ url_for('item_list') }}">Update/Remove</a>
                     <a class="nav-item nav-link" hidden href="{{ url_for('login') }}">Login</a>
                 <a class="nav-item nav-link" hidden href="{{ url_for('register') }}">Register</a>
                 </div>
