@@ -82,7 +82,7 @@ def process_search():
     results = list(mongo.db.items.find(search_criteria))
     print('all_criteria:',all_criteria)
     print('results',results)
-    return render_template('search_results.template.html',items_searched = results)
+    return render_template('search.template.html',items_searched = results)
 
 
 
