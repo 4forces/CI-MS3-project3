@@ -219,6 +219,15 @@ a:link, a:visited, a:hover, a:active {
     background-size: cover;
 }
 
+#item-details > p {
+    margin-bottom: 1.3rem;
+    font-size: 1.5rem;
+}
+
+#item-details > h4 {
+    margin-bottom: 0;
+}
+
 /* Confirm delete page CSS */
 .alert, .btn-danger, .btn-success  {
     border-radius: 0.75rem;
