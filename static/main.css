@@ -214,7 +214,7 @@ a:link, a:visited, a:hover, a:active {
 }
 
 #item-details {
-    background: linear-gradient(rgba(244,250,255, 0.85), rgba(244,250,255, 0.7)), url("/static/img/details.jpg");
+    background: linear-gradient(rgba(244,250,255, 0.85), rgba(244,250,255, 0.75)), url("/static/img/details.jpg");
     background-position: center;
     background-size: cover;
 }
