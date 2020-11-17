@@ -10,7 +10,7 @@ Post Item
     <div class="my-5" id="post-form">
         <div class='row text-center'>
             <div class="col">
-                <h1>Post Item</h1>
+                <h1>Submit Item</h1>
             </div>
         </div>
 
@@ -21,7 +21,7 @@ Post Item
                     <div class='row'>
                         <div class="col-sm-6">
                             <div class="form-group">
-                                <h5><label class="form-check-label">Posted by</label></h5>
+                                <h5><label class="form-check-label">Submitted by</label></h5>
                                 <input class="form-control {% if 'nickname' in errors %} is-invalid {% endif %}" type="text" name="nickname" placeholder="Enter nickname" value="{{ input_value.nickname }}"/>
                                 {% if 'nickname' in errors %}
                                 <div class="invalid-feedback">
