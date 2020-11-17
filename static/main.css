@@ -208,7 +208,7 @@ a:link, a:visited, a:hover, a:active {
 }
 
 #edit-form {
-    background: linear-gradient(rgba(244,250,255, 0.85), rgba(244,250,255, 0.85)), url("/static/img/edit.jpg");
+    background: linear-gradient(rgba(244,250,255, 0.9), rgba(244,250,255, 0.85)), url("/static/img/edit.jpg");
     background-position: center;
     background-size: cover;
 }
