@@ -48,7 +48,7 @@ The fonts used are from Google Fonts:
 
 The colour palette used is as follows: 
 
-<img src="static/img/readme/color-palette2.png" width="200" style="margin:0">
+<img src="static/img/readme/color-palette2.png" width="800" style="margin:0">
 
 ### User stories
 
@@ -72,9 +72,9 @@ This site has 5 main sections:
 - [Browse all items](#Browse-all-items)
 - [Item search](#Item-search)
 - [Submit new item](#Submit-new-item)
-- [Update/Remove item entry](#Update-or-remove-item-entry)
+- [Update/Remove item entry](#Update/Remove-item-entry)
 
-#### Landing Page
+### Landing Page
 
 This is the first page the visitor sees upon [arrival at this site](https://github.com/4forces/CI-MS3-project3/tree/master/static/img/readme/landing-page.PNG). 
 The visitor is greeted with a welcome message, which has a [background image]() of a child playing with toys.
@@ -88,14 +88,14 @@ There are four buttons linking to the other features of the site:
 
 The visitor may also access the other features via the links on the navbar.
 
-#### Browse all items
+### Browse All items
 
 Visitors are able to view items that have been submitted by other visitors or themselves. 
 All items that have been submitted are listed on [this page](https://github.com/4forces/CI-MS3-project3/tree/master/static/img/readme/browse2.png), starting with the most recent. When the visitor mouse-over, 
-the item-box will increase in size, indicating that it can be clicked on, leading to the item details page. 
+the item-box will increase in size, indicating that it can be clicked on, leading to the **Item Details page**. 
 Under **"CRUD"**, this section will fall under **"Read"**.
 
-##### Item details
+#### Item Details page
 
 [This page](https://github.com/4forces/CI-MS3-project3/tree/master/static/img/readme/item-details.PNG) shows all the information the visitor has keyed in when submitting the item:
 
@@ -110,7 +110,7 @@ Under **"CRUD"**, this section will fall under **"Read"**.
 
 The information is wrapped nicely and framed with an [image of children's clothes](https://github.com/4forces/CI-MS3-project3/tree/master/static/img/details.jpg).
 
-#### Item search
+### Item Search
 
 Visitors can search for items by item name and item type. There are five item types to select from:
 - Toys & Playthings
@@ -124,7 +124,7 @@ A screenshot of the item search page [here](https://github.com/4forces/CI-MS3-pr
 
 This section also covers the **"Read"** of **"CRUD"**
 
-### Submit new item
+### Submit New Item
 
 Users can submit items here. This page ([screenshot](https://github.com/4forces/CI-MS3-project3/tree/master/static/img/readme/submit-item.PNG)) requires the donor to input the following item fields:
 1. Nickname of donor
@@ -158,13 +158,10 @@ function getDate() {
 ### Update/Remove item entry
 
 This page ([screenshot](https://github.com/4forces/CI-MS3-project3/tree/master/static/img/readme/update-remove.PNG)) lists all the items submitted, with the option to **Edit** or **Delete** items. 
-
 If needed, users can update their item fields from this page.
 In the event the user wishes to remove his or her item, it can also be done here.
-
 Upon hover of the "Edit" and "Delete" buttons, an icon appears in the buttons to signal 
 an expected action from the user.
-
 This page covers the **"Update"** and **"Destroy"** portions of **"CRUD"**.
 
 #### "Edit Item" Page
@@ -180,9 +177,10 @@ A screenshot of the confirmation page [here](https://github.com/4forces/CI-MS3-p
 and the "Confirm" button to highlight to the user that deletion is a serious action since it is irreversible. 
 
 ### Features Left to Implement
+
 1. **User Login** - For improved management (editing and deletion) of user submitted items
 2. **Submit item page: Picture upload** - It is usually common for visitors to expect to see pictures as 
-part of their consideration before obtaining the item
+part of their consideration before acquiring the item
 3. **Submit item page: Multi options selection for age range** - For example, some items can be used by both toddlers and pres-choolers
 3. **Submit items: Auto deletion of submitted post** - This will be will be a good-to-have for items management
 4. **Browse page: Item tagging** - Cross-item referencing will help visitors in their search for items
@@ -286,7 +284,7 @@ No. | Test Case | Expected Result(s) | Remarks
 ### Submit Item Page
 
 No. | Test Case | Expected Result(s)
--|-|-|-
+-|-|-
 1 | Key in all fields and select radio buttons and click "Submit" | (i) User will be brought to "Update or Remove Items" Page, (ii) Flash message **Item "\<item name>" added** will appear.
 2 | Leave any field empty and click "Submit" | User will be prompted to provide compulsory fields
 3 | Leave out '@' from the email in "Contact" field | User will be prompted to provide a proper email
@@ -386,7 +384,7 @@ To clone this project, please do the following:
 
 
 ### Site Theme and Appearance
-- [Pinterest](https://www.pinterest.com/), which led to [Jasusona](https://demo.hasthemes.com/shopify/jadusona-cm.html)
+- [Pinterest](https://www.pinterest.com/), which led to [Jadusona](https://demo.hasthemes.com/shopify/jadusona-cm.html)
 - [Code Institute Slack community](https://code-institute-room.slack.com) for recommending the following Chrome Extensions:
    - [Color palette](http://palette.site/) to extract reference site color theme
    - [Color pickr eyedropper](https://vidsbee.com/ColorPick/) to identify site colours
@@ -420,14 +418,14 @@ To clone this project, please do the following:
 
 ### Deployment to Heroku
 
-- Lecturer Mr. KX Chor's for his detailed step-by-step guidance
+- Lecturer [Mr. KX Chor's]((https://github.com/kunxin-chor) for his detailed step-by-step guidance
 
 ---
 
 ## Acknowledgements
 
-- The wonderful [CI community at Slack](https://code-institute-room.slack.com) for numerous useful tips, inspiration and motivation :sparkling_heart:
-- Our Lecturer [Mr. Paul KX Chor](https://github.com/kunxin-chor) for much patience & effort in teaching and sharing his deep knowledge with us :clap:
-- My classmates (Collin, Eddy, Frances, JY and Rui Shan) in the spirit of sticking together learning, stuggling :) and striving :satisfied:
+- The wonderful CI community at Slack for numerous useful tips, inspiration and motivation :sparkling_heart:
+- Our Lecturer for much patience & effort in teaching and sharing his deep knowledge with us :clap:
+- My classmates (Collin, Eddy, Frances, JY and Rui Shan) in the spirit of sticking together - Encouraging, striving, struggling :satisfied:
 
 **For education purposes only**
