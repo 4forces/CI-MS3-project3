@@ -186,9 +186,12 @@ part of their consideration before acquiring the item
 4. **Browse page: Item tagging** - Cross-item referencing will help visitors in their search for items
 5. **Browse and Search pages: Option to sort by date of submission** - For better user experience. Current feature is just from newest to oldest
 6. **Browse and Search pages: Pagination of browse/search results** - Currently all items are shown
-7. **Search page: More search filters, for e.g. by condition, age range** - Also for optimal user experience
-8. **Edit page: Auto-store "current date and time" upon Edit** - Currently this is only implemented when user submits item
-9. **Edit and Delete buttons: Fading out of text, and fading in of icon upon mouse-over** - For better aesthetics. Refer to last point in *Additional Notes on the Development of Features* for more information
+7. **Browse and Search pages: "Back to top button** - For a more pleasant user experience
+8. **Search page: More search filters, for e.g. by condition, age range** - Also for optimal user experience
+9. **Edit page: "Go Back" button to return to update/remove page** - User can still click on the Update/Remove on the navbar, but this may not be  intuitive or obvious
+10. **Edit page: Auto-store "current date and time" upon Edit** - Currently this is only implemented when user submits item
+11. **Edit and Delete buttons: Fading out of text, and fading in of icon upon mouse-over** - For better aesthetics. Refer to last point in *Additional Notes on the Development of Features* for more information
+12. **Auto delete post after 1 month, 3 months or 1 week as indicated by user during item submission** - Currently this value is only being stored and not used
 
 
 ### Additional Notes on the Development of Features
@@ -304,7 +307,7 @@ No. | Test Case | Expected Result(s)
 
 - Text with no spaces exceeds the container width in item boxes (screenshot [here](https://github.com/4forces/CI-MS3-project3/tree/master/static/img/readme/text-exceeds-container.PNG))
 - Repeat of commit messages due to infamiliarity using the *git rebase* function (screenshot [here](https://github.com/4forces/CI-MS3-project3/tree/master/static/img/readme/rebase-repeat-commits2.PNG))
-- description is not saved and does not come out when form refresh
+- Line 184 of `app.py` gives the following error `f-string is missing placeholderscornflakes(F541)` 
 
 
 ---
@@ -388,6 +391,7 @@ To clone this project, please do the following:
 - [Code Institute Slack community](https://code-institute-room.slack.com) for recommending the following Chrome Extensions:
    - [Color palette](http://palette.site/) to extract reference site color theme
    - [Color pickr eyedropper](https://vidsbee.com/ColorPick/) to identify site colours
+- [Sticker Footer](https://getbootstrap.com/docs/4.0/examples/sticky-footer/) from bootstrap
 
 
 ### Logo and favicion
@@ -403,7 +407,9 @@ To clone this project, please do the following:
   - [Adam Pritchard's Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
   
   - [commonmark.org](https://commonmark.org/help/)
+  
   - [Github Guides - Markdown Cheatsheet](https://guides.github.com/pdfs/markdown-cheatsheet-online.pdf)
+ 
   - [Line breaks in markdown](https://gist.github.com/shaunlebron/746476e6e7a4d698b373)
 
   **Writing of the Readme:**
@@ -425,7 +431,7 @@ To clone this project, please do the following:
 ## Acknowledgements
 
 - The wonderful CI community at Slack for numerous useful tips, inspiration and motivation :sparkling_heart:
-- Our Lecturer for much patience & effort in teaching and sharing his deep knowledge with us :clap:
+- Our Lecturer Mr. Paul Chor for much patience & dedication in teaching and sharing his deep knowledge with us :clap:
 - My classmates (Collin, Eddy, Frances, JY and Rui Shan) in the spirit of sticking together - Encouraging, striving, struggling :satisfied:
 
 **For education purposes only**
