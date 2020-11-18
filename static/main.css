@@ -20,12 +20,52 @@ body {
 
 
 /* Buttons CSS */
-.bt-big {
-  background-color: rgba(148, 199, 235, 0.7);
+#browse-button {
+    background: linear-gradient(rgba(148, 199, 235, 0.8), rgba(148, 199, 235, 0.8)), url("/static/img/letters.jpg");
+    background-position: top;
+    background-size: cover;
 }
 
-.bt-big:hover {
-  background-color: rgba(255, 112, 138, 0.7);
+#browse-button:hover {
+    background: linear-gradient(rgba(255, 112, 138, 0.7), rgba(255, 112, 138, 0.7)), url("/static/img/letters.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+#search-page-button {
+    background: linear-gradient(rgba(148, 199, 235, 0.85), rgba(148, 199, 235, 0.85)), url("/static/img/blocks.jpg");
+    background-position: top;
+    background-size: cover;
+}
+
+#search-page-button:hover {
+    background: linear-gradient(rgba(255, 112, 138, 0.85), rgba(255, 112, 138, 0.85)), url("/static/img/blocks.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+#submit-button {
+    background: linear-gradient(rgba(148, 199, 235, 0.65), rgba(148, 199, 235, 0.65)), url("/static/img/toys.jpg");
+    background-position: top;
+    background-size: cover;
+}
+
+#submit-button:hover {
+    background: linear-gradient(rgba(255, 112, 138, 0.65), rgba(255, 112, 138, 0.65)), url("/static/img/toys.jpg");
+    background-position: center;
+    background-size: cover;
+}
+
+#update-delete-button {
+    background: linear-gradient(rgba(148, 199, 235, 0.75), rgba(148, 199, 235, 0.75)), url("/static/img/beads.jpg");
+    background-position: top;
+    background-size: cover;
+}
+
+#update-delete-button:hover {
+    background: linear-gradient(rgba(255, 112, 138, 0.75), rgba(255, 112, 138, 0.75)), url("/static/img/beads.jpg");
+    background-position: center;
+    background-size: cover;
 }
 
 .bt {
@@ -67,6 +107,7 @@ body {
   transform: scale(1.05);
   box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
+
 
 
 /* <a> tag CSS */
