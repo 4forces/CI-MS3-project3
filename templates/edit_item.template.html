@@ -110,9 +110,9 @@ Edit Item
                         <h5><label class="form-label">Delete after: </label></h5>
                         <select class="custom-select" name="delete_after">
                             <option selected disabled>Please select</option>
-                            <option value="1 Week" {% if item.delete == '1 Week' %} selected {% endif %}>1 Week</option>
                             <option value="1 Month" {% if item.delete == '1 Month' %} selected {% endif %}>1 Month</option>
                             <option value="3 Months" {% if item.delete == '3 Months' %} selected {% endif %}>3 Months</option>
+                            <option value="1 Week" {% if item.delete == '1 Week' %} selected {% endif %}>1 Week</option>                        
                         </select>
                     </div>
 
