@@ -1,336 +1,432 @@
+
 # GiftKids - A simple site to bless others, or to receive blessings
 
-<img> from am i responsive
+img <img> from am i responsive
 ***
 
 ## Overview
 
-Most parents and caregivers of children will understand how fast kids outgrow the things they own, 
-whether is it clothes, toys or accesories like steamers and child seats. This developer had the
-privilege of witnessing the generosity of many around him, who gratefully share children's resources
-with whomvever that needs. At times, the donor may be at the receiving end, with their gifts coming back to them, 
-since children (especially toddlers) quickly outgrow what they use. However, at times caregivers may be urgently 
-looking for something, yet clueless how and where to start. This brings us to the objective of this site.
+Most parents and caregivers of children will agree that children outgrow things very quickly, 
+whether is it their clothes or toys. Even other accesories like bottle steamers and child seats 
+can be passed around once not needed. Looking around, it is not unusual to observe
+family, friends and colleagues who will not mind giving away unused children's resources 
+to others in need. 
+
+At times, some parents wish to save on extra spending, and do not mind using handed-down items. 
+Some "donors", upon the birth of their subsequent child, may even look to taking back their
+gifts (for e.g. strollers) to be used. 
+
+Conceived with the thought of promoting spirit of generosity and community sharing, this site offers itself as a platform for donors and receivers to connect with each other and exchange
+child-bearing resources. 
+
+This project is deployed on Heroku [here](https://ci-ms3-giftkids.herokuapp.com/).
 
 ### Objective
 
-GiftKids presents itself as a fictional platform for parents and and caregivers looking to give away items 
-do not need, or to look for items they need, on a donation basis. It is hoped that a community and generous spirit of 
-sharing and giving can be promoted. 
+GiftKids presents itself as a fictional platform for parents and caregivers to exchange 
+child-bringing resources on a donation basis. Parents can use this site to give away things they already 
+have or do not need anymore. For parents looking to save, resources can be sourced through this site.
+
 ***
 
 ## UX and UI
 
-This site is designed to be visually appealing to parents and kid-lovers in mind, from the 
-colours used to the font selection. It has a "cutesy" touch, and models itself after sites that sell children related items. 
-The reference website used for the color theme, look and feel is obtained from homepage layout examples at the website: ["Jadusona"](https://demo.hasthemes.com/shopify/jadusona-cm.html),
-which in turn was sourced while browsing through [Pinterest](https://www.pinterest.com/) for appearance inspirations. 
-The fonts used are [Fredoka One](https://fonts.google.com/specimen/Fredoka+One?query=fredoka) for headings and [Ubuntu](https://fonts.google.com/specimen/Ubuntu?query=ubuntu) for contents
+This site is designed in mind to be visually appealing to parents and kids-lovers. From the 
+[colour palette](https://github.com/4forces/CI-MS3-project3/tree/master/static/img/readme/color-palette2.png) used to the font family 
+([Fredoka One](https://github.com/4forces/CI-MS3-project3/tree/master/static/img/readme/font-fredokaone.PNG) for headings, 
+[Ubuntu](https://github.com/4forces/CI-MS3-project3/tree/master/static/img/readme/font-ubuntu.PNG) for content). 
+
+This site aims to model itself after sites that sell children related items. 
+The reference websites for the color scheme, the look and feel is obtained from the website: 
+["Jadusona"](https://demo.hasthemes.com/shopify/jadusona-cm.html), from various examples in 
+the "Homepage Layouts." section. This website  was chanced upon while searching for children 
+website inspirations on [Pinterest](https://www.pinterest.com/).
+
+The fonts used are from Google Fonts:
+- [Fredoka One](https://fonts.google.com/specimen/Fredoka+One?query=fredoka) 
+- [Ubuntu](https://fonts.google.com/specimen/Ubuntu?query=ubuntu)
+
 The colour palette used is as follows: 
 
-Colour Palette:
-<img src="static/images/readme/#" width="200" style="margin:0">
+<img src="static/img/readme/color-palette2.png" width="200" style="margin:0">
 
 ### User stories
 
-* "I believe in recycling, re-using things that are still usable and reducing waste, since children grow up quickly" - *A parent who believes in saving the earth*
-* "I wish to give away used items from my children as they have only been used a short while" - *Someone looking to give away their items*
-* "I am looking for items for my kids, and do not wish to spend too much since they will quickly outgrow it" - *A parent or caregiver looking for recylable kids items*
+1. "I believe child-bringing resources that are still usable should be shared, since young children outgrow their belongings so quickly." - *A parent who believes in sharing items that can still be used*
+2. "I wish to give away used items from bringing up my children. As they have only been used a short while, it wil be a waste to throw it away." - *A generous soul*
+3. "I have many unopened gifts (toys and clothes) from well-wishers, that I hope to bless other families with." - *Someone who has received many blessings and wishes to do same for other children*
+4. "I am looking for items for my kids, and do not wish to spend extra cash since they will quickly outgrow it." - *A parent or caregiver looking for recylable kids items*
 
 
-### Wireframes and Diagrams
+### Wireframes and ER Diagrams
 
- *&Label diagram titles in wireframe*
+* [Wireframe for desktop](https://github.com/4forces/CI-MS3-project3/tree/master/static/img/readme/wireframe-desktop.png)
+* [Wireframe for mobile](https://github.com/4forces/CI-MS3-project3/tree/master/static/img/readme/wireframe-mobile.png)
+* [ER Diagram and Relationship Schema](https://github.com/4forces/CI-MS3-project3/tree/master/static/img/readme/erd2-rs2.png)
 
-* [Wireframes (desktop)](/images/#)
-* [Wireframes (mobile)](/images/#)
-* [ER Diagrams](/images/#)
-* [Logical Diagram](/images/#)
+## Features
 
-### Features
+This site has 5 main sections: 
 
-This site has mainly three sections: 
+- [Landing page](#Landing-page) 
+- [Browse all items](#Browse-all-items)
+- [Item search](#Item-search)
+- [Submit new item](#Submit-new-item)
+- [Update/Remove item entry](#Update-or-remove-item-entry)
 
-- [Landing page](#Landing-Page) 
-- [View items](#View-Items)
-- [Search items](#Search)
-- [Post items](#Post-Items)
-- [Edit/Delete items](#Edit/Delete-Items)
-- 
+#### Landing Page
 
+This is the first page the visitor sees upon [arrival at this site](https://github.com/4forces/CI-MS3-project3/tree/master/static/img/readme/landing-page.PNG). 
+The visitor is greeted with a welcome message, which has a [background image]() of a child playing with toys.
+A repeated graphic of [children's toys](https://github.com/4forces/CI-MS3-project3/tree/master/static/img/bg-body.jpg) is used as a matching
+background to the theme of this site. 
+There are four buttons linking to the other features of the site:
+- Browse all
+- Item Search
+- Submit New item
+- Update or Remove Entry
 
+The visitor may also access the other features via the links on the navbar.
 
-### Landing Page
+#### Browse all items
 
-This page allows potential users to sign up, browse items and post items. 
-The design is kept sinmple and follows a color theme for children website
-[screenshot](/images/#)
+Visitors are able to view items that have been submitted by other visitors or themselves. 
+All items that have been submitted are listed on [this page](https://github.com/4forces/CI-MS3-project3/tree/master/static/img/readme/browse2.png), starting with the most recent. When the visitor mouse-over, 
+the item-box will increase in size, indicating that it can be clicked on, leading to the item details page. 
+Under **"CRUD"**, this section will fall under **"Read"**.
 
-### View Items
+##### Item details
 
-Users are able to view items that have been uploaded by other users or themselves. 
+[This page](https://github.com/4forces/CI-MS3-project3/tree/master/static/img/readme/item-details.PNG) shows all the information the visitor has keyed in when submitting the item:
 
-### Search
+- Item name
+- Description
+- Item type
+- Age range
+- Condition
+- Date submitted
+- Nickname of donor
+- Contact email of donor
 
-Users can searhc for items by:
-- category/type
-- condition
-- user
+The information is wrapped nicely and framed with an [image of children's clothes](https://github.com/4forces/CI-MS3-project3/tree/master/static/img/details.jpg).
 
-### Post Items
+#### Item search
 
-Users can post items they wish to give away
+Visitors can search for items by item name and item type. There are five item types to select from:
+- Toys & Playthings
+- Clothes & Wardrobe
+- Maternity (E.g. Pumps, Nursing pads)
+- Accessories (E.g. Strollers, Car seats)
+- Others
 
-### Edit/Delete Items
+In line with the website's theme, the search box background is an [image of a little girl's dress](https://github.com/4forces/CI-MS3-project3/tree/master/static/img/search.jpg)
+A screenshot of the item search page [here](https://github.com/4forces/CI-MS3-project3/tree/master/static/img/readme/search-page.png). 
 
-Users can edit and/or delete items they have already posted. 
+This section also covers the **"Read"** of **"CRUD"**
+
+### Submit new item
+
+Users can submit items here. This page ([screenshot](https://github.com/4forces/CI-MS3-project3/tree/master/static/img/readme/submit-item.PNG)) requires the donor to input the following item fields:
+1. Nickname of donor
+2. Contact email
+3. Item name
+4. Description (Optional field)
+5. Item type (Choose from 5 categories)
+6. Age range (Infant, Toddler or Preschooler)
+7. Condition (New, Like New, Used)
+8. Delete after (1 week, 1 month, 3 months. Default selection is 1 month)
+
+The "Submit Item" box is also nicely framed with a related background [image](https://github.com/4forces/CI-MS3-project3/tree/master/static/img/post.jpg).
+
+This is the **"Create"** part of **"CRUD"**.
+
+Behind the scenes, the following JavaScript was used to capture the date and time of the submission:
+This data was passed to a hidden html element and captured as part of the `request.form` method. The 
+JavaScript and HTML code blocks are appended.
+
+```javascript
+// Javascript to capture date and time of submission
+function getDate() {
+  let dateSubStr = Date().substring(4,15) + ', ' + Date().substring(16,24) ;
+  document.getElementById('date').value = dateSubStr;
+}
+```
+```html
+<!--hidden html input element in post_item.template.html -->
+<input id="date" name="date" hidden>
+```
+### Update/Remove item entry
+
+This page ([screenshot](https://github.com/4forces/CI-MS3-project3/tree/master/static/img/readme/update-remove.PNG)) lists all the items submitted, with the option to **Edit** or **Delete** items. 
+
+If needed, users can update their item fields from this page.
+In the event the user wishes to remove his or her item, it can also be done here.
+
+Upon hover of the "Edit" and "Delete" buttons, an icon appears in the buttons to signal 
+an expected action from the user.
+
+This page covers the **"Update"** and **"Destroy"** portions of **"CRUD"**.
+
+#### "Edit Item" Page
+
+Upon clicking on the "Edit" button, the user is brought to the "Edit Item" page ([screenshot](https://github.com/4forces/CI-MS3-project3/tree/master/static/img/readme/edit-item.PNG)). 
+The item values are pulled from the database and displayed in its respective fields for the user to modify.
+This page has a custom [image of toys](https://github.com/4forces/CI-MS3-project3/tree/master/static/img/edit.jpg) as background to suit the site theme.
+
+#### "Delete Item" Page
+
+When the "Delete" button is clicked, the site prompts the user if he or she wishes to proceed with the deletion. 
+A screenshot of the confirmation page [here](https://github.com/4forces/CI-MS3-project3/tree/master/static/img/readme/delete-item.PNG). Red colour is used as the background of the dialog box, 
+and the "Confirm" button to highlight to the user that deletion is a serious action since it is irreversible. 
 
 ### Features Left to Implement
-- **User Login** for better management of posts
-- **Picture upload**
-- **TBC...**
-- ```toastr pop up "item added"/item deleted/item modified after submit```
+1. **User Login** - For improved management (editing and deletion) of user submitted items
+2. **Submit item page: Picture upload** - It is usually common for visitors to expect to see pictures as 
+part of their consideration before obtaining the item
+3. **Submit item page: Multi options selection for age range** - For example, some items can be used by both toddlers and pres-choolers
+3. **Submit items: Auto deletion of submitted post** - This will be will be a good-to-have for items management
+4. **Browse page: Item tagging** - Cross-item referencing will help visitors in their search for items
+5. **Browse and Search pages: Option to sort by date of submission** - For better user experience. Current feature is just from newest to oldest
+6. **Browse and Search pages: Pagination of browse/search results** - Currently all items are shown
+7. **Search page: More search filters, for e.g. by condition, age range** - Also for optimal user experience
+8. **Edit page: Auto-store "current date and time" upon Edit** - Currently this is only implemented when user submits item
+9. **Edit and Delete buttons: Fading out of text, and fading in of icon upon mouse-over** - For better aesthetics. Refer to last point in *Additional Notes on the Development of Features* for more information
+
+
+### Additional Notes on the Development of Features
+
+**Solution to resolve favicon 404 error at Edit/Delete item page:** Referred to this post at [stackoverflow](https://stackoverflow.com/questions/27234593/setting-up-static-folder-path-in-flask1)
+to resolve favicon could not load (404) error when viewing the *Edit page* and *Confirm Delete page*. 
+
+**Code for writing the CRUD Functions:** [Tim Nelson's (CI) Task Manager](https://github.com/Code-Institute-Solutions/TaskManager/tree/master/08-SearchingWithinTheDatabase/01-text_index_searching)
+example was very helpful reference, especially when coding the *Create* and *Update* features. 
+
+**Reversing Order of Items Displayed (Most recent submissions first):** The original order of items for *Search* and *Browse* pages was oldest submissions at the top. 
+To reverse this order a solution was found on [stackoverflow](https://stackoverflow.com/questions/45699660/jinja2-reverse-a-list).
+
+**Box Shadows for Contrast:** Box shadows were added so that the pages will not look too "flat".
+The styles for box shadows were adopted from [CSS Scan](https://getcssscan.com/css-box-shadow-examples).
+
+
+**Manipulating toastr Pop-up Elements:**
+For a better visual experience, [toastr](https://github.com/CodeSeven/toastr) was implemented for the flash messages. 
+[This site](https://codeseven.github.io/toastr/demo.html) and [this site](http://plnkr.co/edit/6W9URNyyp2ItO4aUWzBB?preview) was studied intently on the usage of `toastr.options`.
+Issues with `toastr.options` was resolved with guidance from [here](https://stackoverflow.com/questions/44110049/toastr-options-dont-work).
+
+
+**Resolve "Template Syntax Error" when displaying *item_details* page:** At one point in the development process, displaying **item_details.template.html** gave the following error:
+```
+template syntax error: expected token ':', got '}
+```
+A solution was eventually found [here](https://groups.google.com/g/pocoo-libs/c/hZIO4DziL2E?pli=1).
+
+
+**Displaying Icons for Edit and Delete Buttons Upon Mouse-Over:**
+The initial concept arose from [here](https://webdeasy.de/en/top-css-buttons-en/?referer=dev-updated-f41).
+In the beginning, JavaScript method  (referenced from [here](https://www.w3schools.com/Jsref/event_onmouseover.asp)) was used to achieve transition
+effect. However, the transition was abrupt and not smooth. Alternative workarounds were explored via CSS and tested out, referencing from stackoverflow [here](https://stackoverflow.com/questions/44573480/change-text-content-on-hover) and 
+[here](https://stackoverflow.com/questions/33057737/css-replacing-a-text-on-hover-but-smooth-transition-to-the-new-text-does-not-w).
+Eventually, with reference from [here](https://stackoverflow.com/questions/3331353/transitions-on-the-css-display-property) (also stackoverflow), it was decided 
+to have the icons hidden, and displayed only when mouse-over. As to how to point to fontawesome content in CSS, this [link](https://stackoverflow.com/questions/20782368/use-font-awesome-icon-as-css-content) gave an explanation.
 
 ---
 
 ## Technologies Used
 
-1. [HTML](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML_basics)
-   - The standard markup langauge to display document in web browsers.
-2. [CSS](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/CSS_basics)
-   - Web content styling 
-3. [JavaScript](https://jquery.com)
-4. [Flask](https://jquery.com)
-5. [Python 3.8](https://jquery.com)
-6. [MongoDB](https://jquery.com)
-    - The project uses **JQuery** to simplify DOM manipulation. 
-7. [Heroku](https://jquery.com)
-    - The project uses **JQuery** to simplify DOM manipulation.
-8. [JQuery](https://jquery.com)
-    - The project uses **JQuery** to simplify DOM manipulation.
-9. [toastr](https://github.com/CodeSeven/toastr) for message pop-ups upon POST, EDIT, DELETE items
-10. [bootstrap](https://getbootstrap.com/)
-11. [Adobe Photoshop](https://www.adobe.com/sea/products/photoshop.html?sdid=YKHWGJBS&mv=search&ef_id=Cj0KCQiAhZT9BRDmARIsAN2E-J3nMUmJtn6TzrJSACgqgz8qd_J6Uvdp8mOKj4bch-nX2vdyaVi6PQAaAmu0EALw_wcB:G:s&s_kwcid=AL!3085!3!444551131429!e!!g!!adobe%20photoshop&gclid=Cj0KCQiAhZT9BRDmARIsAN2E-J3nMUmJtn6TzrJSACgqgz8qd_J6Uvdp8mOKj4bch-nX2vdyaVi6PQAaAmu0EALw_wcB) to edit some of the images
-12. [Fontawesome](https://www.bootstrapcdn.com/fontawesome/) 
+1. [HTML](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML_basics) to display contents in browser
+2. [CSS](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/CSS_basics) page styling customisatoin
+3. [JavaScript](https://en.wikipedia.org/wiki/JavaScript) for DOM manipulation
+4. [bootstrap](https://getbootstrap.com/) for the frontend development
+5. [Fontawesome](https://www.bootstrapcdn.com/fontawesome/) iconsets for buttons
+6. [Gitpod](https://www.gitpod.io/) online cloud develop environment
+6. [Python](https://www.python.org/) as the backend development language
+7. [Flask](https://flask.palletsprojects.com/en/1.1.x/) web framework
+8. [MongoDB](https://www.mongodb.com/) for data storage
+9. [Heroku](https://www.heroku.com/) for cloud platform deplpyment
+10. [toastr](https://github.com/CodeSeven/toastr) for flash message pop-ups upon POST, EDIT, DELETE items
+11. [ERDplus](https://erdplus.com/) to draw ER Diagrams and Relationship Schema
+11. [Balsamiq](https://balsamiq.com/wireframes/desktop/) for drawing wireframes
+12. [Adobe Photoshop](https://www.adobe.com/sea/products/photoshop.html) for image editing and manipulation
 
 ---
 
 ## Testing
 
 Manual testing was done on all links and Pages. 
-
 Test cases are as follows:
-1. 
-2. 
-3. 
 
-Request
+### Landing Page
 
-In this section, you need to convince the assessor that you have conducted enough testing to legitimately believe that the site works well. Essentially, in this part you will want to go over all of your user stories from the UX section and ensure that they all work as intended, with the project providing an easy and straightforward way for the users to achieve their goals.
+No. | Test Case | Expected Result(s)
+-|-|-
+1 | Click on the "Giftkids" icon at the top right | User will be brought to the *Landing Page*
+2 | Click "Browse" on "Browse All" button, or "Browse" on the navbar | User will be brought to the *Browse Items* page
+3 | Click on "Item Search" button, or "Search" on the navbar | User will be brought to the *Search Page*
+4 | Click on "Submit New Item" button, or "Submit" on the navbar | User will be brought to the *Update or Remove items Page*
 
-Whenever it is feasible, prefer to automate your tests, and if you've done so, provide a brief explanation of your approach, link to the test file(s) and explain how to run them.
+### Browse Items Page
 
-For any scenarios that have not been automated, test the user stories manually and provide as much detail as is relevant. A particularly useful form for describing your testing process is via scenarios, such as:
+No. | Test Case | Expected Result(s)
+-|-|-
+1 | Mouse-over any item-box | Item-box will be expanded slightly
+2 | Click on item-box | User will be redirected to *Item Details page*
 
-1. Contact form:
-    1. Go to the "Contact Us" page
-    2. Try to submit the empty form and verify that an error message about the required fields appears
-    3. Try to submit the form with an invalid email address and verify that a relevant error message appears
-    4. Try to submit the form with all inputs valid and verify that a success message appears.
+### Search Items Page
 
-In addition, you should mention in this section how your project looks and works on different browsers and screen sizes.
+No. | Test Case | Expected Result(s) | Remarks
+-|-|-|-
+1 | Click on "Search" button | All submitted items listed | -
+2 | Type in an item name (For e.g. "chair" or "bottle") | The item(s) containing the word "chair" or "bottle will displayed | Search by item name only
+3 | Select one of the 5 item types from the dropdown list (For e.g. "Toys and Playthings") | All items with type "Toys and Playthings" will be displayed | Search by item type only
+4 | Type in an item name and select an item type (For e.g. type "jumpers", select "clothes") | All items with "jumpers" in their name and type: "clothes" will be displayed | Search by both item name and type
+5 | Mouse-over any item-box in search results| Item-box expand animation will be observed | -
+6 | Click on item-box in search results | User will be redirected to *Item Details page* | - 
 
-You should also mention in this section any interesting bugs or problems you discovered during your testing, even if you haven't addressed them yet.
+### Submit Item Page
 
-If this section grows too long, you may want to split it off into a separate file and link to it from here.
+No. | Test Case | Expected Result(s)
+-|-|-|-
+1 | Key in all fields and select radio buttons and click "Submit" | (i) User will be brought to "Update or Remove Items" Page, (ii) Flash message **Item "\<item name>" added** will appear.
+2 | Leave all fields empty and click "Submit" | User will be prompted to provide all compulsory fields
+3 | Leave out '@' from the email in "Contact" field | User will be prompted to provide a proper email
+
+### Update or Remove items Page
+
+No. | Test Case | Expected Result(s)
+-|-|-
+1 | Click on "Edit" button | User will be redirected to "Edit Item" page, allowing user to view and make changes to previously entered fields.
+2 | From the "Edit Item" page, click on "Submit" button | (i) User will be brought to "Update or Remove Items" Page, (ii) Flash message **Item \<item name> updated** will appear.
+3 | From the "Update or Remove Items" page, click on "Delete" button | User will be brought to confirmation to "Delete Item" page with dialog box asking user **Are you sure you want to delete "\<item name>"?**
+4 | In the confirmation to "Delete Item" page, click "Cancel" | User will be brought back to "Update or Remove Items" Page
+5 | In the confirmation to "Delete Item" page, click "Confirm" | (i) User will be brought to "Update or Remove Items" Page, (ii) Flash message **Item deleted** will appear.
+
 
 ### Issues and bugs
-```
-- background of edit and post page
-- adding a login element
-- adding an image upload option
-- changing the display of the links after login
-- getting the date and add to the data
-- at less than 425 px there is right border
-- description does not come out
-- Edited successfully toastr pops up when click on back button after editing item
-```
+
+- Text with no spaces exceeds the container width in item boxes (screenshot [here](https://github.com/4forces/CI-MS3-project3/tree/master/static/img/readme/text-exceeds-container.PNG))
+- Repeat of commit messages due to infamiliarity using the *git rebase* function (screenshot [here](https://github.com/4forces/CI-MS3-project3/tree/master/static/img/readme/rebase-repeat-commits2.PNG))
+- description is not saved and does not come out when form refresh
+
 
 ---
 
 ## Deployment
 
-This section should describe the process you went through to deploy the project to a hosting platform (e.g. GitHub Pages or Heroku).
+### Github
 
-In particular, you should provide all details of the differences between the deployed version and the development version, if any, including:
-- Different values for environment variables (Heroku Config Vars)?
-- Different configuration files?
-- Separate git branch?
+**(a) Downloading this Project**
 
-In addition, if it is not obvious, you should also describe how to run your code locally.
+To download the project code, please do the following:
 
-Deployment
-a. Setting up MySQL (ClearDB) with Heroku
-Installing ClearDB in Git Bash using heroku addons:create cleardb:ignite
-Datatables in the database were created using the create_datatables.py file written by the developer
-Datasets were imported automatically from the csv file using import_datasets.py file written by the developer
+1. At the [project page](https://github.com/4forces/CI-MS3-project3), click on the "Code" button, and select "Download ZIP"
+2. This ZIP file can be unzipped to access all project code and related files
 
-b. Heroku Deployment
-Sign up for an account at Heroku.
-Download Heroku CLI at Heroku website.
-Install the dowloaded Heroku CLI from Step 2.
-Open up Git Bash terminal. Cd to the location that you have your project in. Then, in the Git Bash Terminal, login to Heroku by typing heroku login. A login page will be popped up to allow you to login to Heroku.
-Open up another Git Bash terminal. Create a new app using heroku create <app_name>.
-In Git Bash, check whether the new remotes has been successfully added using git remote -v.
-In Git Bash, install gunicorn with the command git remote -v.
-Create a file called Procfile. Add web gunicorn app:app and save it.
-Create the requirements.txt file with pip3 freeze --local > requirements.txt.
-In Git Bash, commit and push the project to GitHub and Heroku with the following:
-git add .
-git commit -m "<Commit Message>"
-git push heroku master
-In Heroku, set up your key and value pair needed for the project. For this project, the database url, MySQL username, database, host and password has been configured under the Settings Tab.
-To open up the app hosted on Heroku, click on the "Open App" button at the very top page of the Heroku dashboard.
-b. To run this web application on your local PC
-Instructions Note: This web application was run on a Windows PC. The following command might be slightly different if run on a Mac PC.
+**(b) Clone the Project**
+```
+To clone this project, please do the following:
 
-Go to Cereal 101 github repository.
+1. At the [project page](https://github.com/4forces/CI-MS3-project3), click on the "Code" button 
+2. Click on the "copy icon" to copy the project link to clipboard
+2. This URL can be pasted it in your IDE terminal to clone in your computer
+3. Type in `git remote rm origin` into the terminal
+```
+**(c) Creating the Repository**
+1. Login to GitHub
+2. Go to [CI Gitpod full template](https://github.com/Code-Institute-Org/gitpod-full-template)
+3. Type in a unique name under "Repository name", and an optional description of the to-be-created repository
+4. Select the option of making the repository "Public"
+6. Click on the  "Create Repository from template" button
+7. User will be re-directed to the newly created repository page
 
-Click on the 'Clone or Download' button and then click 'Download ZIP' and extract the files to a location of your choice on your laptop / desktop. Else, you can clone the project by running the following command on your terminal: git clone https://github.com/<username>/<repository>
+**(d) Deploying to GitHub Pages**
+1. On the menu-bar, click on "Settings" (Beside the gear icon)
+2. Scroll down to "GitHub Pages" section
+3. Under "Source", select "Branch: master"
+4. Click "Save", and the website will be deployed
+5. Scroll down to "GitHub Pages" section again, where the deployed link can be retrieved
+6. The project can be accessed via the deployed link.
 
-Create a virtual environment using the following command: python -m venv venv
+### Heroku
 
-Activate the virtual environment created using the following command: On Windows: venv\Scripts\activate
-
-Install all the packages needed using the following command: pip install -r requirements.txt
-
-Set the enviroment variables needed to run this web application. First, right click on My Computer. Then right click on Properties. On the left hand side of the menu bar, click on Advanced system settings. Under the System Variables section, click on the New button. In the pop up dialog box, key in the Variable Name and Variable Value field. The environment variables needed to be setup would be the database name, database host, database password and database username. Note: For the variable name, you are free to choose a variable name of your choice:
-
-An example of the enviroment variables key values pair would be as follow: a. MYSQL_HOST(variable name) will be: us-cdbr-iron-east-02.cleardb.net (variable value) b. MYSQL_USER(variable name) will be: B80f8d428xxxxx(variable value) c. MYSQL_PASSWORD(variable name) will be: F48exxxx(variable value) d. MYSQL_DB will(variable name) be: heroku_58632fb6debxxxx(variable value)
-
-Run the application using the following command: python app.py
-
-To see the web application in action, go the the following link: http://127.0.0.1:8080
-
----
+1. Sign up for a Heroku account
+2. After forking, downloading or cloning from the master branch this project from [github](https://github.com/4forces/CI-MS3-project3), 
+ install all the requirements with `pip3 install -r requirements.txt` in the terminal
+3. Login to Heroku by typing in the terminal `heroku login -i`
+4. Create a new app (replace <app_name> with a name of your own (Note: name must be unique)
+5. Check that new remote has been added by typing `git remote -v` into the terminal
+6. Install gunicorn with `pip3 install gunicorn`
+7. Create a file named `Procfile` (without any extension, with the first P uppercase)
+8. Open the "Procfile" add the following line `web gunicorn <your python file name without .py>:app `
+9. Create requirements file with the command `pip3 freeze --local > requirements.txt` in terminal
+10. Commit all additions by typing following in terminal:
+    - `git add .`
+    - `git commit -m "<Commit Message>"`
+    - Replace `<Commit Message>` with a suitable description
+11. Git push to Heroku by using `git push heroku master` command
+12. Add the following in Heroku Config Vars
+    - MongoDB URI
+    - Secret key for Flask
+    - Database Name: giftkids
+13. Set the debug mode to false on Heroku
 
 ## Credits
 
+### Gitpod Setup
+
+- Code Institute's [Gitpod full template](https://github.com/Code-Institute-Org/gitpod-full-template)
+
 ### Images and Graphics
-1. Images were mostly sourced from [Unplash](https://unsplash.com/) and a bit from [Pexels](https://www.pexels.com/)
-4. Background image graphics obtained from [freepik](https://www.freepik.com/premium-vector/toys-doodle-set_6551728.htm#page=1&query=toys&position=41)
+- Images were mostly sourced from [Unplash](https://unsplash.com/), and a bit from [Pexels](https://www.pexels.com/)
+- Background image graphics obtained from [freepik](https://www.freepik.com/premium-vector/toys-doodle-set_6551728.htm#page=1&query=toys&position=41)
 
 
-### secret Key
-[RandomKeygen](https://randomkeygen.com/) to generate the secret key
-
-### code
-1. [Tim Nelson's (CI) Task Manager](https://github.com/Code-Institute-Solutions/TaskManager/tree/master/08-SearchingWithinTheDatabase/01-text_index_searching)
-
-### style and feel
-1. Pinterest which led to (2) 
-2. https://demo.hasthemes.com/shopify/jadusona-cm.html
-3. Color palette (Chrome extension) to extract color theme
-4. Color pickr eyedropper (Chrome extension) to pick color
-3. and google [search results](https://www.google.com/search?q=baby+gift+wallpaper&tbm=isch&ved=2ahUKEwinwczF1r_sAhUunEsFHaXtAKoQ2-cCegQIABAA&oq=baby+gift+wallpaper&gs_lcp=CgNpbWcQAzICCAA6BggAEAcQHjoICAAQCBAHEB5Qp_wBWN3_AWC_gQJoAHAAeACAAUmIAYcCkgEBNZgBAKABAaoBC2d3cy13aXotaW1nwAEB&sclient=img&ei=2AKNX6f1Oq64rtoPpduD0Ao&bih=969&biw=1920&rlz=1C1NHXL_enSG810SG810#imgrc=fBrjw4FAwGnf8M)
+### Secret Key
+- [RandomKeygen](https://randomkeygen.com/) to generate the secret key
 
 
-### Alighment and looks refinement: 
-4. Alumni's website: 
-   - https://linda-instaramen.herokuapp.com/#
-   - https://mel-buyandsell-marketplace.herokuapp.com/
+### Site Theme and Appearance
+- [Pinterest](https://www.pinterest.com/), which led to [Jasusona](https://demo.hasthemes.com/shopify/jadusona-cm.html)
+- [Code Institute Slack community](https://code-institute-room.slack.com) for recommending the following Chrome Extensions:
+   - [Color palette](http://palette.site/) to extract reference site color theme
+   - [Color pickr eyedropper](https://vidsbee.com/ColorPick/) to identify site colours
 
 
 ### Logo and favicion
-1. [Free Logo Design](https://www.freelogodesign.org/)
-2. [favicon.io](https://favicon.io/favicon-converter/)
-
-### Layout Design
-1. [Smashing Magazine](https://www.smashingmagazine.com/2016/04/web-developer-guide-color/)
-2. [Width and Height Display](Width and Height Display)
-
-### Solution to resolve favicon 404 error when edit/delete item
-1. [stackoverflow](https://stackoverflow.com/questions/27234593/setting-up-static-folder-path-in-flask1)
-
-### Content
-- The text for section Y was copied from the [Wikipedia article Z](https://en.wikipedia.org/wiki/Z)
-- Idea was conceived from viewing the website of Nanyang Academics. Linke [here](https://www.nanyangacademics.com/)
-
-### Media
-- The photos used in this site were obtained from [Unplash]()
-
-### JS Date code snippet
-- Retrieve [date object](https://www.w3schools.com/js/js_dates.asp)
-- [Substring](https://www.w3schools.com/jsref/jsref_substring.asp) to cut date string
-
-### readme and markdown
-- The [CI Slack community](https://code-institute-room.slack.com) which gave much useful tips and pointers on to useful sites to:
-
-**Markdown**
-
-- [Adam Pritchard's Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
-
-- [commonmark.org](https://commonmark.org/help/)
-
-- [Github Guides - Markdown Cheatsheet](https://guides.github.com/pdfs/markdown-cheatsheet-online.pdf)
-- [Line breaks in markdown](https://gist.github.com/shaunlebron/746476e6e7a4d698b373)
-
-**Writing Readme**
-
-- [CI Readme template](https://github.com/Code-Institute-Solutions/readme-template)
-
-- [Anna Gilhespy's *Portrait Artist* Readme](https://github.com/AJGreaves/portrait-artist/blob/master/README.md)
+1. [Free Logo Design](https://www.freelogodesign.org/) to generate site logo
+2. [favicon.io](https://favicon.io/favicon-converter/) to convert logo to favicon
 
 
-### Changing Edit and Delete buttons
-Concept from [here](https://webdeasy.de/en/top-css-buttons-en/?referer=dev-updated-f41)
-JS from [w3schools](https://www.w3schools.com/Jsref/event_onmouseover.asp)
-CSS methods from [here](https://stackoverflow.com/questions/44573480/change-text-content-on-hover), 
-[here](https://stackoverflow.com/questions/33057737/css-replacing-a-text-on-hover-but-smooth-transition-to-the-new-text-does-not-w), 
-and [here](https://stackoverflow.com/questions/3331353/transitions-on-the-css-display-property)
-[Fontawesome content with CSS](https://stackoverflow.com/questions/20782368/use-font-awesome-icon-as-css-content)
-The evolving of css display:
-0. attempted to try without js (pure css)
-1. Discovered that display-none to display-block does not allow transition effects
-2. Work towards Opacity and visibility, but realised the element still takes up space although not visible
-3. A compromise was decided that to fade-in the fontawesome icon upon hover - leaves a slightly unsightly of 'align-left' as fontawesome icon is hidden
+### Readme Writing and Markdown
+ The [CI Slack community](https://code-institute-room.slack.com), which gave many pointers and tips on various useful sites on:
 
-### Reversing display order in {% for %} loop
-1. Reverse the order of items displayed in a `{% for %}` loop, from [stackoverflow](https://stackoverflow.com/questions/45699660/jinja2-reverse-a-list)
+  **Markdown:**
 
-### Box shodows
-CSS Scan [Beautiful CSS box-shadow examples](https://getcssscan.com/css-box-shadow-examples)
+  - [Adam Pritchard's Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
+  
+  - [commonmark.org](https://commonmark.org/help/)
+  - [Github Guides - Markdown Cheatsheet](https://guides.github.com/pdfs/markdown-cheatsheet-online.pdf)
+  - [Line breaks in markdown](https://gist.github.com/shaunlebron/746476e6e7a4d698b373)
 
+  **Writing of the Readme:**
 
-### text shadow for navbar
-W3 Schools link [here](https://www.w3schools.com/css/css3_shadows.asp)
-Initally the idea is to on hover, increase the font size by 1.075x, but due to the misalignment that occurs link [here]().
-Work around is to just settle with text shadow and changing font color
+  - [CI Readme template](https://github.com/Code-Institute-Solutions/readme-template)
+  
+  - [Anna Gilhespy's *Portrait Artist* Readme](https://github.com/AJGreaves/portrait-artist/blob/master/README.md)
 
+### Syntax Clarifications
 
-### Toastr pop up. 
+- Documentations for [Jinja](https://jinja.palletsprojects.com/en/2.11.x/templates/) and [Flask](https://flask.palletsprojects.com/en/1.1.x/)
 
-Lecturer Mr KX Chor for allowing us to reference his code.
-[This site](https://codeseven.github.io/toastr/demo.html) and [this site](http://plnkr.co/edit/6W9URNyyp2ItO4aUWzBB?preview) for information on toatr.options usage.
-[This site](https://stackoverflow.com/questions/44110049/toastr-options-dont-work) to resolve toatr.options not working
+### Deployment to Heroku
 
+- Lecturer Mr. KX Chor's for his detailed step-by-step guidance
 
-## Resolve display error in item_details page
-Resolve error: `Solve 'expected  ':', got '}' error in item_details display` on item_details.template.html
-with refernce from this [site](https://groups.google.com/g/pocoo-libs/c/hZIO4DziL2E?pli=1)
-
-
-### Jinja documentation
-
-Link [here](https://jinja.palletsprojects.com/en/2.11.x/templates/) for clarification on jinja
-
-### Flask documentation
-
-link [here](https://flask.palletsprojects.com/en/1.1.x/) for flask syntax
+---
 
 ## Acknowledgements
 
-- I received inspiration for this project from X
-- Lots of tips, inspiration and encouragement from the wonderful CI community at [Slack](https://code-institute-room.slack.com)
+- The wonderful [CI community at Slack](https://code-institute-room.slack.com) for numerous useful tips, inspiration and motivation :sparkling_heart:
+- Our Lecturer [Mr. Paul KX Chor](https://github.com/kunxin-chor) for much patience & effort in teaching and sharing his deep knowledge with us :clap:
+- My classmates (Collin, Eddy, Frances, JY and Rui Shan) in the spirit of sticking together learning, stuggling :) and striving :satisfied:
 
-
+**For education purposes only**
