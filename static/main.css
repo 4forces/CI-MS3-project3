@@ -13,7 +13,6 @@ body {
     border-radius: 1.5rem;
 }
 
-
 .header-font, h1, h2, h3, h4, h5, h6 {
   font-family: "Fredoka One", cursive;
 }
@@ -24,48 +23,56 @@ body {
     background: linear-gradient(rgba(148, 199, 235, 0.8), rgba(148, 199, 235, 0.8)), url("/static/img/letters.jpg");
     background-position: top;
     background-size: cover;
+    border-radius: 1.5rem;  
 }
 
 #browse-button:hover {
     background: linear-gradient(rgba(255, 112, 138, 0.7), rgba(255, 112, 138, 0.7)), url("/static/img/letters.jpg");
     background-position: center;
     background-size: cover;
+    border-radius: 1.5rem;  
 }
 
 #search-page-button {
     background: linear-gradient(rgba(148, 199, 235, 0.85), rgba(148, 199, 235, 0.85)), url("/static/img/blocks.jpg");
     background-position: top;
     background-size: cover;
+    border-radius: 1.5rem;  
 }
 
 #search-page-button:hover {
     background: linear-gradient(rgba(255, 112, 138, 0.85), rgba(255, 112, 138, 0.85)), url("/static/img/blocks.jpg");
     background-position: center;
     background-size: cover;
+    border-radius: 1.5rem;  
 }
 
 #submit-button {
     background: linear-gradient(rgba(148, 199, 235, 0.65), rgba(148, 199, 235, 0.65)), url("/static/img/toys.jpg");
     background-position: top;
     background-size: cover;
+    border-radius: 1.5rem;  
 }
 
 #submit-button:hover {
     background: linear-gradient(rgba(255, 112, 138, 0.65), rgba(255, 112, 138, 0.65)), url("/static/img/toys.jpg");
     background-position: center;
     background-size: cover;
+    border-radius: 1.5rem;  
 }
 
 #update-delete-button {
     background: linear-gradient(rgba(148, 199, 235, 0.75), rgba(148, 199, 235, 0.75)), url("/static/img/beads.jpg");
     background-position: top;
     background-size: cover;
+    border-radius: 1.5rem;  
 }
 
 #update-delete-button:hover {
     background: linear-gradient(rgba(255, 112, 138, 0.75), rgba(255, 112, 138, 0.75)), url("/static/img/beads.jpg");
     background-position: center;
     background-size: cover;
+    border-radius: 1.5rem;  
 }
 
 .bt {
@@ -76,16 +83,16 @@ body {
   background-color: rgba(255, 112, 138);
 }
 
-.bt-big .bt-big:hover, .bt, .bt:hover,.custom-select {
+.bt, .bt:hover, .custom-select {
        border-radius: 1.5rem;     
 }
 
-.bt-big, .bt {
+#browse-button, #search-page-button, #submit-button, #update-delete-button, .bt {
   color: #1a191b;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
 }
 
-.bt-big:hover, .bt:hover {
+#browse-button:hover, #search-page-button:hover, #submit-button:hover, #update-delete-button:hover, .bt:hover {
   color: #ffffff;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
@@ -109,14 +116,14 @@ body {
 }
 
 
-
 /* <a> tag CSS */
 a:link, a:visited, a:hover, a:active {
   text-decoration: none;
   color: #1a191b;
 }
 
-/* card css */
+
+/* Transition css for item cards */
 .card {
     transition: 0.5s ease;
 }
@@ -124,6 +131,7 @@ a:link, a:visited, a:hover, a:active {
 .card:hover {
     transform: scale(1.03)
 }
+
 
 /* navbar css */
 .navbar {
@@ -139,7 +147,6 @@ a:link, a:visited, a:hover, a:active {
 
 .navbar-light:hover .navbar-nav:hover .nav-link:hover {
     text-shadow: 2px 2px 5px #fe7690;
-    /* transform: scale(1.075); */
     color: #b0384e;
 }
 
@@ -147,6 +154,8 @@ a:link, a:visited, a:hover, a:active {
     width: 3.5rem;
 }
 
+
+/* Search Page CSS */
 #search-button {
   background-color: rgba(244,250,255,0.7);
   color: #1a191b;
@@ -175,30 +184,17 @@ a:link, a:visited, a:hover, a:active {
 }
 
 
-/* Home.template CSS */
+/* Landing page CSS */
 .jumbotron-image {
-    /* padding-top: 10rem;
-    padding-bottom: calc(10rem - 4.5rem); */
     background: linear-gradient(rgba(184,219,245, 0.85), rgba(244,250,255, 0.85)), url("/static/img/child.jpg");
     background-position: center;
-    /* background-repeat: no-repeat;
-    background-attachment: scroll; */
     background-size: cover;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 30px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
     border-radius: 0.75rem
-    /* height: 100vh; */
 }
 
 
-/* .delete2, .delete2:after, .delete2:before {
-    border: 1px solid black;
-    align-self: center;
-    height: 100px;
-    width: 100px;
-    position: absolute;
-    font-size: 40px;
-    color: black
-} */
+/* Update or Remove Items page CSS */
 .delete:after {
     font-family: FontAwesome;
     content: " \f00d";
@@ -213,19 +209,16 @@ a:link, a:visited, a:hover, a:active {
     transition: opacity 0.33s linear;
 }
 
-/* .delete2:hover:before {
-    opacity: 0;
-} */
 .delete:hover:after {
     opacity: 1;
 }
-
 
 .edit:after {
     font-family: FontAwesome;
     content: " \f040";
     opacity: 0;
 }
+
 .edit:before {
     content: "Edit";
     opacity: 1;
@@ -235,9 +228,6 @@ a:link, a:visited, a:hover, a:active {
     transition: opacity 0.33s linear;
 }
 
-/* .delete2:hover:before {
-    opacity: 0;
-} */
 .edit:hover:after {
     opacity: 1;
 }
@@ -260,6 +250,8 @@ a:link, a:visited, a:hover, a:active {
     background-size: cover;
 }
 
+
+/* Item Details Page CSS */
 #item-details > p {
     margin-bottom: 1.3rem;
     font-size: 1.5rem;
@@ -269,7 +261,8 @@ a:link, a:visited, a:hover, a:active {
     margin-bottom: 0;
 }
 
-/* Confirm delete page CSS */
+
+/* Confirm-Delete Page CSS */
 .alert, .btn-danger, .btn-success  {
     border-radius: 0.75rem;
 }
@@ -278,7 +271,8 @@ a:link, a:visited, a:hover, a:active {
     color: #ffffff;
 }
 
-/* form validation */
+
+/* Submit Item Page - Form validation css */
 .missing-field {
     border: 1px solid #dc3545;
     border-radius: 5px;
@@ -291,7 +285,6 @@ a:link, a:visited, a:hover, a:active {
 footer {
   background-color: #94c8e9;
   display: flex;
-  /* min-height: 100vh; */
   flex-direction: column;
   justify-content: space-between
 }
