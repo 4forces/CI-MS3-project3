@@ -9,12 +9,12 @@ Delete Item
     <div class="row justify-content-center">
         <div class="col-8 frame my-5">
             <div class="my-3 text-center">
-                <!-- <div class='row text-center'> -->
+            <!-- Page title -->
                     <div class="col">
                         <h1>Delete Item</h1>
                     </div>
-                <!-- </div> -->
 
+            <!-- for loop to generate customised item delete confirm box content -->
             {% for item in item %}
             <form method="POST">
                 <div class="alert alert-danger">

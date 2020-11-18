@@ -8,6 +8,7 @@ Submit Item
 
 <div class="container">
     <div class="my-5" id="post-form">
+        <!-- Page title -->
         <div class='row text-center'>
             <div class="col">
                 <h1>Submit Item</h1>
@@ -16,10 +17,11 @@ Submit Item
 
         <div class='row'>
             <div class="col">
+                <!-- Start of Form -->
                 <form method="POST">
-
                     <div class='row'>
                         <div class="col-sm-6">
+                        <!-- Form input Field 1 -->
                             <div class="form-group">
                                 <h5><label class="form-check-label">Submitted by</label></h5>
                                 <input class="form-control {% if 'nickname' in errors %} is-invalid {% endif %}" type="text" name="nickname" placeholder="Enter nickname" value="{{ input_value.nickname }}"/>
@@ -31,6 +33,7 @@ Submit Item
                             </div>
                         </div>
                         <div class="col-sm-6">
+                            <!-- Form input Field 2 -->
                             <div class="form-group">
                                 <h5><label class="form-check-label">Contact</label></h5>
                                 <input class="form-control {% if 'email' in errors %} is-invalid {% endif %}" type="text" name="email" placeholder="Enter email" value="{{ input_value.email }}"/>
@@ -42,7 +45,8 @@ Submit Item
                             </div>
                         </div>
                     </div>
-
+                    
+                    <!-- Form input Field 3 -->                    
                     <div class="form-group">
                         <h5><label class="form-check-label">Item name </label></h5>
                         <input class="form-control {% if 'name' in errors %} is-invalid {% endif %}" type="text" name="item_name" placeholder="Enter item name" value="{{ input_value.item_name }}"/>
@@ -53,6 +57,7 @@ Submit Item
                         {% endif %}
                     </div>
 
+                    <!-- Form input Field 4 -->                    
                     <div class="form-group">
                         <h5><label class="form-check-label">Description </label></h5>
                         <input class="form-control {% if 'description' in errors %} is-invalid {% endif %}" row="3" name="description" placeholder="Enter item description (optional)" value="{{ input_value.description }}">
@@ -63,6 +68,7 @@ Submit Item
                         {% endif %}                            
                     </div>
 
+                    <!-- Form input Field 5 -->                    
                     <div class="form-group">
                         <h5><label class="form-label">Item type: </label></h5>
                         <select class="custom-select {% if 'item_type' in errors %} missing-field {% endif %}" name="item_type">
@@ -83,6 +89,7 @@ Submit Item
 
                     <div class="row">
                         <div class="col-sm-6">
+                            <!-- Form input Field 6 -->
                             <div class="form-group">
                                 <h5>Age Range:</h5>
                                 <div class= "{% if 'age' in errors %} missing-field {% endif %}">
@@ -108,6 +115,7 @@ Submit Item
                         </div>
 
                         <div class="col-sm-6">
+                            <!-- Form input Field 7 -->
                             <div class="form-group">
                                 <h5>Item Condition</h5>
                                 <div class= "{% if 'condition' in errors %} missing-field {% endif %}">
@@ -133,6 +141,7 @@ Submit Item
                         </div>
                     </div>
 
+                    <!-- Picture upload function currently hidden - for future development -->
                     <div class="input-group" hidden>
                         <h5>Upload Image</h5>
                         <div class="input-group-prepend">
@@ -143,7 +152,8 @@ Submit Item
                             <label class="custom-file-label" for="image">Choose file</label>
                         </div>
                     </div>
-
+                    
+                    <!-- Form input Field 8 -->
                     <div class="form-group">
                         <h5><label class="form-label">Delete after: </label></h5>
                         <select class="custom-select {% if 'delete' in errors %} missing-field {% endif %}" name="delete_after">
@@ -159,12 +169,15 @@ Submit Item
                         {% endif %} 
                     </div>
 
+                    <!-- Input Field 9 (hidden) -->
                     <input id="date" name="date" hidden>
 
                     <div class="form-group text-center">
                         <input type="submit" onclick="getDate()" value="Submit" class="btn bt"/>
                     </div>
                 </form>
+                <!-- End of form -->
+
             </div>
         </div>
     </div> 
