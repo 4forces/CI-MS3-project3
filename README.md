@@ -1,7 +1,7 @@
 
 # GiftKids - A simple site to bless others, or to receive blessings
 
-<img src="static/img/readme/title-pic.PNG" width="700" style="margin:0">
+<img src="static/img/readme" width="800" style="margin:0">
 
 ## Overview
 
@@ -71,13 +71,13 @@ This site has 5 main sections:
 - [Browse all items](#Browse-all-items)
 - [Item search](#Item-search)
 - [Submit new item](#Submit-new-item)
-- [Update/Remove item entry](#Update/Remove-item-entry)
+- [Update/Remove item entry](#updateremove-item-entry)
 
 ### Landing Page
 
 This is the first page the visitor sees upon [arrival at this site](https://github.com/4forces/CI-MS3-project3/tree/master/static/img/readme/landing-page.PNG). 
 The visitor is greeted with a welcome message, which has a [background image]() of a child playing with toys.
-A repeated graphic of [children's toys](https://github.com/4forces/CI-MS3-project3/tree/master/static/img/bg-body.jpg) is used as a matching
+A repeated graphic of children's toys is used as a matching
 background to the theme of this site. 
 There are four buttons linking to the other features of the site:
 - Browse all
@@ -308,8 +308,8 @@ No. | Test Case | Expected Result(s)
 - Repeat of commit messages due to infamiliarity using the *git rebase* function (screenshot [here](https://github.com/4forces/CI-MS3-project3/tree/master/static/img/readme/rebase-repeat-commits2.PNG))
 - Line 184 of `app.py` gives the following error `f-string is missing placeholderscornflakes(F541)` 
 - Issues with sticky footer:
-   - Setting `position:absolute` shows a floating footer for "long" pages ([screenshot]((https://github.com/4forces/CI-MS3-project3/tree/master/static/img/readme/footer.PNG))
-   - Removing it results in floating footer for short pages ([screenshot]((https://github.com/4forces/CI-MS3-project3/tree/master/static/img/readme/footer2.PNG))
+   - Setting `position:absolute` shows a floating footer for "long" pages ([screenshot](https://github.com/4forces/CI-MS3-project3/tree/master/static/img/readme/footer.PNG))
+   - Removing it results in floating footer for short pages ([screenshot](https://github.com/4forces/CI-MS3-project3/tree/master/static/img/readme/footer2.PNG))
 
 ---
 
@@ -423,7 +423,7 @@ To clone this project, please do the following:
 
 ### Deployment to Heroku
 
-- Lecturer [Mr. KX Chor's]((https://github.com/kunxin-chor) for his detailed step-by-step guidance
+- Lecturer [Mr. KX Chor's](https://github.com/kunxin-chor) for his detailed step-by-step guidance
 
 ---
 
