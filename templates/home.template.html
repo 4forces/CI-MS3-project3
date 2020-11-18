@@ -9,7 +9,8 @@
             <h1 class="display-4">Welcome to GiftKids!</h1>
             <p class="lead">A simple site to look for things you need, or to give away.</p>
             <hr class="my-4">
-            <p>Saving. Sharing. Recycling.</p>
+            <h6>Sharing, Giving, Supporting.</h6>
+            <p>Do look around, search for items, or submit your item for donation. Cheers!</P>
         </div>
 </div>
 
@@ -23,16 +24,16 @@
                     <button type="button" class="bt-big btn btn-lg btn-block">Post Gifts</button>
                 </a> -->
                 <a class="col" href="{{ url_for('browse_items') }}">
-                    <button type="button" class="bt-big btn btn-lg btn-block">Browse All</button>
+                    <button id="browse-button" type="button" class="bt-big btn btn-lg btn-block">Browse All</button>
                 </a>
                 <a class="col" href="{{ url_for('show_search') }}">
-                    <button type="button" class="bt-big btn btn-lg btn-block">Item Search</button>
+                    <button id="search-page-button" type="button" class="bt-big btn btn-lg btn-block">Item Search</button>
                 </a>
                 <a class="col" href="{{ url_for('show_post_items') }}">
-                    <button type="button" class="bt-big btn btn-lg btn-block">Submit New Item</button>
+                    <button id="submit-button" type="button" class="bt-big btn btn-lg btn-block">Submit New Item</button>
                 </a>
                 <a class="col" href="{{ url_for('item_list') }}">
-                    <button type="button" class="bt-big btn btn-lg btn-block">Update or Remove Entry</button>
+                    <button id="update-delete-button" type="button" class="bt-big btn btn-lg btn-block">Update or Remove Entry</button>
                 </a>
         </div>
     </div>
