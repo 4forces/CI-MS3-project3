@@ -48,7 +48,7 @@ The fonts used are from Google Fonts:
 
 The colour palette used is as follows: 
 
-<img src="static/img/readme/color-palette2.png" width="200" style="margin:0">
+<img src="static/img/readme/color-palette2.png" width="600" style="margin:0">
 
 ### User stories
 
