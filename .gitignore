@@ -6,4 +6,6 @@ __pycache__/
 env.py
 app2-json-old.py
 app3-before-delete.py
+items.json
+users.json
 
