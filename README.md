@@ -279,15 +279,16 @@ No. | Test Case | Expected Result(s) | Remarks
 2 | Type in an item name (For e.g. "chair" or "bottle") | The item(s) containing the word "chair" or "bottle will displayed | Search by item name only
 3 | Select one of the 5 item types from the dropdown list (For e.g. "Toys and Playthings") | All items with type "Toys and Playthings" will be displayed | Search by item type only
 4 | Type in an item name and select an item type (For e.g. type "jumpers", select "clothes") | All items with "jumpers" in their name and type: "clothes" will be displayed | Search by both item name and type
-5 | Mouse-over any item-box in search results| Item-box expand animation will be observed | -
-6 | Click on item-box in search results | User will be redirected to *Item Details page* | - 
+5 | Type in a random text, for e.g "abc" into the search box and click search | "No item found" will be shown | -
+6 | Mouse-over any item-box in search results| Item-box expand animation will be observed | -
+7 | Click on item-box in search results | User will be redirected to *Item Details page* | - 
 
 ### Submit Item Page
 
 No. | Test Case | Expected Result(s)
 -|-|-|-
 1 | Key in all fields and select radio buttons and click "Submit" | (i) User will be brought to "Update or Remove Items" Page, (ii) Flash message **Item "\<item name>" added** will appear.
-2 | Leave all fields empty and click "Submit" | User will be prompted to provide all compulsory fields
+2 | Leave any field empty and click "Submit" | User will be prompted to provide compulsory fields
 3 | Leave out '@' from the email in "Contact" field | User will be prompted to provide a proper email
 
 ### Update or Remove items Page
