@@ -53,7 +53,8 @@ def browse_items():
 
 @app.route('/search', methods=["GET"])
 def show_search():
-    return render_template("search.template.html")
+    search_criteria = {}
+    return render_template("search.template.html", search_count = mongo.db.items.find(search_criteria).count())
 
 
 @app.route('/search', methods=["POST"])
@@ -82,7 +83,7 @@ def process_search():
     results = list(mongo.db.items.find(search_criteria))
     print('all_criteria:',all_criteria)
     print('results',results)
-    return render_template('search.template.html',items_searched = results)
+    return render_template('search.template.html',items_searched = results, search_count = mongo.db.items.find(search_criteria).count())
 
 
 
