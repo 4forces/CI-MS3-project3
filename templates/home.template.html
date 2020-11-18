@@ -17,18 +17,18 @@
 <div class="container">
     <div class="row mt-5 justify-content-center align-items-center">
         <div class="col-md-6 text-center">
-                <a class="col" href="{{ url_for('browse_items') }}">
-                    <button id="browse-button" type="button" class="btn btn-lg btn-block">Browse All</button>
-                </a>
-                <a class="col" href="{{ url_for('show_search') }}">
-                    <button id="search-page-button" type="button" class="btn btn-lg btn-block">Item Search</button>
-                </a>
-                <a class="col" href="{{ url_for('show_post_items') }}">
-                    <button id="submit-button" type="button" class="btn btn-lg btn-block">Submit New Item</button>
-                </a>
-                <a class="col" href="{{ url_for('item_list') }}">
-                    <button id="update-delete-button" type="button" class="btn btn-lg btn-block">Update or Remove Entry</button>
-                </a>
+                <button id="browse-button" type="button" class="btn btn-lg btn-block">
+                    <a class="col" href="{{ url_for('browse_items') }}">Browse All</a>
+                </button>
+                <button id="search-page-button" type="button" class="btn btn-lg btn-block">
+                    <a class="col" href="{{ url_for('show_search') }}">Item Search</a>
+                </button>
+                <button id="submit-button" type="button" class="btn btn-lg btn-block">
+                    <a class="col" href="{{ url_for('show_post_items') }}">Submit New Item</a>
+                </button>
+                <button id="update-delete-button" type="button" class="btn btn-lg btn-block">
+                    <a class="col" href="{{ url_for('item_list') }}">Update or Remove Entry</a>
+                </button>
         </div>
     </div>
 </div>

@@ -60,7 +60,7 @@ Submit Item
                     <!-- Form input Field 4 -->                    
                     <div class="form-group">
                         <h5><label class="form-check-label">Description </label></h5>
-                        <input class="form-control {% if 'description' in errors %} is-invalid {% endif %}" row="3" name="description" placeholder="Enter item description (optional)" value="{{ input_value.description }}">
+                        <input class="form-control {% if 'description' in errors %} is-invalid {% endif %}" name="description" placeholder="Enter item description (optional)" value="{{ input_value.description }}">
                         {% if 'description' in errors %}
                         <div class="invalid-feedback">
                             {{errors.description}}
