@@ -8,6 +8,6 @@ app2-json-old.py
 app3-before-delete.py
 items.json
 users.json
-item_notfound.template.html
-login.template.html
-register.template.html
+notfound.html
+login.html
+register.html
