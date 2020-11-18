@@ -1,9 +1,15 @@
 /* Common CSS */
 body {
-  /* background-color: antiquewhite; */
   font-family: "Ubuntu", sans-serif;
   color: #1a191b;
   background: linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75)), url("/static/img/bg-body.jpg");
+  /* height: 100%; */
+}
+
+footer {
+    bottom: 0;
+    position: absolute;
+    width: 100%;
 }
 
 .frame, #post-form, #search-bg, #edit-form {
@@ -254,7 +260,7 @@ a:link, a:visited, a:hover, a:active {
 /* Item Details Page CSS */
 #item-details > p {
     margin-bottom: 1.3rem;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
 }
 
 #item-details > h4 {
