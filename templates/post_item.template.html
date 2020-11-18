@@ -66,7 +66,7 @@ Post Item
                     <div class="form-group">
                         <h5><label class="form-label">Item type: </label></h5>
                         <select class="custom-select {% if 'item_type' in errors %} missing-field {% endif %}" name="item_type">
-                            <option disabled>Please select</option>
+                            <option selected disabled>Please select</option>
                             <option value="Toys" {% if request.form.get('item_type') == 'Toys' %} selected {% endif %}>Toys & Playthings</option>
                             <option value="Clothes" {% if request.form.get('item_type') == 'Clothes' %} selected {% endif %}>Clothes & Wardrobe</option>
                             <option value="Maternity" {% if request.form.get('item_type') == 'Maternity' %} selected {% endif %}>Maternity (E.g. Pumps, Nursing pads)</option>
