@@ -55,7 +55,7 @@ Post Item
 
                     <div class="form-group">
                         <h5><label class="form-check-label">Description </label></h5>
-                        <textarea class="form-control {% if 'description' in errors %} is-invalid {% endif %}" row="3" name="description" placeholder="Enter item description (optional)" value="{{ input_value.description }}"></textarea>
+                        <input class="form-control {% if 'description' in errors %} is-invalid {% endif %}" row="3" name="description" placeholder="Enter item description (optional)" value="{{ input_value.description }}">
                         {% if 'description' in errors %}
                         <div class="invalid-feedback">
                             {{errors.description}}
@@ -87,15 +87,15 @@ Post Item
                                 <h5>Age Range:</h5>
                                 <div class= "{% if 'age' in errors %} missing-field {% endif %}">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="age" id="infant" value="Infant (Newborn - 1 year)"/>
+                                        <input class="form-check-input" type="radio" name="age" id="infant" value="Infant (Newborn - 1 year)" {% if request.form.get('age') == 'Infant (Newborn - 1 year)' %} checked {% endif %}/>
                                         <label class="form-check-label" for="infant">Infant (Newborn - 1 year)</label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="age" id="toddler" value="Toddler (1 - 2 years)"/>
+                                        <input class="form-check-input" type="radio" name="age" id="toddler" value="Toddler (1 - 2 years)" {% if request.form.get('age') == 'Toddler (1 - 2 years)' %} checked {% endif %}/>
                                         <label class="form-check-label" for="toddler">Toddler (1 - 2 years)</label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="age" id="preschooler" value="Preschooler (2 - 5 years)"/>
+                                        <input class="form-check-input" type="radio" name="age" id="preschooler" value="Preschooler (2 - 5 years)" {% if request.form.get('age') == 'Preschooler (2 - 5 years)' %} checked {% endif %}/>
                                         <label class="form-check-label" for="toddler">Preschooler (2 - 5 years)</label>
                                     </div>
                                 </div>
@@ -112,15 +112,15 @@ Post Item
                                 <h5>Item Condition</h5>
                                 <div class= "{% if 'condition' in errors %} missing-field {% endif %}">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="condition" id="new" value="New">
+                                        <input class="form-check-input" type="radio" name="condition" id="new" value="New" {% if request.form.get('condition') == 'New' %} checked {% endif %}>
                                         <label class="form-check-label" for="new">New</label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="condition" id="like-new" value="Like New">
+                                        <input class="form-check-input" type="radio" name="condition" id="like-new" value="Like New" {% if request.form.get('condition') == 'Like New' %} checked {% endif %}>
                                         <label class="form-check-label" for="like-new">Like New</label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="condition" id="used" value="Used">
+                                        <input class="form-check-input" type="radio" name="condition" id="used" value="Used" {% if request.form.get('condition') == 'Used' %} checked {% endif %}>
                                         <label class="form-check-label" for="used">Used</label>
                                     </div>
                                 </div>
