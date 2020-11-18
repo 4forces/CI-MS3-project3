@@ -1,14 +1,10 @@
 from flask import Flask, render_template, request, redirect, url_for, flash
 import os
-import json
-import random
 from flask_pymongo import PyMongo
 
-# for env.py set up
+# env.py set up
 if os.path.exists("env.py"):
     import env
-# bson.json converts the mongo format to json for workability
-from bson.json_util import dumps, loads
 from bson.objectid import ObjectId
 
 app = Flask(__name__)
@@ -25,26 +21,12 @@ print('DB name:', os.environ.get("MONGO_DBNAME"))
 mongo = PyMongo(app)
 
 
-@app.route('/')  # ok
+@app.route('/')
 def home():
     return render_template('home.template.html')
 
 
-@app.route('/register')  # ok
-def register():
-    return render_template('register.template.html')
-
-
-@app.route('/login')  # ok
-def login():
-    return render_template('login.template.html')
-
-@app.route('/notfound')
-def not_found():
-    return render_template('item_notfound.template.html')
-
-# display all items list - vistor view
-@app.route('/browse')  # ok
+@app.route('/browse')
 def browse_items():
     items = mongo.db.items.find()
     print(items)
@@ -54,7 +36,9 @@ def browse_items():
 @app.route('/search', methods=["GET"])
 def show_search():
     search_criteria = {}
-    return render_template("search.template.html", search_count = mongo.db.items.find(search_criteria).count())
+    return render_template("search.template.html",
+                           search_count=mongo.db.items.find(search_criteria)
+                           .count())
 
 
 @app.route('/search', methods=["POST"])
@@ -79,50 +63,50 @@ def process_search():
     all_criteria = [search_item, search_type]
 
     print(search_criteria)
-    
+
     results = list(mongo.db.items.find(search_criteria))
-    print('all_criteria:',all_criteria)
-    print('results',results)
-    return render_template('search.template.html',items_searched = results, search_count = mongo.db.items.find(search_criteria).count())
+    print('all_criteria:', all_criteria)
+    print('results', results)
+    return render_template('search.template.html',
+                           items_searched=results,
+                           search_count=mongo.db.items.
+                           find(search_criteria).count())
 
 
-
-# display all items list - login view
-@app.route('/listings')  # ok
+# display all items list
+@app.route('/listings')
 def item_list():
     items = mongo.db.items.find()
     return render_template('item_listings.template.html', all_items=items)
 
 
 # view item details
-@app.route('/items/<item_id>')  # ok
+@app.route('/items/<item_id>')
 def view_item_details(item_id):
     item = list(mongo.db.items.find({"_id": ObjectId(item_id)}))
     print('Item selected for VIEW:', item)
     return render_template('item_details.template.html', item=item)
 
 
+# add item
 @app.route('/items/post', methods=['GET'])
 def show_post_items():
-    return render_template('post_item.template.html',input_value={}, errors={})
+    return render_template('post_item.template.html',
+                           input_value={}, errors={})
 
 
 # add item - with ['POST']
-@app.route('/items/post', methods=['POST'])  # ok
+@app.route('/items/post', methods=['POST'])
 def process_post_items():
-    # if request.method == 'POST':
 
     print('form values grab:', request.form)
-    
+
     nickname = request.form.get('nickname')
     email = request.form.get('email')
     name = request.form.get('item_name')
-    description = request.form.get('description')
     item_type = request.form.get('item_type')
     age = request.form.get('age')
     condition = request.form.get('condition')
-    delete = request.form.get('delete_after')
-    date = request.form.get('date')
 
     form_errors = {}
 
@@ -131,13 +115,10 @@ def process_post_items():
 
     if not email or '@' not in email:
         form_errors["email"] = "Please provide a proper email"
-    
+
     if not name:
         form_errors["name"] = "Please provide an item name"
 
-    # if not description:
-    #     form_errors['description'] = "Please provide an item description"
-    
     if not item_type:
         form_errors['item_type'] = "Please select an item type"
 
@@ -147,11 +128,8 @@ def process_post_items():
     if not condition:
         form_errors['condition'] = "Please indicate the item condition"
 
-    # if not delete:
-    #     form_errors['delete'] = 'Please choose duration to delete post'
-
     print('form_errors: ', form_errors)
-    
+
     if len(form_errors) == 0:
         item = {
             'nickname': request.form.get('nickname'),
@@ -168,9 +146,10 @@ def process_post_items():
         flash(f'Item "{item["name"]}" added', 'message')
         return redirect(url_for("item_list"))
 
-    else: 
+    else:
         print(request.form)
-        return render_template('post_item.template.html', input_value=request.form, errors=form_errors)
+        return render_template('post_item.template.html',
+                               input_value=request.form, errors=form_errors)
 
 
 # edit item - with ['POST']
@@ -188,7 +167,7 @@ def edit_items(item_id):
             'delete': request.form.get('delete_after'),
         }
         mongo.db.items.update_one({"_id": ObjectId(item_id)}, {'$set': item})
-        flash(f'Item "{item["name"]}" updated', 'info')  
+        flash(f'Item "{item["name"]}" updated', 'info')
         return redirect(url_for("item_list"))
 
     item = mongo.db.items.find_one({"_id": ObjectId(item_id)})
@@ -200,7 +179,7 @@ def edit_items(item_id):
 def delete_items(item_id):
     if request.method == 'POST':
         mongo.db.items.remove({"_id": ObjectId(item_id)})
-        flash(f"Item deleted", 'error')
+        flash(f"Item deleted", "error")
         return redirect(url_for("item_list"))
 
     item = list(mongo.db.items.find({"_id": ObjectId(item_id)}))
@@ -211,8 +190,5 @@ def delete_items(item_id):
 # "magic code" -- boilerplate
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
-            # only one program can run on one port,
-            # therefore flask gives error
-            # if it is run 2nd time
             port=int(os.environ.get('PORT')),
-            debug=True)
+            debug=False)
