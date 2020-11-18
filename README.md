@@ -1,8 +1,7 @@
 
 # GiftKids - A simple site to bless others, or to receive blessings
 
-img <img> from am i responsive
-***
+<img src="static/img/readme/title-pic.PNG" width="700" style="margin:0">
 
 ## Overview
 
@@ -308,7 +307,9 @@ No. | Test Case | Expected Result(s)
 - Text with no spaces exceeds the container width in item boxes (screenshot [here](https://github.com/4forces/CI-MS3-project3/tree/master/static/img/readme/text-exceeds-container.PNG))
 - Repeat of commit messages due to infamiliarity using the *git rebase* function (screenshot [here](https://github.com/4forces/CI-MS3-project3/tree/master/static/img/readme/rebase-repeat-commits2.PNG))
 - Line 184 of `app.py` gives the following error `f-string is missing placeholderscornflakes(F541)` 
-
+- Issues with sticky footer:
+   - Setting `position:absolute` shows a floating footer for "long" pages ([screenshot]((https://github.com/4forces/CI-MS3-project3/tree/master/static/img/readme/footer.PNG))
+   - Removing it results in floating footer for short pages ([screenshot]((https://github.com/4forces/CI-MS3-project3/tree/master/static/img/readme/footer2.PNG))
 
 ---
 
@@ -324,14 +325,13 @@ To download the project code, please do the following:
 2. This ZIP file can be unzipped to access all project code and related files
 
 **(b) Clone the Project**
-```
+
 To clone this project, please do the following:
 
 1. At the [project page](https://github.com/4forces/CI-MS3-project3), click on the "Code" button 
 2. Click on the "copy icon" to copy the project link to clipboard
 2. This URL can be pasted it in your IDE terminal to clone in your computer
-3. Type in `git remote rm origin` into the terminal
-```
+
 **(c) Creating the Repository**
 1. Login to GitHub
 2. Go to [CI Gitpod full template](https://github.com/Code-Institute-Org/gitpod-full-template)
@@ -380,6 +380,7 @@ To clone this project, please do the following:
 ### Images and Graphics
 - Images were mostly sourced from [Unplash](https://unsplash.com/), and a bit from [Pexels](https://www.pexels.com/)
 - Background image graphics obtained from [freepik](https://www.freepik.com/premium-vector/toys-doodle-set_6551728.htm#page=1&query=toys&position=41)
+- README title picture from [Am I Responsive](http://ami.responsivedesign.is/#)
 
 
 ### Secret Key
@@ -391,8 +392,6 @@ To clone this project, please do the following:
 - [Code Institute Slack community](https://code-institute-room.slack.com) for recommending the following Chrome Extensions:
    - [Color palette](http://palette.site/) to extract reference site color theme
    - [Color pickr eyedropper](https://vidsbee.com/ColorPick/) to identify site colours
-- [Sticker Footer](https://getbootstrap.com/docs/4.0/examples/sticky-footer/) from bootstrap
-
 
 ### Logo and favicion
 1. [Free Logo Design](https://www.freelogodesign.org/) to generate site logo
