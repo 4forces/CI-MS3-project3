@@ -1,7 +1,7 @@
 
 # GiftKids - A simple site to bless others, or to receive blessings
 
-<img src="static/img/title-pic.PNG" width="800" style="margin:0">
+<img src="static/img/readme/title-pic.PNG" width="800" style="margin:0">
 
 ## Overview
 
