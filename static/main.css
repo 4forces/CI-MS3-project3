@@ -3,13 +3,6 @@ body {
   font-family: "Ubuntu", sans-serif;
   color: #1a191b;
   background: linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75)), url("/static/img/bg-body.jpg");
-  /* height: 100%; */
-}
-
-footer {
-    bottom: 0;
-    position: absolute;
-    width: 100%;
 }
 
 .frame, #post-form, #search-bg, #edit-form {
